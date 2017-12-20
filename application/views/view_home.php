@@ -54,7 +54,7 @@
         <div class="intro-text">
           <div class="intro-lead-in">Selamat Datang di SIPELSIS</div>
           <div class="intro-heading text-uppercase">Sistem Informasi Pelanggaran Siswa SMK Telkom Malang</div>
-          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#masuk">MASUK</a>
+          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="<?php echo base_url(); ?>index.php/auth">MASUK</a>
         </div>
       </div>
     </header>
