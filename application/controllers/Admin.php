@@ -11,7 +11,8 @@ class Admin extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('view_dasboradmin');
+		$data['main_view'] = 'view_dasboradmin';
+		$this->load->view('view_templatedasbor', $data);
 	}
 
 }
