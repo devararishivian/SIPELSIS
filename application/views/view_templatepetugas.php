@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" href="<?php echo base_url(); ?>assets/gentelella/images/favicon.ico" type="image/ico" />
 
-    <title>SIPELSIS | Admin Dashboard</title>
+    <title>SIPELSIS | Operator Dashboard</title>
 
     <!-- Bootstrap -->
     <link href="<?php echo base_url(); ?>assets/gentelella/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -47,8 +47,8 @@
                 <img src="<?php echo base_url(); ?>assets/gentelella/production/images/img.jpg" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
-                <span>Administrator</span>
-                <h2>Raden Mas Vian Mangkuwanito Limo Tanpo Busono</h2>
+                <span>Petugas Piket</span>
+                <h2>Kungkingkang</h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -61,30 +61,9 @@
                 <h3>General</h3>
                 <ul class="nav side-menu">
                   <li><a href="javascript:void(0)"><i class="fa fa-home"></i> Dashboard </a></li>
-                  <li><a><i class="fa fa-table"></i> Lihat dan Edit Data <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="tables_dynamic.html">Data Admin</a></li>
-                      <li><a href="tables_dynamic.html">Data Petugas</a></li>
-                      <li><a href="tables_dynamic.html">Data Pelanggaran</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-edit"></i> Tambah Data <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="tables_dynamic.html">Data Admin</a></li>
-                      <li><a href="tables_dynamic.html">Data Petugas</a></li>
-                      <li><a href="tables_dynamic.html">Data Pelanggaran</a></li>
-                    </ul>
-                  </li>
+                  <li><a href="javascript:void(0)"><i class="fa fa-plus"></i> Tambah Pelanggaran </a></li>
                 </ul>
               </div>
-              <div class="menu_section">
-                <h3>Lain-lain</h3>
-                <ul class="nav side-menu">               
-                  <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Verifikasi Pelanggaran </a></li>
-                  <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Kelola Data Siswa </a></li>
-                </ul>
-              </div>
-
             </div>
             <!-- /sidebar menu -->
 
@@ -118,7 +97,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="images/img.jpg" alt="">Raden Mas Vian Mangkuwanito Limo Tanpo Busono
+                    <img src="images/img.jpg" alt="">Kungkingkang
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
