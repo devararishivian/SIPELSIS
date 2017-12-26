@@ -74,7 +74,7 @@
                           <td>yoyok</td>
                           <td>12R6</td>
                           <td>62</td>
-                          <td>Berat Sangat</td>
+                          <td>Berat euy ayamnya busuq</td>
                           <td <button type="button" class="btn btn-success btn-xs">Lanjut</button> </td>
                           <td <button type="button" class="btn btn-danger btn-xs">Hapus</button> </td>
                         </tr>
