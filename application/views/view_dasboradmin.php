@@ -23,24 +23,66 @@
                   <h3>Petugas</h3>
                 </div>
               </div>
+
+
+
+
+
               <div class="x_panel">
-                <div class="x_title">
-                  <h2><i class="fa fa-users"></i> Verifikasi Pelanggaran </h2>
-                  <ul class="nav navbar-right panel_toolbox">
-                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                    </li>
-                    <li class="dropdown">
-                    </li>
-                  </ul>
-                  <div class="clearfix"></div>
-                </div>
-                <div class="x_content" style="display: block;">
+                  <div class="x_title">
+                    <h2>Verifikasi Pelanggaran </h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                        </ul>
+                      
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th>No</th>
+                          <th>Nama</th>
+                          <th>Kelas</th>
+                          <th>Absen</th>
+                          <th>Jenis Pelanggaran</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>Suyit</td>
+                          <td>12T1</td>
+                          <td>69</td>
+                          <td>Berat Sangat</td>
+                          <td <button type="button" class="btn btn-success btn-xs">Lanjut</button> </td>
+                          <td <button type="button" class="btn btn-danger btn-xs">Hapus</button> </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">2</th>
+                          <td>emil</td>
+                          <td>12R1</td>
+                          <td>63</td>
+                          <td>Berat Sangat</td>
+                          <td <button type="button" class="btn btn-success btn-xs">Lanjut</button> </td>
+                          <td <button type="button" class="btn btn-danger btn-xs">Hapus</button> </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">3</th>
+                          <td>yoyok</td>
+                          <td>12R6</td>
+                          <td>62</td>
+                          <td>Berat Sangat</td>
+                          <td <button type="button" class="btn btn-success btn-xs">Lanjut</button> </td>
+                          <td <button type="button" class="btn btn-danger btn-xs">Hapus</button> </td>
+                        </tr>
+                      </tbody>
+                    </table>
 
-                  <p></p>
-                  
-
+                  </div>
                 </div>
-              </div>
 
 
 
