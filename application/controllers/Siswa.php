@@ -15,6 +15,18 @@ class Siswa extends CI_Controller {
 		$this->load->view('view_templatesiswa', $data);
 	}
 
+	public function profil()
+	{
+		$data['main_view'] = 'view_profilsiswa';
+		$this->load->view('view_templatesiswa', $data);
+	}
+
+	public function capel()
+	{
+		$data['main_view'] = 'view_dasborsiswa';
+		$this->load->view('view_templatesiswa', $data);
+	}
+
 }
 
 /* End of file Siswa.php */

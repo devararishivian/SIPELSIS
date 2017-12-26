@@ -60,9 +60,9 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a href="javascript:void(0)"><i class="fa fa-home"></i> Dashboard </a></li>
-                  <li><a href="javascript:void(0)"><i class="fa fa-user"></i> Profil Siswa</a></li>
-                  <li><a href="javascript:void(0)"><i class="fa fa-book"></i> Catatan Pelanggaran </a></li>
+                  <li><a href="<?php echo base_url(); ?>index.php/siswa"><i class="fa fa-home"></i> Dashboard </a></li>
+                  <li><a href="<?php echo base_url(); ?>index.php/siswa/profil"><i class="fa fa-user"></i> Profil Siswa</a></li>
+                  <li><a href="<?php echo base_url(); ?>index.php/siswa/capel"><i class="fa fa-book"></i> Catatan Pelanggaran </a></li>
                 </ul>
               </div>
             </div>
