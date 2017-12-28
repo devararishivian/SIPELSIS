@@ -60,19 +60,19 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a href="javascript:void(0)"><i class="fa fa-home"></i> Dashboard </a></li>
+                  <li><a href="<?php echo base_url(); ?>index.php/admin/"><i class="fa fa-home"></i> Dashboard </a></li>
                   <li><a><i class="fa fa-table"></i> Lihat dan Edit Data <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="tables_dynamic.html">Data Admin</a></li>
-                      <li><a href="tables_dynamic.html">Data Petugas</a></li>
-                      <li><a href="tables_dynamic.html">Data Pelanggaran</a></li>
+                      <li><a href="<?php echo base_url(); ?>index.php/admin/lihatadmin">Data Admin</a></li>
+                      <li><a href="<?php echo base_url(); ?>index.php/admin/lihatpetugas">Data Petugas</a></li>
+                      <li><a href="<?php echo base_url(); ?>index.php/admin/lihatpelanggaran">Data Pelanggaran</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-edit"></i> Tambah Data <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="tables_dynamic.html">Data Admin</a></li>
-                      <li><a href="tables_dynamic.html">Data Petugas</a></li>
-                      <li><a href="tables_dynamic.html">Data Pelanggaran</a></li>
+                      <li><a href="<?php echo base_url(); ?>index.php/admin/tambahadmin">Data Admin</a></li>
+                      <li><a href="<?php echo base_url(); ?>index.php/admin/tambahpetugas">Data Petugas</a></li>
+                      <li><a href="<?php echo base_url(); ?>index.php/admin/tambahpelanggaran">Data Pelanggaran</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -80,8 +80,8 @@
               <div class="menu_section">
                 <h3>Lain-lain</h3>
                 <ul class="nav side-menu">               
-                  <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Verifikasi Pelanggaran </a></li>
-                  <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Kelola Data Siswa </a></li>
+                  <li><a href="<?php echo base_url(); ?>index.php/admin/verifikasipelanggaran"><i class="fa fa-laptop"></i> Verifikasi Pelanggaran </a></li>
+                  <li><a href="<?php echo base_url(); ?>index.php/admin/kelolasiswa"><i class="fa fa-laptop"></i> Kelola Data Siswa </a></li>
                 </ul>
               </div>
 
