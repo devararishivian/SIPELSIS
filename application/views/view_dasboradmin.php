@@ -24,18 +24,9 @@
                 </div>
               </div>
 
-
-
-
-
               <div class="x_panel">
                   <div class="x_title">
-                    <h2>Verifikasi Pelanggaran </h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                        </ul>
-                      
+                    <h2>Verifikasi Pelanggaran Baru</h2>                    
                     </ul>
                     <div class="clearfix"></div>
                   </div>
@@ -48,17 +39,17 @@
                           <th>Kelas</th>
                           <th>Absen</th>
                           <th>Jenis Pelanggaran</th>
+                          <th>Aksi</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
                           <th scope="row">1</th>
-                          <td>Suyit</td>
+                          <td>Den Mas Ganteng Notobotolimo Ndekmejo Karosilo</td>
                           <td>12T1</td>
                           <td>69</td>
                           <td>Berat Sangat</td>
-                          <td <button type="button" class="btn btn-success btn-xs">Lanjut</button> </td>
-                          <td <button type="button" class="btn btn-danger btn-xs">Hapus</button> </td>
+                          <td> <button type="button" class="btn btn-info btn-xs">Kelola</button> </td>
                         </tr>
                         <tr>
                           <th scope="row">2</th>
@@ -66,8 +57,7 @@
                           <td>12R1</td>
                           <td>63</td>
                           <td>Berat Sangat</td>
-                          <td <button type="button" class="btn btn-success btn-xs">Lanjut</button> </td>
-                          <td <button type="button" class="btn btn-danger btn-xs">Hapus</button> </td>
+                          <td> <button type="button" class="btn btn-info btn-xs">Kelola</button> </td>
                         </tr>
                         <tr>
                           <th scope="row">3</th>
@@ -75,21 +65,13 @@
                           <td>12R6</td>
                           <td>62</td>
                           <td>Berat euy ayamnya busuq</td>
-                          <td <button type="button" class="btn btn-success btn-xs">Lanjut</button> </td>
-                          <td <button type="button" class="btn btn-danger btn-xs">Hapus</button> </td>
+                          <td> <button type="button" class="btn btn-info btn-xs">Kelola</button> </td>
                         </tr>
                       </tbody>
                     </table>
 
                   </div>
                 </div>
-
-
-
-
-
-            
-                    </article>
                   </div>
                 </div>
               </div>
