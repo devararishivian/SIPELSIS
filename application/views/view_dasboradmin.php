@@ -48,7 +48,7 @@
                           <td>Den Mas Ganteng Notobotolimo Ndekmejo Karosilo</td>
                           <td>12T1</td>
                           <td>69</td>
-                          <td>Berat Sangat</td>
+                          <td>Kedisiplinan</td>
                           <td> <button type="button" class="btn btn-info btn-xs">Kelola</button> </td>
                         </tr>
                         <tr>
@@ -56,7 +56,7 @@
                           <td>emil</td>
                           <td>12R1</td>
                           <td>63</td>
-                          <td>Berat Sangat</td>
+                          <td>Kerapian</td>
                           <td> <button type="button" class="btn btn-info btn-xs">Kelola</button> </td>
                         </tr>
                         <tr>
@@ -64,7 +64,7 @@
                           <td>yoyok</td>
                           <td>12R6</td>
                           <td>62</td>
-                          <td>Berat euy ayamnya busuq</td>
+                          <td>Kerajinan</td>
                           <td> <button type="button" class="btn btn-info btn-xs">Kelola</button> </td>
                         </tr>
                       </tbody>
