@@ -54,9 +54,11 @@
                       <div class="item form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="foto">Foto</span>
                         </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
                         <form action="#" method="post" enctype="multipart/form-data">
                           <input type="file" name="gambar">
                         </form>
+                        </div>
                       </div>
                       <div class="ln_solid"></div>
                       <div class="form-group">
