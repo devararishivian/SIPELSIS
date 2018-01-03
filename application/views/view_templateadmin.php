@@ -208,7 +208,7 @@
     <script src="<?php echo base_url(); ?>assets/gentelella/vendors/pdfmake/build/pdfmake.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/gentelella/vendors/pdfmake/build/vfs_fonts.js"></script>
     <!-- validator -->
-    <script src="../vendors/validator/validator.js"></script>
+    <script src="<?php echo base_url(); ?>assets/gentelella/vendors/validator/validator.js"></script>
 
 
     <!-- Custom Theme Scripts -->
