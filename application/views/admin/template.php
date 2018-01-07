@@ -87,8 +87,7 @@
               </div>
               <div class="menu_section">
                 <h3>Lain-lain</h3>
-                <ul class="nav side-menu">               
-                  <li><a href="<?php echo base_url(); ?>index.php/admin/verifikasipelanggaran"><i class="fa fa-laptop"></i> Verifikasi Pelanggaran </a></li>
+                <ul class="nav side-menu">
                   <li><a href="<?php echo base_url(); ?>index.php/admin/kelolasiswa"><i class="fa fa-laptop"></i> Kelola Data Siswa </a></li>
                 </ul>
               </div>

@@ -11,56 +11,56 @@ class Admin extends CI_Controller {
 
 	public function index()
 	{
-		$data['main_view'] = 'view_dasboradmin';
-		$this->load->view('view_templateadmin', $data);
+		$data['main_view'] = 'admin/dasbor';
+		$this->load->view('admin/template', $data);
 	}
 
 	public function lihatadmin()
 	{
-		$data['main_view'] = 'view_lihatadmin';
-		$this->load->view('view_templateadmin', $data);
+		$data['main_view'] = 'admin/lihatadmin';
+		$this->load->view('admin/template', $data);
 	}
 
 	public function lihatpetugas()
 	{
-		$data['main_view'] = 'view_lihatpetugas';
-		$this->load->view('view_templateadmin', $data);
+		$data['main_view'] = 'admin/lihatpetugas';
+		$this->load->view('admin/template', $data);
 	}
 
 	public function lihatpelanggaran()
 	{
-		$data['main_view'] = 'view_lihatpelanggaran';
-		$this->load->view('view_templateadmin', $data);
+		$data['main_view'] = 'admin/lihatpelanggaran';
+		$this->load->view('admin/template', $data);
 	}
 
 	public function tambahadmin()
 	{
-		$data['main_view'] = 'view_tambahadmin';
-		$this->load->view('view_templateadmin', $data);
+		$data['main_view'] = 'admin/tambahadmin';
+		$this->load->view('admin/template', $data);
 	}
 
 	public function tambahpetugas()
 	{
-		$data['main_view'] = 'view_tambahpetugas';
-		$this->load->view('view_templateadmin', $data);
+		$data['main_view'] = 'admin/tambahpetugas';
+		$this->load->view('admin/template', $data);
 	}
 
 	public function tambahpelanggaran()
 	{
-		$data['main_view'] = 'view_tambahpelanggaran';
-		$this->load->view('view_templateadmin', $data);
+		$data['main_view'] = 'admin/tambahpelanggaran';
+		$this->load->view('admin/template', $data);
 	}
 
 	public function verifikasipelanggaran()
 	{
-		$data['main_view'] = 'view_verifpelanggaran';
-		$this->load->view('view_templateadmin', $data);
+		$data['main_view'] = 'admin/verifpelanggaran';
+		$this->load->view('admin/template', $data);
 	}
 
 	public function kelolasiswa()
 	{
-		$data['main_view'] = 'view_kelolasiswa';
-		$this->load->view('view_templateadmin', $data);
+		$data['main_view'] = 'admin/kelolasiswa';
+		$this->load->view('admin/template', $data);
 	}
 
 }

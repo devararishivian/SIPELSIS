@@ -49,7 +49,10 @@
                           <td>12T1</td>
                           <td>69</td>
                           <td>Kedisiplinan</td>
-                          <td> <button type="button" class="btn btn-info btn-xs">Kelola</button> </td>
+                          <td> 
+                            <button type="button" class="btn btn-success btn-xs">Konfirmasi</button> 
+                            <button type="button" class="btn btn-danger btn-xs">Hapus</button>
+                          </td>
                         </tr>
                         <tr>
                           <th scope="row">2</th>
@@ -57,7 +60,10 @@
                           <td>12R1</td>
                           <td>63</td>
                           <td>Kerapian</td>
-                          <td> <button type="button" class="btn btn-info btn-xs">Kelola</button> </td>
+                          <td> 
+                            <button type="button" class="btn btn-success btn-xs">Konfirmasi</button> 
+                            <button type="button" class="btn btn-danger btn-xs">Hapus</button>
+                          </td>
                         </tr>
                         <tr>
                           <th scope="row">3</th>
@@ -65,7 +71,10 @@
                           <td>12R6</td>
                           <td>62</td>
                           <td>Kerajinan</td>
-                          <td> <button type="button" class="btn btn-info btn-xs">Kelola</button> </td>
+                          <td> 
+                            <button type="button" class="btn btn-success btn-xs">Konfirmasi</button> 
+                            <button type="button" class="btn btn-danger btn-xs">Hapus</button>
+                          </td>
                         </tr>
                       </tbody>
                     </table>
