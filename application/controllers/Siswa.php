@@ -11,20 +11,20 @@ class Siswa extends CI_Controller {
 
 	public function index()
 	{
-		$data['main_view'] = 'view_dasborsiswa';
-		$this->load->view('view_templatesiswa', $data);
+		$data['main_view'] = 'siswa/dasbor';
+		$this->load->view('siswa/template', $data);
 	}
 
 	public function profil()
 	{
-		$data['main_view'] = 'view_profilsiswa';
-		$this->load->view('view_templatesiswa', $data);
+		$data['main_view'] = 'siswa/profilsiswa';
+		$this->load->view('siswa/template', $data);
 	}
 
 	public function capel()
 	{
-		$data['main_view'] = 'view_dasborsiswa';
-		$this->load->view('view_templatesiswa', $data);
+		$data['main_view'] = 'siswa/dasbor';
+		$this->load->view('siswa/template', $data);
 	}
 
 }

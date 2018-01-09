@@ -2,11 +2,18 @@
         <div class="right_col" role="main">
           <div class="">
             <div class="row top_tiles">
-              <div class="animated flipInY col-lg-12 col-md-12 col-sm-6 col-xs-12">
+              <div class="animated flipInY col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="tile-stats">
+                  <div class="icon"><i class="fa fa-steam-square"></i></div>
+                  <div class="count">17</div>
+                  <h3>Total Pelanggaran</h3>
+                </div>
+              </div>
+              <div class="animated flipInY col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="tile-stats">
                   <div class="icon"><i class="fa fa-steam-square"></i></div>
                   <div class="count">179</div>
-                  <h3>Total Pelanggaran</h3>
+                  <h3>Total Point</h3>
                 </div>
               </div>
 
