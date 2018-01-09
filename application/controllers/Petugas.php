@@ -11,8 +11,8 @@ class Petugas extends CI_Controller {
 
 	public function index()
 	{
-		$data['main_view'] = 'view_dasborpetugas';
-		$this->load->view('view_templatepetugas', $data);
+		$data['main_view'] = 'petugas/dasbor';
+		$this->load->view('petugas/template', $data);
 	}
 
 }
