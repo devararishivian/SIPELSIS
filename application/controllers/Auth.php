@@ -7,13 +7,13 @@ class Auth extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->library('google');
-		$this->load->model('siswa');
+		$this->load->model('siswa_model');
 	}
 
 	public function index(){
         //redirect to profile page if user already logged in
         if($this->session->userdata('loggedIn') == true){
-            redirect('siswa/dasbor');
+            redirect('siswa');
         }
         
         
@@ -31,12 +31,12 @@ class Auth extends CI_Controller {
             $userData['URL_PROFIL_SISWA'] = !empty($gInfo['link'])?$gInfo['link']:'';
             $userData['URL_FOTO_SISWA'] = !empty($gInfo['picture'])?$gInfo['picture']:'';
 			
-            $check = $this->siswa->checkUser($userData);
+            $check = $this->siswa_model->checkUser($userData);
 
             $this->session->set_userdata('loggedIn',true);
             $this->session->set_userdata('userData',$userData);
 
-           	redirect('home/');
+           	redirect('siswa');
 
 		}
 
