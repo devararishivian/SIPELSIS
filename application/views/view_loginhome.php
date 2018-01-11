@@ -41,6 +41,9 @@
                 <a class="btn btn-default submit" href="index.html">Log in</a>
                 <a class="reset_pass" href="#">Lupa Password?</a>
               </div>
+              <p>
+                                    <a href="<?php echo $loginURL; ?>">Login with Google</a>
+                                </p>
 
               <div class="clearfix"></div>
 
