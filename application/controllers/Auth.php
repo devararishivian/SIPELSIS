@@ -22,7 +22,8 @@ class Auth extends CI_Controller {
 			
 			//get user info from google
 			$gpInfo = $this->google->getUserInfo();
-			
+			$emailp = substr($gpInfo['email'], strpos($gpInfo['email'], '@'));
+			if (strpos($emailp, 'smktelkom-mlg.sch.id') !== false) {
             //preparing data for database insertion
 			$userData['OAUTH_PROVIDER'] 	= 'google';
 			$userData['IDSISWA'] 			= $gpInfo['id'];
@@ -42,6 +43,12 @@ class Auth extends CI_Controller {
 			
 			//redirect to profile page
 			redirect('siswa');
+			} else {
+				$data['loginURL'] = $this->google->loginURL();
+		
+				//load google login view
+				$this->load->view('view_loginerror',$data);
+			}
 		} 
 		
 		//google login url
