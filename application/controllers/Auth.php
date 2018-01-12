@@ -10,40 +10,47 @@ class Auth extends CI_Controller {
 		$this->load->model('siswa_model');
 	}
 
-	public function index(){
-        //redirect to profile page if user already logged in
-        if($this->session->userdata('loggedIn') == true){
-            redirect('siswa');
+	// versi findco
+	public function index() {
+        if ($this->session->userdata('loggedIn') == true) {
+        	redirect('siswa');
         }
-        
-        
-		if (isset($_GET['code'])) {
-			//Google Auth
+
+        if(isset($_GET['code'])){
+			//authenticate user
 			$this->google->getAuthenticate();
-
-			$gInfo = $this->google->getUserInfo();
-			print_r($gInfo);
-			$userData['OAUTH_PROVIDER'] = 'Google';
-			$userData['IDSISWA'] = $gInfo['id'];
-			$userData['NAMA_SISWA'] = $gInfo['given_name'];
-			$userData['EMAIL_SISWA'] = $gInfo['email'];
-			$userData['JK_SISWA'] = !empty($gInfo['gender'])?$gInfo['gender']:'';
-            $userData['URL_PROFIL_SISWA'] = !empty($gInfo['link'])?$gInfo['link']:'';
-            $userData['URL_FOTO_SISWA'] = !empty($gInfo['picture'])?$gInfo['picture']:'';
 			
-            $check = $this->siswa_model->checkUser($userData);
-
-            $this->session->set_userdata('loggedIn',true);
-            $this->session->set_userdata('userData',$userData);
-
-           	redirect('siswa');
-
-		}
-
+			//get user info from google
+			$gpInfo = $this->google->getUserInfo();
+			
+            //preparing data for database insertion
+			$userData['OAUTH_PROVIDER'] 	= 'google';
+			$userData['IDSISWA'] 			= $gpInfo['id'];
+            $userData['NAMA_SISWA'] 		= $gpInfo['given_name'];
+            $userData['EMAIL_SISWA']		= $gpInfo['email'];
+            $userData['JURUSAN']			= substr($gpInfo['family_name'], -3);
+			$userData['JK_SISWA'] 			= !empty($gpInfo['gender'])?$gpInfo['gender']:'';
+            $userData['URL_PROFIL_SISWA'] 	= !empty($gpInfo['link'])?$gpInfo['link']:'';
+            $userData['URL_FOTO_SISWA'] 	= !empty($gpInfo['picture'])?$gpInfo['picture']:'';
+			
+			//insert or update user data to the database
+            $userID = $this->siswa_model->checkUser($userData);
+			
+			//store status & user info in session
+			$this->session->set_userdata('loggedIn', true);
+			$this->session->set_userdata('userData', $userData);
+			
+			//redirect to profile page
+			redirect('siswa');
+		} 
+		
+		//google login url
 		$data['loginURL'] = $this->google->loginURL();
-        $this->load->view('view_loginhome',$data);
+		
+		//load google login view
+		$this->load->view('view_loginhome',$data);
     }
-        
+
     public function logout(){
         //delete login status & user info from session
         $this->session->unset_userdata('loggedIn');
@@ -51,10 +58,34 @@ class Auth extends CI_Controller {
         $this->session->sess_destroy();
         
         //redirect to login page
-        redirect('auth');
+        redirect('Auth');
     }
-
 }
+    
+
+        /* if (isset($_GET['code'])) {
+            // authenticate user
+            $this->google->getAuthenticate();
+            //get user info from google
+            $gInfo = $this->google->getUserInfo();
+            // set user role from email
+            $emailp = substr($gInfo['email'], strpos($gInfo['email'], '@'));
+            if (strpos($emailp, 'smktelkom-mlg.sch.id') !== false) {
+                    $userData = $this->siswa_model->checkUser($gInfo);
+                }
+                $this->session->set_userdata(md5('Logged_In'), true);
+                $this->session->set_userdata(md5('UserData'), $userData);
+                redirect('siswa');
+            } else {
+                $this->load->view('view_loginhome');
+                return;
+            }
+        $data['loginURL'] = $this->google->loginURL();
+        $this->load->view('view_loginhome',$data);    
+        //redirect($this->google->loginURL());
+        } */
+
+
 
 /* End of file controllername.php */
 /* Location: ./application/controllers/controllername.php */
