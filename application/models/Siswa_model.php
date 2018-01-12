@@ -66,4 +66,24 @@ class Siswa_model extends CI_Model{
 	 	return $userID ? $userID : false;
 
 	}
+
+	public function loginsiswa() {
+        $UNAME_SISWA = $this->input->post('UNAME_SISWA');
+        $PASS_SISWA = $this->input->post('PASS_SISWA');
+        $query = $this->db->where('UNAME_SISWA', $UNAME_SISWA)
+        				->where('PASS_SISWA', $PASS_SISWA)
+        				->get('tb_siswa');
+
+        if ($query->num_rows() > 0) {
+        	$data = array(
+        			'UNAME_SISWA'	=> $UNAME_SISWA,
+        			'loggedIn'		=> TRUE
+        	);
+        	$this->session->set_userdata($data);
+        	return true;
+        } else {
+        	return false;
+        }
+        
+    }
 }

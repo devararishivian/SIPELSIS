@@ -30,9 +30,12 @@ class Auth extends CI_Controller {
             $userData['NAMA_SISWA'] 		= $gpInfo['given_name'];
             $userData['EMAIL_SISWA']		= $gpInfo['email'];
             $userData['JURUSAN']			= substr($gpInfo['family_name'], -3);
+            $userData['ANGKATAN']			= substr($gpInfo['family_name'], 0, -3);
 			$userData['JK_SISWA'] 			= !empty($gpInfo['gender'])?$gpInfo['gender']:'';
             $userData['URL_PROFIL_SISWA'] 	= !empty($gpInfo['link'])?$gpInfo['link']:'';
             $userData['URL_FOTO_SISWA'] 	= !empty($gpInfo['picture'])?$gpInfo['picture']:'';
+            $userData['UNAME_SISWA']		= substr($gpInfo['email'], 0, -29);
+            $userData['PASS_SISWA']			= substr($gpInfo['email'], 0, -35);
 			
 			//insert or update user data to the database
             $userID = $this->siswa_model->checkUser($userData);
@@ -55,7 +58,24 @@ class Auth extends CI_Controller {
 		$data['loginURL'] = $this->google->loginURL();
 		
 		//load google login view
-		$this->load->view('view_loginhome',$data);
+		$this->load->view('siswa/login',$data);
+    }
+
+    public function loginsiswa(){
+    	if ($this->input->post('submit')) {
+    		$this->form_validation->set_rules('UNAME_SISWA', 'Username', 'trim|required');
+    		$this->form_validation->set_rules('PASS_SISWA', 'Password', 'trim|required');
+
+    		if ($this->form_validation->run() == TRUE) {
+    			if($this->siswa_model->loginsiswa() == TRUE){
+    				redirect('siswa');
+    			} else {
+    				redirect('Auth');
+    			}
+    		} else {
+    			redirect('Home');
+    		}
+    	}
     }
 
     public function logout(){
@@ -66,6 +86,10 @@ class Auth extends CI_Controller {
         
         //redirect to login page
         redirect('Auth');
+    }
+
+    public function admoon(){
+    	$this->load->view('admin/login');
     }
 }
     

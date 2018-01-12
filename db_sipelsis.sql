@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     1/12/2018 2:45:40 PM                         */
+/* Created on:     1/12/2018 10:01:47 PM                        */
 /*==============================================================*/
 
 
@@ -66,10 +66,12 @@ create table TB_SISWA
    EMAIL_SISWA          varchar(255),
    JK_SISWA             varchar(255),
    JURUSAN              varchar(255),
+   ANGKATAN             varchar(10),
    KELAS_SISWA          varchar(10),
    NOABSEN_SISWA        int,
    URL_FOTO_SISWA       varchar(255),
    URL_PROFIL_SISWA     varchar(255),
+   UNAME_SISWA          varchar(32),
    PASS_SISWA           varchar(32),
    primary key (IDSISWA)
 );
