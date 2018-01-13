@@ -19,7 +19,8 @@ class Admin_model extends CI_Model {
         if ($query->num_rows() > 0) {
         	$data = array(
         			'UNAME_ADMIN'	=> $UNAME_ADMIN,
-        			'loggedIn'		=> TRUE
+        			'loggedIn'		=> TRUE,
+        			'loggedRole'	=> $query->row()->ROLE
         	);
         	$this->session->set_userdata($data);
         	return true;

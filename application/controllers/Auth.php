@@ -97,7 +97,11 @@ class Auth extends CI_Controller {
     public function loginadmin(){
 
     	if($this->admin_model->loginadmin() == TRUE){
-			redirect('admin');
+			if ($this->session->userdata('loggedRole') === 'Admin') {
+                redirect('admin');
+            }else {
+                redirect('petugas');
+            }
 		} else {
 			//$this->session->set_flashdata('failed', 'Login Gagal, Username/Password Salah');
 			$this->session->set_flashdata('failed', 'Login Gagal, Username/Password Salah');
@@ -109,6 +113,7 @@ class Auth extends CI_Controller {
     public function logout(){
         //delete login status & user info from session
         $this->session->unset_userdata('loggedIn');
+        $this->session->unset_userdata('loggedRole');
         $this->session->unset_userdata('userData');
         $this->session->sess_destroy();
         
