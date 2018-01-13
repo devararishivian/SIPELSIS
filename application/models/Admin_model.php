@@ -29,6 +29,14 @@ class Admin_model extends CI_Model {
         }
         
     }
+
+    public function get_data_admin(){
+    	$this->db->select('*');
+		$this->db->from('tb_admin');
+		$this->db->order_by('IDADMIN', 'ASC');
+
+		return $this->db->get()->result();
+    }
 	
 
 }

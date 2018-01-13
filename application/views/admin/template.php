@@ -55,7 +55,7 @@
                 <img src="<?php echo base_url(); ?>assets/gentelella/production/images/img.jpg" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
-                <span>Administrator</span>
+                <span><?php echo $data_admin->ROLE; ?></span>
                 <h2>Raden Mas Vian Mangkuwanito Limo Tanpo Busono</h2>
               </div>
             </div>

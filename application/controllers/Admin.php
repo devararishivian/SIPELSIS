@@ -6,12 +6,15 @@ class Admin extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->model('admin_model');
+		$this->load->model('siswa_model');
 		//Do your magic here
 	}
 
 	public function index()
 	{
 		$data['main_view'] = 'admin/dasbor';
+		$data['data_admin'] = $this->admin_model->get_data_admin();
 		$this->load->view('admin/template', $data);
 	}
 
