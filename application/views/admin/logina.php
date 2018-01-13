@@ -50,14 +50,23 @@
                         	<div class="form-top">
                         		<div class="form-top-left">
                         			<h3>Masuk ke Dashboard Admin</h3>
-                            		<p>Masukkan username dan password</p>
+                    <?php
+                    $failed = $this->session->flashdata('failed');
+                    if(!empty($failed)){
+                      echo '<div class="alert alert-danger alert-dismissable">';
+                      echo '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>';
+                      echo '<i class="icon fa fa-warning"></i>';
+                      echo $failed;
+                      echo '</div>';
+                    }
+                ?>
                         		</div>
                         		<div class="form-top-right">
                         			<i class="fa fa-lock"></i>
                         		</div>
                             </div>
                             <div class="form-bottom">
-			                    <form role="form" action="" method="POST" class="login-form">
+			                    <form role="form" action="<?php echo base_url(); ?>index.php/Auth/loginadmin" method="post" class="login-form" enctype="multipart/form-data">
 			                    	<div class="form-group">
 			                    		<label class="sr-only" for="UNAME_ADMIN">Username</label>
 			                        	<input type="text" name="UNAME_ADMIN" placeholder="Username..." class="form-username form-control" id="UNAME_ADMIN">

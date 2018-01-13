@@ -56,15 +56,6 @@
                       echo $failed;
                       echo '</div>';
                     }
-
-                    $success = $this->session->flashdata('success');
-                    if(!empty($success)){
-                      echo '<div class="alert alert-success alert-dismissable">';
-                      echo '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>';
-                      echo '<i class="icon fa fa-check"></i>';
-                      echo $success;
-                      echo '</div>';
-                  }
                 ?>
                                 </div>
                                 <div class="form-top-right">

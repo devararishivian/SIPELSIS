@@ -8,6 +8,7 @@ class Auth extends CI_Controller {
 		parent::__construct();
 		$this->load->library('google');
 		$this->load->model('siswa_model');
+		$this->load->model('admin_model');
 	}
 
 	// versi findco
@@ -88,6 +89,22 @@ class Auth extends CI_Controller {
 			$this->load->view('siswa/login',$data);
 		}
     }
+    
+    public function admoon(){
+        $this->load->view('admin/logina');
+    }
+
+    public function loginadmin(){
+
+    	if($this->admin_model->loginadmin() == TRUE){
+			redirect('admin');
+		} else {
+			//$this->session->set_flashdata('failed', 'Login Gagal, Username/Password Salah');
+			$this->session->set_flashdata('failed', 'Login Gagal, Username/Password Salah');
+			$this->load->view('admin/logina');
+		}
+		$this->load->view('admin/logina');
+    }
 
     public function logout(){
         //delete login status & user info from session
@@ -97,10 +114,6 @@ class Auth extends CI_Controller {
         
         //redirect to login page
         redirect('Auth');
-    }
-
-    public function admoon(){
-    	$this->load->view('admin/login');
     }
 }
     
