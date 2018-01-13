@@ -47,14 +47,32 @@
                             <div class="form-top">
                                 <div class="form-top-left">
                                     <h3>Masuk ke Dashboard Siswa</h3>
-                                    <p>Masuk dengan username dan password</p>
+                <?php
+                    $failed = $this->session->flashdata('failed');
+                    if(!empty($failed)){
+                      echo '<div class="alert alert-danger alert-dismissable">';
+                      echo '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>';
+                      echo '<i class="icon fa fa-warning"></i>';
+                      echo $failed;
+                      echo '</div>';
+                    }
+
+                    $success = $this->session->flashdata('success');
+                    if(!empty($success)){
+                      echo '<div class="alert alert-success alert-dismissable">';
+                      echo '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>';
+                      echo '<i class="icon fa fa-check"></i>';
+                      echo $success;
+                      echo '</div>';
+                  }
+                ?>
                                 </div>
                                 <div class="form-top-right">
                                     <i class="fa fa-key"></i>
                                 </div>
                             </div>
                             <div class="form-bottom">
-                                <form role="form" action="<?php echo base_url(); ?>index.php/Auth/loginsiswa" method="POST" class="login-form">
+                                <form role="form" action="<?php echo base_url(); ?>index.php/Auth/loginsiswa" method="post" class="login-form" enctype="multipart/form-data">
                                     <div class="form-group">
                                         <label class="sr-only" for="UNAME_SISWA">Username</label>
                                         <input type="text" name="UNAME_SISWA" placeholder="qaisha_rishivian_24rpl" class="form-username form-control" id="UNAME_SISWA">

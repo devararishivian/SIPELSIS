@@ -50,7 +50,8 @@ class Auth extends CI_Controller {
 				$data['loginURL'] = $this->google->loginURL();
 		
 				//load google login view
-				$this->load->view('view_loginerror',$data);
+				$this->session->set_flashdata('failed', 'Harap Login dengan Email Sekolah');
+				$this->load->view('siswa/login', $data);
 			}
 		} 
 		
@@ -62,6 +63,7 @@ class Auth extends CI_Controller {
     }
 
     public function loginsiswa(){
+    	/*
     	if ($this->input->post('submit')) {
     		$this->form_validation->set_rules('UNAME_SISWA', 'Username', 'trim|required');
     		$this->form_validation->set_rules('PASS_SISWA', 'Password', 'trim|required');
@@ -76,6 +78,15 @@ class Auth extends CI_Controller {
     			redirect('Home');
     		}
     	}
+    	*/
+    	if($this->siswa_model->loginsiswa() == TRUE){
+			redirect('siswa');
+		} else {
+			//$this->session->set_flashdata('failed', 'Login Gagal, Username/Password Salah');
+			$this->session->set_flashdata('failed', 'Login Gagal, Username/Password Salah');
+			$data['loginURL'] = $this->google->loginURL();
+			$this->load->view('siswa/login',$data);
+		}
     }
 
     public function logout(){

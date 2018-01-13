@@ -66,7 +66,7 @@
 			                        	<label class="sr-only" for="PASS_ADMIN">Password</label>
 			                        	<input type="password" name="PASS_ADMIN" placeholder="Password..." class="form-password form-control" id="PASS_ADMIN">
 			                        </div>
-			                        <button type="submit" class="btn">Sign in!</button>
+			                        <button type="submit" class="btn">MASUK</button>
 			                    </form>
 		                    </div>
                         </div>

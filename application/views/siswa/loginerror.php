@@ -47,7 +47,7 @@
                             <div class="form-top">
                                 <div class="form-top-left">
                                     <h3>Masuk ke Dashboard Siswa</h3>
-                                    <p>Masuk dengan username dan password</p>
+                                    <p style="color:red">Login Gagal</p>
                                 </div>
                                 <div class="form-top-right">
                                     <i class="fa fa-key"></i>
