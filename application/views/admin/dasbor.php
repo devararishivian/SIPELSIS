@@ -12,14 +12,14 @@
               <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
                 <div class="tile-stats">
                   <div class="icon"><i class="fa fa-user"></i></div>
-                  <div class="count">2</div>
+                  <div class="count"><?php echo $total_a; ?></div>
                   <h3>Admin</h3>
                 </div>
               </div>
               <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
                 <div class="tile-stats">
                   <div class="icon"><i class="fa fa-user"></i></div>
-                  <div class="count">179</div>
+                  <div class="count"><?php echo $total_a; ?></div>
                   <h3>Petugas</h3>
                 </div>
               </div>

@@ -14,30 +14,46 @@ class Admin_model extends CI_Model {
         $PASS_ADMIN = $this->input->post('PASS_ADMIN');
         $query = $this->db->where('UNAME_ADMIN', $UNAME_ADMIN)
         				->where('PASS_ADMIN', $PASS_ADMIN)
-        				->get('tb_admin');
+        				->get('TB_ADMIN');
 
         if ($query->num_rows() > 0) {
+
+            $result = $query->result();
+
         	$data = array(
-        			'UNAME_ADMIN'	=> $UNAME_ADMIN,
-        			'loggedIn'		=> TRUE,
-        			'loggedRole'	=> $query->row()->ROLE
+        			'UNAME_ADMIN'	   => $UNAME_ADMIN,
+        			'loggedIn'		   => TRUE,
+        			'loggedRole'	   => $result['ROLE'],
+                    'loggedAdminName'  => $result['NAMA_ADMIN']
         	);
         	$this->session->set_userdata($data);
-        	return true;
+        	return TRUE;
         } else {
-        	return false;
+        	return FALSE;
         }
         
     }
 
     public function get_data_admin(){
-    	$this->db->select('*');
-		$this->db->from('tb_admin');
+        $ROLE = 'Admin';
+    	$this->db->select('*')->where('ROLE', $ROLE);
+		$this->db->from('TB_ADMIN');
 		$this->db->order_by('IDADMIN', 'ASC');
 
 		return $this->db->get()->result();
     }
+
+    public function total_admin()
+    {
+        $role = 'Admin';
+        return $this->db->from('TB_ADMIN')->where('ROLE', $role)->count_all_results();
+    }
 	
+    public function total_petugas()
+    {
+        $role = 'Petugas';
+        return $this->db->from('TB_ADMIN')->where('ROLE', $role)->count_all_results();
+    }
 
 }
 

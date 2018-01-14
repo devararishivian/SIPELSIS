@@ -52,11 +52,24 @@
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="<?php echo base_url(); ?>assets/gentelella/production/images/img.jpg" alt="..." class="img-circle profile_img">
+                <img src="<?php echo base_url(); ?>assets/img/<?php foreach ($admin as $data){
+                          echo $data->FOTO_ADMIN;
+                        }  ?>" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
-                <span><?php echo $data_admin->ROLE; ?></span>
-                <h2>Raden Mas Vian Mangkuwanito Limo Tanpo Busono</h2>
+                <span>
+                      <?php 
+                        //foreach ($admin as $data){
+                          echo $data->ROLE;
+                        //} 
+                        //$this->session->userdata('loggedRole');
+                      ?>
+                </span>
+                <h2><?php 
+                        //foreach ($admin as $data){
+                          echo $data->NAMA_ADMIN;
+                        //} 
+                      ?></h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -108,12 +121,18 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="images/img.jpg" alt="">Raden Mas Vian Mangkuwanito Limo Tanpo Busono
+                    <img src="<?php echo base_url(); ?>assets/img/<?php foreach ($admin as $data){
+                          echo $data->FOTO_ADMIN;
+                        }  ?>" alt=""><?php 
+                        foreach ($admin as $data){
+                          echo $data->NAMA_ADMIN;
+                        } 
+                      ?>
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
                     <li><a href="javascript:;"> Profile</a></li>
-                    <li><a href="javascript:;"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                    <li><a href="<?php echo base_url(); ?>index.php/admin/logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                   </ul>
                 </li>
               </ul>

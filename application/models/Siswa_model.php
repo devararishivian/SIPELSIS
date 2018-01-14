@@ -49,17 +49,17 @@ class Siswa_model extends CI_Model{
     public function checkUser($data = [])
 	{
 		$this->db->select('IDSISWA');
-	 	$this->db->from('tb_siswa');
+	 	$this->db->from('TB_SISWA');
 	 	$this->db->where(array('OAUTH_PROVIDER' => $data['OAUTH_PROVIDER'], 'IDSISWA' => $data['IDSISWA']));
 	 	$query = $this->db->get();
 	 	$row = $query->num_rows();
 
 	 	if ($row > 0) {
 	 	$result = $query->row_array();
-        $update = $this->db->update('tb_siswa', $data, array('IDSISWA' => $result['IDSISWA']));
+        $update = $this->db->update('TB_SISWA', $data, array('IDSISWA' => $result['IDSISWA']));
         $userID = $result['IDSISWA'];
 	 	}else{
-            $insert = $this->db->insert('tb_siswa', $data);
+            $insert = $this->db->insert('TB_SISWA', $data);
             $userID = $this->db->insert_id();
 	 	}
 
@@ -72,7 +72,7 @@ class Siswa_model extends CI_Model{
         $PASS_SISWA = $this->input->post('PASS_SISWA');
         $query = $this->db->where('UNAME_SISWA', $UNAME_SISWA)
         				->where('PASS_SISWA', $PASS_SISWA)
-        				->get('tb_siswa');
+        				->get('TB_SISWA');
 
         if ($query->num_rows() > 0) {
         	$data = array(
