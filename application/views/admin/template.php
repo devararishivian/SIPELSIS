@@ -52,22 +52,22 @@
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="<?php echo base_url(); ?>assets/img/<?php foreach ($admin as $data){
-                          echo $data->FOTO_ADMIN;
-                        }  ?>" alt="..." class="img-circle profile_img">
+                <img src="<?php echo base_url(); ?>assets/img/<?php echo $this->session->userdata('FOTO_ADMIN'); ?>" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
                 <span>
                       <?php 
                         //foreach ($admin as $data){
-                          echo $data->ROLE;
+                          //echo $admin->ROLE;
+                      echo $this->session->userdata('loggedRole');
                         //} 
                         //$this->session->userdata('loggedRole');
                       ?>
                 </span>
                 <h2><?php 
                         //foreach ($admin as $data){
-                          echo $data->NAMA_ADMIN;
+                          //echo $admin->NAMA_ADMIN;
+                      echo $this->session->userdata('loggedAdminName');
                         //} 
                       ?></h2>
               </div>
@@ -121,13 +121,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="<?php echo base_url(); ?>assets/img/<?php foreach ($admin as $data){
-                          echo $data->FOTO_ADMIN;
-                        }  ?>" alt=""><?php 
-                        foreach ($admin as $data){
-                          echo $data->NAMA_ADMIN;
-                        } 
-                      ?>
+                    <img src="<?php echo base_url(); ?>assets/img/<<?php echo $this->session->userdata('FOTO_ADMIN'); ?>" alt=""><?php echo $this->session->userdata('loggedAdminName'); ?>
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">

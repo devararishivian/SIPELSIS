@@ -90,7 +90,7 @@ class Auth extends CI_Controller {
 		}
     }
     
-    public function admoon(){
+    public function admin(){
         $this->load->view('admin/logina');
     }
 

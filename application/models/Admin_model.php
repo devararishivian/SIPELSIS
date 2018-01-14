@@ -16,31 +16,64 @@ class Admin_model extends CI_Model {
         				->where('PASS_ADMIN', $PASS_ADMIN)
         				->get('TB_ADMIN');
 
-        if ($query->num_rows() > 0) {
+        if ($this->db->affected_rows() == 1) {
 
-            $result = $query->result();
+            $result = $query->row_array();
 
-        	$data = array(
+        	$session = array(
         			'UNAME_ADMIN'	   => $UNAME_ADMIN,
         			'loggedIn'		   => TRUE,
         			'loggedRole'	   => $result['ROLE'],
-                    'loggedAdminName'  => $result['NAMA_ADMIN']
+                    'loggedAdminName'  => $result['NAMA_ADMIN'],
+                    'FOTO_ADMIN'       => $result['FOTO_ADMIN'],
         	);
-        	$this->session->set_userdata($data);
-        	return TRUE;
+        	$this->session->set_userdata($session);
+        	return true;
         } else {
-        	return FALSE;
+        	return false;
         }
         
     }
 
-    public function get_data_admin(){
-        $ROLE = 'Admin';
+    /*public function loginadmin($UNAME_ADMIN,$PASS_ADMIN)
+    {
+        $query = $this->db->where('UNAME_ADMIN', $this->db->escape_str($username))
+        ->where('PASS_ADMIN', $this->db->escape_str($password))
+        ->get('TB_ADMIN');
+        if ($this->db->affected_rows() == 1) {
+            $admin = $query->row_array();
+
+            $session = array(
+                'loggedIn' => TRUE,
+                'loggedRole' => 'Admin',
+                'IDADMIN' => $admin['IDADMIN'],
+                'UNAME_ADMIN' => $admin['UNAME_ADMIN'],
+                'FOTO_ADMIN' => $admin['FOTO_ADMIN'],
+                'Admin' => $admin
+            );
+            $this->session->set_userdata($session);
+
+            return true;
+        }
+
+        return false;
+    }*/
+
+    public function getAllAdmin(){
+        /*$ROLE = 'Admin';
     	$this->db->select('*')->where('ROLE', $ROLE);
 		$this->db->from('TB_ADMIN');
 		$this->db->order_by('IDADMIN', 'ASC');
 
-		return $this->db->get()->result();
+		return $this->db->get()->result(); */
+        return $this->db->get('TB_ADMIN')->result();
+    }
+
+    public function getAdminById($id)
+    {
+        return $this->db
+        ->where('IDADMIN', $this->db->escape_str($id))
+        ->get('TB_ADMIN')->result();
     }
 
     public function total_admin()

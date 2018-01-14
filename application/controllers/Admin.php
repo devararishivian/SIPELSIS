@@ -6,6 +6,9 @@ class Admin extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		if (! $this->session->userdata('loggedIn') || $this->session->userdata('loggedIn') == null) {
+			redirect('/');
+		}
 		$this->load->model('admin_model');
 		$this->load->model('siswa_model');
 		//Do your magic here
@@ -13,11 +16,11 @@ class Admin extends CI_Controller {
 
 	public function index()
 	{
-		if($this->session->userdata('loggedIn') == TRUE){
+		/*if($this->session->userdata('loggedIn') == TRUE){
 			if($this->session->userdata('loggedRole') != 'Admin'){
 				//$id = $this->session->userdata('IDADMIN');
 				$data['main_view'] = 'admin/dasbor';
-				$data['admin'] = $this->admin_model->get_data_admin();
+				$data['admin'] = $this->admin_model->getAllAdmin();
 				$data['total_a'] = $this->admin_model->total_admin();
 				$this->load->view('admin/template', $data);
 			} else {
@@ -25,62 +28,64 @@ class Admin extends CI_Controller {
 			}
 		} else {
 			redirect('Auth/admoon');
-		}
+		}*/
+		if ($this->session->userdata('loggedRole') == 'Admin') {
+			$data['main_view'] = 'admin/dasbor';
+			$data['admin'] = $this->admin_model->getAllAdmin();
+			$data['total_a'] = $this->admin_model->total_admin();
+			$data['total_p'] = $this->admin_model->total_petugas();
+			$this->load->view('admin/template', $data);
+		} else {
+				redirect('petugas');
+			}
 	}
+
 
 	public function lihatadmin()
 	{
 		$data['main_view'] = 'admin/lihatadmin';
-		$data['admin'] = $this->admin_model->get_data_admin();
 		$this->load->view('admin/template', $data);
 	}
 
 	public function lihatpetugas()
 	{
 		$data['main_view'] = 'admin/lihatpetugas';
-		$data['admin'] = $this->admin_model->get_data_admin();
 		$this->load->view('admin/template', $data);
 	}
 
 	public function lihatpelanggaran()
 	{
 		$data['main_view'] = 'admin/lihatpelanggaran';
-		$data['admin'] = $this->admin_model->get_data_admin();
 		$this->load->view('admin/template', $data);
 	}
 
 	public function tambahadmin()
 	{
 		$data['main_view'] = 'admin/tambahadmin';
-		$data['admin'] = $this->admin_model->get_data_admin();
 		$this->load->view('admin/template', $data);
 	}
 
 	public function tambahpetugas()
 	{
 		$data['main_view'] = 'admin/tambahpetugas';
-		$data['admin'] = $this->admin_model->get_data_admin();
 		$this->load->view('admin/template', $data);
 	}
 
 	public function tambahpelanggaran()
 	{
 		$data['main_view'] = 'admin/tambahpelanggaran';
-		$data['admin'] = $this->admin_model->get_data_admin();
 		$this->load->view('admin/template', $data);
 	}
 
 	public function verifikasipelanggaran()
 	{
 		$data['main_view'] = 'admin/verifpelanggaran';
-		$data['admin'] = $this->admin_model->get_data_admin();
 		$this->load->view('admin/template', $data);
 	}
 
 	public function kelolasiswa()
 	{
 		$data['main_view'] = 'admin/kelolasiswa';
-		$data['admin'] = $this->admin_model->get_data_admin();
 		$this->load->view('admin/template', $data);
 	}
 
@@ -92,7 +97,7 @@ class Admin extends CI_Controller {
         $this->session->sess_destroy();
         
         //redirect to login page
-        redirect('Auth/admoon');
+        redirect('Auth/admin');
     }
 
 }
