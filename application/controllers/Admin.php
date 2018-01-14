@@ -44,6 +44,7 @@ class Admin extends CI_Controller {
 	public function lihatadmin()
 	{
 		$data['main_view'] = 'admin/lihatadmin';
+		$data['admin'] = $this->admin_model->getAllAdmin();
 		$this->load->view('admin/template', $data);
 	}
 
