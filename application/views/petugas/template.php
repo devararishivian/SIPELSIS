@@ -44,11 +44,17 @@
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="<?php echo base_url(); ?>assets/gentelella/production/images/img.jpg" alt="..." class="img-circle profile_img">
+                 <img src="<?php echo base_url(); ?>assets/img/<?php echo $this->session->userdata('FOTO_ADMIN'); ?>" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
-                <span>Petugas Piket</span>
-                <h2>Kungkingkang</h2>
+                <span> 
+                      <?php 
+                      echo $this->session->userdata('loggedRole');
+                      ?>
+                </span>
+                <h2><?php 
+                      echo $this->session->userdata('loggedAdminName'); 
+                      ?></h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -76,17 +82,16 @@
                 <a id="menu_toggle"><i class="fa fa-bars"></i></a>
               </div>
 
-              <ul class="nav navbar-nav navbar-right">
+             <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="images/img.jpg" alt="">Kungkingkang
+                    <img src="<?php echo base_url(); ?>assets/img/<<?php echo $this->session->userdata('FOTO_ADMIN'); ?>" alt=""><?php echo $this->session->userdata('loggedAdminName'); ?>
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
-                    <li><a href="javascript:;"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                    <li><a href="javascript:;"> Profile</a></li>
+                    <li><a href="<?php echo base_url(); ?>index.php/admin/logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                   </ul>
-                </li>
-              </ul>
             </nav>
           </div>
         </div>
