@@ -12,7 +12,7 @@
                   <div class="x_content">
 
                     <!-- start form for validation -->
-                    <form id="demo-form" data-parsley-validate>
+                    <form action="<?php echo base_url(); ?>index.php/admin/insertadmin" method="post" enctype="multipart/form-data" id="demo-form">
                       <label for="NAMA_ADMIN">Nama * :</label>
                       <input type="text" id="NAMA_ADMIN" class="form-control" name="NAMA_ADMIN" required />
 
@@ -36,24 +36,18 @@
                       <input type="password" id="PASS_ADMIN" class="form-control" name="PASS_ADMIN" required />
 
                       <label for="ROLE">ROLE * :</label>
-                      <div class="radio">
-                        <label>
-                          <input type="radio" class="flat" name="ROLE" disabled="disabled" checked> Admin
-                        </label>
-                      </div>
-
-                      <div> 
-                        <form action="#" method="post" enctype="multipart/form-data"> 
-                          <input type="file" name="FOTO_ADMIN"> 
-                      </form> 
+                      <p>
+                      <input type="radio" class="flat" name="ROLE" id="ROLE" value="Admin" checked="TRUE"/> Admin
+                      </p>
+                       
+                      <div>
+                          <input type="file" name="FOTO_ADMIN">
                       </div><br /> 
                                          
-                      <div class="form-group">
                         <div>
                           <button type="reset" class="btn btn-primary">Reset</button>
-                          <button id="submit" type="submit" class="btn btn-success">Submit</button>
+                          <input type="submit" value="Submit" class="btn btn-success">
                         </div>
-                      </div>
 
                     </form>
                     <!-- end form for validations -->

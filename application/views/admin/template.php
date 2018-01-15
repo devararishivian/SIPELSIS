@@ -33,6 +33,13 @@
     <!-- bootstrap-daterangepicker -->
     <link href="<?php echo base_url(); ?>assets/gentelella/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
+    <!-- bootstrap-wysiwyg -->
+    <link href="<?php echo base_url(); ?>assets/gentelella/vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
+    <!-- Select2 -->
+    <link href="<?php echo base_url(); ?>assets/gentelella/vendors/select2/dist/css/select2.min.css" rel="stylesheet">
+    <!-- Switchery -->
+    <link href="<?php echo base_url(); ?>assets/gentelella/vendors/switchery/dist/switchery.min.css" rel="stylesheet">
+
     <!-- Table css -->
     <link href="<?php echo base_url(); ?>assets/gentelella/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>assets/gentelella/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">

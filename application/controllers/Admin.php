@@ -25,6 +25,32 @@ class Admin extends CI_Controller {
 		} else {
 				redirect('petugas');
 			}
+
+		//$this->form_validation->set_value('NAMA_ADMIN','NAMA', 'trim|required');
+
+		/*if($this->input->post('submit')){			
+
+			if ($this->form_validation->run() == TRUE) {
+
+				if($this->admin_model->insertadmin() == TRUE)
+				{
+					$this->load->view('admin/lihatadmin');
+				} else {
+						$this->load->view('admin/tambahadmin');
+				
+			} else {
+					$this->load->view('admin/tambahadmin');
+			} */
+
+	}
+
+	public function insertadmin()
+	{
+		if($this->admin_model->insertadmin() == TRUE){
+				redirect('admin/lihatadmin');
+			} else {
+				redirect('admin/tambahadmin');
+			}
 	}
 
 
@@ -89,6 +115,7 @@ class Admin extends CI_Controller {
         //redirect to login page
         redirect('Auth/admin');
     }
+		
 
 }
 

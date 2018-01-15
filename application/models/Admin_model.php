@@ -35,7 +35,26 @@ class Admin_model extends CI_Model {
         
     }
 
-    public function insertadmin(){
+    public function insertadmin()
+    {
+        $data = array(
+                'NAMA_ADMIN' => $this->input->post('NAMA_ADMIN'),
+                'EMAIL_ADMIN' => $this->input->post('EMAIL_ADMIN'),
+                'NIP' => $this->input->post('NIP'),
+                'JK_ADMIN' => $this->input->post('JK_ADMIN'),
+                'UNAME_ADMIN' => $this->input->post('UNAME_ADMIN'),
+                'PASS_ADMIN' => $this->input->post('PASS_ADMIN'),
+                'ROLE' => $this->input->post('ROLE'),
+                'FOTO_ADMIN' => NULL,
+        );
+
+        $this->db->insert('TB_ADMIN', $data);
+
+        if ($this->db->affected_rows() > 0) {
+            return TRUE;            
+        } else {
+            return FALSE;
+        }
 
     }
 
