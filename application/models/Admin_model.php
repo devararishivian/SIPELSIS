@@ -36,7 +36,7 @@ class Admin_model extends CI_Model {
     }
 
     public function insertadmin(){
-        
+
     }
 
     public function getAllAdmin(){
@@ -63,6 +63,11 @@ class Admin_model extends CI_Model {
         return $this->db
         ->where('ROLE',$ROLE)
         ->get('TB_ADMIN')->result();
+    }
+
+    public function getAllPelanggaran()
+    {
+        return $this->db->get('TB_PELANGGARAN')->result();
     }
 
     public function total_admin()

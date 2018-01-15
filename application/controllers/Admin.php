@@ -45,6 +45,7 @@ class Admin extends CI_Controller {
 	public function lihatpelanggaran()
 	{
 		$data['main_view'] = 'admin/lihatpelanggaran';
+		$data['pelanggaran'] = $this->admin_model->getAllPelanggaran();
 		$this->load->view('admin/template', $data);
 	}
 

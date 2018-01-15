@@ -14,7 +14,16 @@ class Auth extends CI_Controller {
 	// versi findco
 	public function index() {
         if ($this->session->userdata('loggedIn') == true) {
-        	redirect('siswa');
+
+            if($this->session->userdata('loggedRole') == 'Siswa'){
+                redirect('siswa');
+            } else {
+                $data['loginURL'] = $this->google->loginURL();
+        
+                //load google login view
+                $this->load->view('siswa/login',$data);
+            }
+        	
         }
 
         if(isset($_GET['code'])){
@@ -91,7 +100,16 @@ class Auth extends CI_Controller {
     }
     
     public function admin(){
-        $this->load->view('admin/logina');
+
+        if($this->session->userdata('loggedIn') == true){
+            if($this->session->userdata('loggedRole') == 'Admin'){
+                redirect('admin');
+            } else {
+                redirect('petugas');
+            }
+        } else {
+            $this->load->view('admin/logina');
+        }
     }
 
     public function loginadmin(){

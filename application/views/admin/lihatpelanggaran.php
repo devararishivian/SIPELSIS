@@ -9,42 +9,30 @@
             <table id="datatable-buttons" class="table table-striped table-bordered">
                 <thead>
                   <tr>
+                    <th>ID </th>
                     <th>Nama</th>
                     <th>Kategori</th>
-                    <th>Keterangan</th>
+                    <th>Point</th>
                     <th>Aksi</th>
                 </thead>
                 <tbody>
+                  <?php 
+                    foreach ($pelanggaran as $data) {
+                      echo '                   
+
                   <tr>
-                    <td>Pulang disekan</td>
-                    <td>Kedisplinan</td>
-                    <td>Tidak boleh sangad</td>
+                    <td>'.$data->IDPELANGGARAN.'</td>
+                    <td>'.$data->NAMA_PELANGGARAN.'</td>
+                    <td>'.$data->KATEGORI_PELANGGARAN.'</td>
+                    <td>'.$data->POINT_PELANGGARAN.'</td>
                     <td>
-                      <button type="button" class="btn btn-info btn-xs">Detail</button> 
                       <button type="button" class="btn btn-success btn-xs">Edit</button>
                       <button type="button" class="btn btn-danger btn-xs">Delete</button>
                     </td>
                   </tr>
-                  <tr>
-                    <td>Atribut Tidak Lengkap</td>
-                    <td>Kerapian</td>
-                    <td>Kapok</td>                    
-                    <td> 
-                      <button type="button" class="btn btn-info btn-xs">Detail</button> 
-                      <button type="button" class="btn btn-success btn-xs">Edit</button>
-                      <button type="button" class="btn btn-danger btn-xs">Delete</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Terlambat</td>
-                    <td>Kerajinan</td>
-                    <td>Kapok</td>                    
-                    <td> 
-                      <button type="button" class="btn btn-info btn-xs">Detail</button> 
-                      <button type="button" class="btn btn-success btn-xs">Edit</button>
-                      <button type="button" class="btn btn-danger btn-xs">Delete</button>
-                    </td>
-                  </tr>
+                    ';
+                    }
+                  ?>
                 </tbody>
             </table>
         </div>
