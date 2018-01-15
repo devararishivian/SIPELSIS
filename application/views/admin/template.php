@@ -44,7 +44,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-university"></i> <span>SIPELSIS</span></a>
+              <a href="<?php echo base_url(); ?>index.php/admin/" class="site_title"><i class="fa fa-university"></i> <span>SIPELSIS</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -121,7 +121,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="<?php echo base_url(); ?>assets/img/<?php echo $this->session->userdata('FOTO_ADMIN'); ?>" alt=""><?php echo $this->session->userdata('loggedAdminName'); ?>
+                    <img src="<?php echo base_url(); ?>assets/img/<<?php echo $this->session->userdata('FOTO_ADMIN'); ?>" alt=""><?php echo $this->session->userdata('loggedAdminName'); ?>
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
