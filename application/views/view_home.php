@@ -71,22 +71,12 @@
             <div class="team-member">
               <img class="mx-auto rounded-circle" src="<?php echo base_url(); ?>assets/agency/img/team/1.jpg" alt="">
               <h4>Devvara</h4>
-              <p class="text-muted">Lead Designer</p>
               <ul class="list-inline social-buttons">
                 <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fa fa-twitter"></i>
+                  <a href="https://www.instagram.com/masdevz/">
+                    <i class="fa fa-instagram"></i>
                   </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fa fa-facebook"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fa fa-linkedin"></i>
-                  </a>
+               
                 </li>
               </ul>
             </div>
@@ -95,22 +85,12 @@
             <div class="team-member">
               <img class="mx-auto rounded-circle" src="<?php echo base_url(); ?>assets/agency/img/team/2.jpg" alt="">
               <h4>Arik</h4>
-              <p class="text-muted">Lead Marketer</p>
-              <ul class="list-inline social-buttons">
+               <ul class="list-inline social-buttons">
                 <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fa fa-twitter"></i>
+                  <a href="https://www.instagram.com/arik_nurkhoiriyah/">
+                    <i class="fa fa-instagram"></i>
                   </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fa fa-facebook"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fa fa-linkedin"></i>
-                  </a>
+               
                 </li>
               </ul>
             </div>
@@ -119,22 +99,12 @@
             <div class="team-member">
               <img class="mx-auto rounded-circle" src="<?php echo base_url(); ?>assets/agency/img/team/3.jpg" alt="">
               <h4>Maghrisya</h4>
-              <p class="text-muted">Lead Developer</p>
-              <ul class="list-inline social-buttons">
+               <ul class="list-inline social-buttons">
                 <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fa fa-twitter"></i>
+                  <a href="https://www.instagram.com/maghrisyaamaliaw/">
+                    <i class="fa fa-instagram"></i>
                   </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fa fa-facebook"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fa fa-linkedin"></i>
-                  </a>
+               
                 </li>
               </ul>
             </div>
@@ -143,22 +113,12 @@
             <div class="team-member">
               <img class="mx-auto rounded-circle" src="<?php echo base_url(); ?>assets/agency/img/team/4.jpg" alt="">
               <h4>Sandro</h4>
-              <p class="text-muted">Lead Developer</p>
-              <ul class="list-inline social-buttons">
+               <ul class="list-inline social-buttons">
                 <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fa fa-twitter"></i>
+                  <a href="https://www.instagram.com/sandrodmuhammad/">
+                    <i class="fa fa-instagram"></i>
                   </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fa fa-facebook"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fa fa-linkedin"></i>
-                  </a>
+               
                 </li>
               </ul>
             </div>
