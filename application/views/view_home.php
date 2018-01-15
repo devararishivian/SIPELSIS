@@ -141,7 +141,7 @@
           </div>
           <div class="col-sm-3">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="<?php echo base_url(); ?>assets/agency/img/team/3.jpg" alt="">
+              <img class="mx-auto rounded-circle" src="<?php echo base_url(); ?>assets/agency/img/team/4.jpg" alt="">
               <h4>Sandro</h4>
               <p class="text-muted">Lead Developer</p>
               <ul class="list-inline social-buttons">
