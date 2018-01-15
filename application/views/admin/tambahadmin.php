@@ -3,81 +3,67 @@
           <div class="">
             <div class="clearfix"></div>
             <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12">
+
+                <div class="x_panel">
                   <div class="x_title">
-                    <h2>Tambah Data <small>Admin</small></h2>
+                    <h2>Tambah Admin</h2>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    <form class="form-horizontal form-label-left" novalidate>
 
-                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nama_admin">Nama <span class="required">*</span>
+                    <!-- start form for validation -->
+                    <form id="demo-form" data-parsley-validate>
+                      <label for="NAMA_ADMIN">Nama * :</label>
+                      <input type="text" id="NAMA_ADMIN" class="form-control" name="NAMA_ADMIN" required />
+
+                      <label for="EMAIL_ADMIN">Email * :</label>
+                      <input type="email" id="EMAIL_ADMIN" class="form-control" name="EMAIL_ADMIN" data-parsley-trigger="change" required />
+
+                      <label for="NIP">NIP * :</label>
+                      <input type="number" id="NIP" class="form-control" name="NIP" required="required"/>
+
+                      <label>Jenis Kelamin * :</label>
+                      <p>
+                        Laki - laki:
+                        <input type="radio" class="flat" name="JK_ADMIN" id="genderM" value="Laki - laki" required="required" /> Perempuan:
+                        <input type="radio" class="flat" name="JK_ADMIN" id="genderF" value="Perempuan" />
+                      </p>
+
+                      <label for="UNAME_ADMIN">Username * :</label>
+                      <input type="text" id="UNAME_ADMIN" class="form-control" name="UNAME_ADMIN" required />
+
+                      <label for="PASS_ADMIN">Password * :</label>
+                      <input type="password" id="PASS_ADMIN" class="form-control" name="PASS_ADMIN" required />
+
+                      <label for="ROLE">ROLE * :</label>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" class="flat" name="ROLE" disabled="disabled" checked> Admin
                         </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="nama_admin" class="form-control col-md-7 col-xs-12" name="nama_admin" required="required" type="text">
-                        </div>
-                      </div>
-                      <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email_admin">Email <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="email_admin" id="email_admin" name="email_admin" required="required" class="form-control col-md-7 col-xs-12">
-                        </div>
-                      </div>
-                      <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="idadmin">ID Admin <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="idadmin" name="idadmin" required="required" class="form-control col-md-7 col-xs-12" disabled>
-                        </div>
                       </div>
 
-                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nip">NIP <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="nip" name="nip" required="required" class="form-control col-md-7 col-xs-12">
-                        </div>
-                      </div>
-                    <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="jabatan">Jabatan <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="jabatan" class="form-control col-md-7 col-xs-12" name="jabatan" required="required" type="text">
-                        </div>
-                      </div>
-                      <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="uname_admin">Username <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="uname_admin" class="form-control col-md-7 col-xs-12" name="uname_admin" placeholder="qaisha_rishivian_24rpl" required="required" type="text">
-                        </div>
-                      </div>
-                      <div class="item form-group">
-                        <label for="pass_admin" class="control-label col-md-3">Password <span class="required">*</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="pass_admin" type="password" name="pass_admin" class="form-control col-md-7 col-xs-12" required="required">
-                        </div>
-                      </div>
-                      <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="foto_admin">Foto</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                        <form action="#" method="post" enctype="multipart/form-data">
-                          <input type="file" name="foto_admin">
-                        </form>
-                        </div>
-                      </div>
-                      <div class="ln_solid"></div>
+                      <div> 
+                        <form action="#" method="post" enctype="multipart/form-data"> 
+                          <input type="file" name="FOTO_ADMIN"> 
+                      </form> 
+                      </div><br /> 
+                                         
                       <div class="form-group">
-                        <div class="col-md-6 col-md-offset-3">
-                          <button type="submit" class="btn btn-primary">Cancel</button>
+                        <div>
+                          <button type="reset" class="btn btn-primary">Reset</button>
                           <button id="submit" type="submit" class="btn btn-success">Submit</button>
                         </div>
                       </div>
+
                     </form>
+                    <!-- end form for validations -->
+
                   </div>
+                </div>
+
+
+              </div>
+
                 </div>
               </div>
           </div>
