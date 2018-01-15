@@ -58,6 +58,22 @@ class Admin_model extends CI_Model {
 
     }
 
+    public function insertpelanggaran()
+    {
+        $data = array(
+                'NAMA_PELANGGARAN'      => $this->input->post('NAMA_PELANGGARAN'),
+                'KATEGORI_PELANGGARAN'  => $this->input->post('KATEGORI_PELANGGARAN'),
+                'POINT_PELANGGARAN'     => $this->input->post('POINT_PELANGGARAN'),
+        );
+
+        $this->db->insert('TB_PELANGGARAN', $data);
+        if ($this->db->affected_rows() > 0) {
+            return TRUE;            
+        } else {
+            return FALSE;
+        }
+    }
+
     public function getAllAdmin(){
         /*$ROLE = 'Admin';
     	$this->db->select('*')->where('ROLE', $ROLE);

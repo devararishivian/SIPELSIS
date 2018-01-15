@@ -12,14 +12,15 @@
                   <div class="x_content">
 
                     <!-- start form for validation -->
-                    <form id="demo-form" data-parsley-validate>
+                    <form action="<?php echo base_url(); ?>index.php/admin/insertpelanggaran" method="post" id="demo-form">
                       <label for="NAMA_PELANGGARAN">Nama * :</label>
                       <input type="text" id="NAMA_PELANGGARAN" class="form-control" name="NAMA_PELANGGARAN" required />
 
+                      <div class="form-group">
                       <label for="KATEGORI_PELANGGARAN">Kategori * :</label>
                       <div class="form-group">
                         <div>
-                          <select id="KATEGORI_PELANGGARAN" name="KATEGORI_PELANGGARAN" class="form-control">
+                          <select id="KATEGORI_PELANGGARAN" name="KATEGORI_PELANGGARAN" class="form-control" required> 
                             <option selected disabled hidden>Pilih Kategori</option>
                             <option value="Ringan">Ringan</option>
                             <option value="Sedang">Sedang</option>
@@ -27,7 +28,8 @@
                           </select>
                         </div>
                       </div>
-
+                    </div>
+                      <!--
                       <div class="form-group">
                         <label class="control-label">Point Pelanggaran</label>
                         <div>
@@ -45,14 +47,34 @@
                           </select>
                         </div>
                       </div>
-                      
+                    -->
+
+                      <div class="form-group">
+                      <label for="POINT_PELANGGARAN">Point * :</label>
+                      <div class="radio">
+                        <label>
+                            <input type="radio" class="flat" value="10" name="POINT_PELANGGARAN" required="required"> 10 : Ringan
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                            <input type="radio" class="flat" value="20" name="POINT_PELANGGARAN"> 20 : Sedang
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                            <input type="radio" class="flat" value="45" name="POINT_PELANGGARAN"> 45 : Berat
+                        </label>
+                      </div>
+                    </div>
+
                       
                       <br /> 
                                          
                       <div class="form-group">
                         <div>
                           <button type="reset" class="btn btn-primary">Reset</button>
-                          <button id="submit" type="submit" class="btn btn-success">Submit</button>
+                          <input type="submit" value="Submit" class="btn btn-success">
                         </div>
                       </div>
 

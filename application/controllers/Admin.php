@@ -84,6 +84,15 @@ class Admin extends CI_Controller {
 		}
 	}
 
+	public function insertpelanggaran()
+	{
+		if($this->admin_model->insertpelanggaran() == TRUE){
+			redirect('admin/lihatpelanggaran');
+		} else {
+			redirect('admin/tambahpelanggaran');
+		}
+	}
+
 
 	public function lihatadmin()
 	{
