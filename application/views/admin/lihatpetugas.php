@@ -9,32 +9,29 @@
             <table id="datatable-buttons" class="table table-striped table-bordered">
                 <thead>
                   <tr>
-                    <th>Name</th>
-                    <th>NIS</th>
+                    <th>Nama</th>
+                    <th>NIP</th>
                     <th>Email</th>
                     <th>Aksi</th>
                 </thead>
                 <tbody>
+                  <?php 
+                    foreach ($admin as $data) {
+                      echo '                   
+
                   <tr>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
+                    <td>'.$data->NAMA_ADMIN.'</td>
+                    <td>'.$data->NIP.'</td>
+                    <td>'.$data->EMAIL_ADMIN.'</td>
                     <td>
                       <button type="button" class="btn btn-info btn-xs">Detail</button> 
                       <button type="button" class="btn btn-success btn-xs">Edit</button>
                       <button type="button" class="btn btn-danger btn-xs">Delete</button>
                     </td>
                   </tr>
-                  <tr>
-                    <td>Garrett Winters</td>
-                    <td>Accountant</td>
-                    <td>Tokyo</td>                    
-                    <td> 
-                      <button type="button" class="btn btn-info btn-xs">Detail</button> 
-                      <button type="button" class="btn btn-success btn-xs">Edit</button>
-                      <button type="button" class="btn btn-danger btn-xs">Delete</button>
-                    </td>
-                  </tr>
+                    ';
+                    }
+                  ?>
                 </tbody>
             </table>
         </div>

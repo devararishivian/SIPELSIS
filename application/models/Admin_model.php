@@ -35,6 +35,53 @@ class Admin_model extends CI_Model {
         
     }
 
+    public function insertadmin(){
+
+    }
+
+    public function getAllAdmin(){
+        /*$ROLE = 'Admin';
+    	$this->db->select('*')->where('ROLE', $ROLE);
+		$this->db->from('TB_ADMIN');
+		$this->db->order_by('IDADMIN', 'ASC');
+
+		return $this->db->get()->result(); */
+        return $this->db->get('TB_ADMIN')->result();
+    }
+
+    public function getAdminByRole()
+    {   
+        $ROLE = 'Admin';
+        return $this->db
+        ->where('ROLE',$ROLE)
+        ->get('TB_ADMIN')->result();
+    }
+
+    public function getPetugasByRole()
+    {   
+        $ROLE = 'Petugas';
+        return $this->db
+        ->where('ROLE',$ROLE)
+        ->get('TB_ADMIN')->result();
+    }
+
+    public function getAllPelanggaran()
+    {
+        return $this->db->get('TB_PELANGGARAN')->result();
+    }
+
+    public function total_admin()
+    {
+        $role = 'Admin';
+        return $this->db->from('TB_ADMIN')->where('ROLE', $role)->count_all_results();
+    }
+	
+    public function total_petugas()
+    {
+        $role = 'Petugas';
+        return $this->db->from('TB_ADMIN')->where('ROLE', $role)->count_all_results();
+    }
+
     /*public function loginadmin($UNAME_ADMIN,$PASS_ADMIN)
     {
         $query = $this->db->where('UNAME_ADMIN', $this->db->escape_str($username))
@@ -58,35 +105,6 @@ class Admin_model extends CI_Model {
 
         return false;
     }*/
-
-    public function getAllAdmin(){
-        /*$ROLE = 'Admin';
-    	$this->db->select('*')->where('ROLE', $ROLE);
-		$this->db->from('TB_ADMIN');
-		$this->db->order_by('IDADMIN', 'ASC');
-
-		return $this->db->get()->result(); */
-        return $this->db->get('TB_ADMIN')->result();
-    }
-
-    public function getAdminById($id)
-    {
-        return $this->db
-        ->where('IDADMIN', $this->db->escape_str($id))
-        ->get('TB_ADMIN')->result();
-    }
-
-    public function total_admin()
-    {
-        $role = 'Admin';
-        return $this->db->from('TB_ADMIN')->where('ROLE', $role)->count_all_results();
-    }
-	
-    public function total_petugas()
-    {
-        $role = 'Petugas';
-        return $this->db->from('TB_ADMIN')->where('ROLE', $role)->count_all_results();
-    }
 
 }
 
