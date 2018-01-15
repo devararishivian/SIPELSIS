@@ -7,7 +7,7 @@ class Admin extends CI_Controller {
 	{
 		parent::__construct();
 		if (! $this->session->userdata('loggedIn') || $this->session->userdata('loggedIn') == null) {
-			redirect('/');
+			redirect('auth/admin');
 		}
 		$this->load->model('admin_model');
 		$this->load->model('siswa_model');
@@ -46,11 +46,42 @@ class Admin extends CI_Controller {
 
 	public function insertadmin()
 	{
-		if($this->admin_model->insertadmin() == TRUE){
+        $config['upload_path'] = './uploads/';
+        $config['allowed_types'] = 'gif|jpg|png|jpeg';
+        $config['max_size']  = '2000';
+        $this->upload->initialize($config);
+        $this->load->library('upload', $config);
+
+        if($this->upload->do_upload('FOTO_ADMIN')){
+			if($this->admin_model->insertadmin($this->upload->data()) == TRUE){
 				redirect('admin/lihatadmin');
 			} else {
 				redirect('admin/tambahadmin');
 			}
+		} else {
+			$this->session->set_flashdata('failed', $this->upload->display_errors());
+	        redirect('admin/tambahadmin');
+		}
+	}
+
+	public function insertpetugas()
+	{
+		$config['upload_path'] = './uploads/';
+        $config['allowed_types'] = 'gif|jpg|png|jpeg';
+        $config['max_size']  = '2000';
+        $this->upload->initialize($config);
+        $this->load->library('upload', $config);
+
+        if($this->upload->do_upload('FOTO_ADMIN')){
+			if($this->admin_model->insertadmin($this->upload->data()) == TRUE){
+				redirect('admin/lihatpetugas');
+			} else {
+				redirect('admin/tambahpetugas');
+			}
+		} else {
+			$this->session->set_flashdata('failed', $this->upload->display_errors());
+	        redirect('admin/tambahpetugas');
+		}
 	}
 
 

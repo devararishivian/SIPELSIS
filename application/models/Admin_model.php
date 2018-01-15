@@ -35,7 +35,7 @@ class Admin_model extends CI_Model {
         
     }
 
-    public function insertadmin()
+    public function insertadmin($FOTO_ADMIN)
     {
         $data = array(
                 'NAMA_ADMIN' => $this->input->post('NAMA_ADMIN'),
@@ -45,7 +45,7 @@ class Admin_model extends CI_Model {
                 'UNAME_ADMIN' => $this->input->post('UNAME_ADMIN'),
                 'PASS_ADMIN' => $this->input->post('PASS_ADMIN'),
                 'ROLE' => $this->input->post('ROLE'),
-                'FOTO_ADMIN' => NULL,
+                'FOTO_ADMIN' => $FOTO_ADMIN['file_name'],
         );
 
         $this->db->insert('TB_ADMIN', $data);

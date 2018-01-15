@@ -10,6 +10,25 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
+                    <?php
+                  $failed = $this->session->flashdata('failed');
+                    if(!empty($failed)){
+                      echo '<div class="alert alert-danger alert-dismissable" style="margin-top: 10px">';
+                      echo '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>';
+                      echo '<i class="icon fa fa-warning"></i>';
+                      echo $failed;
+                      echo '</div>';
+                    }
+
+                  $success = $this->session->flashdata('success');
+                  if(!empty($success)){
+                      echo '<div class="alert alert-success alert-dismissable" style="margin-top: 10px">';
+                      echo '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>';
+                      echo '<i class="icon fa fa-check"></i>';
+                      echo $success;
+                      echo '</div>';
+                  }
+                ?>
 
                     <!-- start form for validation -->
                     <form action="<?php echo base_url(); ?>index.php/admin/insertadmin" method="post" enctype="multipart/form-data" id="demo-form">
@@ -39,10 +58,10 @@
                       <p>
                       <input type="radio" class="flat" name="ROLE" id="ROLE" value="Admin" checked="TRUE"/> Admin
                       </p>
-                       
-                      <div>
-                          <input type="file" name="FOTO_ADMIN">
-                      </div><br /> 
+
+                      <label>Upload Foto * :</label>
+                      <input type="file" name="FOTO_ADMIN" />
+                      <br /> 
                                          
                         <div>
                           <button type="reset" class="btn btn-primary">Reset</button>
