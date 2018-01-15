@@ -3,8 +3,9 @@
           <div class="">
             <div class="clearfix"></div>
             <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
 
-                <div class="x_panel">
+                
                   <div class="x_title">
                     <h2>Tambah Admin</h2>
                     <div class="clearfix"></div>
@@ -31,22 +32,38 @@
                 ?>
 
                     <!-- start form for validation -->
-                    <form action="<?php echo base_url(); ?>index.php/admin/insertadmin" method="post" enctype="multipart/form-data" id="demo-form">
-                      <label for="NAMA_ADMIN">Nama * :</label>
+                    <form action="<?php echo base_url(); ?>index.php/admin/insertadmin" method="post" enctype="multipart/form-data" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                      <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="NAMA_ADMIN">Nama * :</label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
                       <input type="text" id="NAMA_ADMIN" class="form-control" name="NAMA_ADMIN" required />
+                      </div>
+                      </div>
 
-                      <label for="EMAIL_ADMIN">Email * :</label>
+                      <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="EMAIL_ADMIN">Email * :</label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
                       <input type="email" id="EMAIL_ADMIN" class="form-control" name="EMAIL_ADMIN" data-parsley-trigger="change" required />
+                      </div>
+                      </div>
 
-                      <label for="NIP">NIP * :</label>
+                      <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="NIP">NIP * :</label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
                       <input type="number" id="NIP" class="form-control" name="NIP" required="required"/>
+                      </div>
+                      </div>
 
-                      <label>Jenis Kelamin * :</label>
+                      <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12">Jenis Kelamin * :</label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
                       <p>
                         Laki - laki:
                         <input type="radio" class="flat" name="JK_ADMIN" id="genderM" value="Laki - laki" required="required" /> Perempuan:
                         <input type="radio" class="flat" name="JK_ADMIN" id="genderF" value="Perempuan" />
                       </p>
+                      </div>
+                      </div>
 
                       <label for="UNAME_ADMIN">Username * :</label>
                       <input type="text" id="UNAME_ADMIN" class="form-control" name="UNAME_ADMIN" required />
@@ -79,6 +96,5 @@
 
                 </div>
               </div>
-          </div>
         </div>
         <!-- /page content -->

@@ -58,6 +58,32 @@ class Admin_model extends CI_Model {
 
     }
 
+    public function insertsiswa()
+    {
+        $data = array(
+                'IDSISWA'               => $this->input->post('IDSISWA'),
+                'OAUTH_PROVIDER'        => 'google',
+                'NIS'                   => $this->input->post('NIS'),
+                'NAMA_SISWA'            => $this->input->post('NAMA_SISWA'),
+                'EMAIL_SISWA'           => $this->input->post('EMAIL_SISWA'),
+                'JK_SISWA'              => $this->input->post('JK_SISWA'),
+                'JURUSAN'               => $this->input->post('JURUSAN'),
+                'ANGKATAN'              => $this->input->post('ANGKATAN'),
+                'KELAS_SISWA'           => $this->input->post('KELAS_SISWA'),
+                'NOABSEN_SISWA'         => $this->input->post('NOABSEN_SISWA'),
+                'URL_FOTO_SISWA'        => $this->input->post('URL_FOTO_SISWA'),
+                'UNAME_SISWA'           => $this->input->post('UNAME_SISWA'),
+                'PASS_SISWA'            => $this->input->post('PASS_SISWA'),
+        );
+
+        $this->db->insert('TB_SISWA', $data);
+        if ($this->db->affected_rows() > 0) {
+            return TRUE;            
+        } else {
+            return FALSE;
+        }
+    }
+
     public function insertpelanggaran()
     {
         $data = array(

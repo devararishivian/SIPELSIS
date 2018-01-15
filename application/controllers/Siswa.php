@@ -27,6 +27,17 @@ class Siswa extends CI_Controller {
 		$this->load->view('siswa/template', $data);
 	}
 
+	public function logout(){
+        //delete login status & user info from session
+        $this->session->unset_userdata('loggedIn');
+        $this->session->unset_userdata('loggedRole');
+        $this->session->unset_userdata('userData');
+        $this->session->sess_destroy();
+        
+        //redirect to login page
+        redirect('Auth');
+    }
+
 }
 
 /* End of file Siswa.php */

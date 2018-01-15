@@ -93,6 +93,15 @@ class Admin extends CI_Controller {
 		}
 	}
 
+	public function insertsiswa()
+	{
+		if($this->admin_model->insertsiswa() == TRUE){
+			redirect('admin/kelolasiswa');
+		} else {
+			redirect('admin/kelolasiswa');
+		}
+	}
+
 
 	public function lihatadmin()
 	{
@@ -142,6 +151,7 @@ class Admin extends CI_Controller {
 	public function kelolasiswa()
 	{
 		$data['main_view'] = 'admin/kelolasiswa';
+		$data['siswa'] = $this->siswa_model->getAllSiswa();
 		$this->load->view('admin/template', $data);
 	}
 
