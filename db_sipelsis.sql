@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 14, 2018 at 07:25 AM
+-- Generation Time: Jan 15, 2018 at 05:52 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 5.6.32
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `TB_ADMIN` (
-  `IDADMIN` varchar(255) NOT NULL,
+  `IDADMIN` int(11) NOT NULL,
   `NIP` varchar(32) DEFAULT NULL,
   `NAMA_ADMIN` varchar(255) DEFAULT NULL,
   `EMAIL_ADMIN` varchar(255) DEFAULT NULL,
@@ -45,9 +45,9 @@ CREATE TABLE `TB_ADMIN` (
 --
 
 INSERT INTO `TB_ADMIN` (`IDADMIN`, `NIP`, `NAMA_ADMIN`, `EMAIL_ADMIN`, `JK_ADMIN`, `FOTO_ADMIN`, `UNAME_ADMIN`, `PASS_ADMIN`, `ROLE`) VALUES
-('3436462', '53625363', 'Petugas 1', 'petugas1@smktelkom-mlg.sch.id', 'male', 'petugas1', 'petugas', 'petugas', 'Petugas'),
-('345234243', '52513414', 'Admin 2', 'admin2@smktelkom-mlg.sch.id', 'male', 'aw3w32.png', 'admin2', 'admin2', 'Admin'),
-('657879342', '65342324', 'Admin 1', 'admin@smktelkom-mlg.sch.id', 'male', 'aw3w3.png', 'admin', 'admin', 'Admin');
+(100001, '8869352', 'Sisworoso', 'sisworoso@smktelkom-mlg.sch.id', 'Laki - laki', 'sisworoso.jpg', 'sisworoso', 'sisworoso', 'Admin'),
+(100002, '7543524', 'Rofiqut Thoriq', 'thoriq@smktelkom-mlg.sch.id', 'Laki - laki', 'thoriq.jpg', 'thoriq', 'thoriq', 'Admin'),
+(100003, '235352', 'Petugas 1', 'petugas1@smktelkom-mlg.sch.id', 'Laki - laki', 'p1.jpg', 'petugas1', 'petugas1', 'Petugas');
 
 -- --------------------------------------------------------
 
@@ -56,10 +56,11 @@ INSERT INTO `TB_ADMIN` (`IDADMIN`, `NIP`, `NAMA_ADMIN`, `EMAIL_ADMIN`, `JK_ADMIN
 --
 
 CREATE TABLE `TB_CAPELSIS` (
-  `IDCAPELSIS` varchar(12) NOT NULL,
-  `IDADMIN` varchar(255) DEFAULT NULL,
-  `IDPELANGGARAN` varchar(12) DEFAULT NULL,
-  `IDSISWA` varchar(255) DEFAULT NULL
+  `IDCAPELSIS` int(11) NOT NULL,
+  `IDADMIN` int(11) DEFAULT NULL,
+  `IDPELANGGARAN` int(11) DEFAULT NULL,
+  `IDSISWA` varchar(255) DEFAULT NULL,
+  `STATUS_CAPELSIS` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -69,11 +70,18 @@ CREATE TABLE `TB_CAPELSIS` (
 --
 
 CREATE TABLE `TB_PELANGGARAN` (
-  `IDPELANGGARAN` varchar(12) NOT NULL,
+  `IDPELANGGARAN` int(11) NOT NULL,
   `NAMA_PELANGGARAN` varchar(50) DEFAULT NULL,
   `POINT_PELANGGARAN` int(11) DEFAULT NULL,
   `KATEGORI_PELANGGARAN` varchar(12) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `TB_PELANGGARAN`
+--
+
+INSERT INTO `TB_PELANGGARAN` (`IDPELANGGARAN`, `NAMA_PELANGGARAN`, `POINT_PELANGGARAN`, `KATEGORI_PELANGGARAN`) VALUES
+(1001, 'Datang Terlambat', 10, 'Ringan');
 
 -- --------------------------------------------------------
 
@@ -84,7 +92,6 @@ CREATE TABLE `TB_PELANGGARAN` (
 CREATE TABLE `TB_SISWA` (
   `IDSISWA` varchar(255) NOT NULL,
   `OAUTH_PROVIDER` varchar(255) DEFAULT NULL,
-  `OAUTH_UID` varchar(255) DEFAULT NULL,
   `NIS` varchar(32) DEFAULT NULL,
   `NAMA_SISWA` varchar(255) DEFAULT NULL,
   `EMAIL_SISWA` varchar(255) DEFAULT NULL,
@@ -98,14 +105,6 @@ CREATE TABLE `TB_SISWA` (
   `UNAME_SISWA` varchar(32) DEFAULT NULL,
   `PASS_SISWA` varchar(32) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `TB_SISWA`
---
-
-INSERT INTO `TB_SISWA` (`IDSISWA`, `OAUTH_PROVIDER`, `OAUTH_UID`, `NIS`, `NAMA_SISWA`, `EMAIL_SISWA`, `JK_SISWA`, `JURUSAN`, `ANGKATAN`, `KELAS_SISWA`, `NOABSEN_SISWA`, `URL_FOTO_SISWA`, `URL_PROFIL_SISWA`, `UNAME_SISWA`, `PASS_SISWA`) VALUES
-('100226635222306593612', 'google', NULL, NULL, 'Qaisha Muhammada Devvara Rishivian', 'qaisha_rishivian_24rpl@student.smktelkom-mlg.sch.id', 'male', 'RPL', '24', NULL, NULL, 'https://lh4.googleusercontent.com/-7y6-czREqxs/AAAAAAAAAAI/AAAAAAAAAFU/IyD-DWPZxVc/photo.jpg', 'https://plus.google.com/100226635222306593612', 'qaisha_rishivian_24rpl', 'qaisha_rishivian'),
-('101177830012522300057', 'google', NULL, NULL, 'SA\'ADATUL SHOLEHAH', 'saadatul_sholehah_24rpl@student.smktelkom-mlg.sch.id', '', 'RPL', '24', NULL, NULL, 'https://lh3.googleusercontent.com/-RbR16x9XKOw/AAAAAAAAAAI/AAAAAAAAADA/dcavwthgruk/photo.jpg', '', 'saadatul_sholehah_24rpl', 'saadatul_sholehah');
 
 --
 -- Indexes for dumped tables
@@ -123,8 +122,8 @@ ALTER TABLE `TB_ADMIN`
 ALTER TABLE `TB_CAPELSIS`
   ADD PRIMARY KEY (`IDCAPELSIS`),
   ADD KEY `FK_RELATIONSHIP_3` (`IDSISWA`),
-  ADD KEY `FK_RELATIONSHIP_4` (`IDPELANGGARAN`),
-  ADD KEY `FK_RELATIONSHIP_5` (`IDADMIN`);
+  ADD KEY `FK_RELATIONSHIP_5` (`IDADMIN`),
+  ADD KEY `FK_RELATIONSHIP_4` (`IDPELANGGARAN`);
 
 --
 -- Indexes for table `TB_PELANGGARAN`
@@ -137,6 +136,28 @@ ALTER TABLE `TB_PELANGGARAN`
 --
 ALTER TABLE `TB_SISWA`
   ADD PRIMARY KEY (`IDSISWA`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `TB_ADMIN`
+--
+ALTER TABLE `TB_ADMIN`
+  MODIFY `IDADMIN` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100004;
+
+--
+-- AUTO_INCREMENT for table `TB_CAPELSIS`
+--
+ALTER TABLE `TB_CAPELSIS`
+  MODIFY `IDCAPELSIS` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `TB_PELANGGARAN`
+--
+ALTER TABLE `TB_PELANGGARAN`
+  MODIFY `IDPELANGGARAN` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1002;
 
 --
 -- Constraints for dumped tables

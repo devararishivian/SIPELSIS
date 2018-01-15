@@ -16,19 +16,6 @@ class Admin extends CI_Controller {
 
 	public function index()
 	{
-		/*if($this->session->userdata('loggedIn') == TRUE){
-			if($this->session->userdata('loggedRole') != 'Admin'){
-				//$id = $this->session->userdata('IDADMIN');
-				$data['main_view'] = 'admin/dasbor';
-				$data['admin'] = $this->admin_model->getAllAdmin();
-				$data['total_a'] = $this->admin_model->total_admin();
-				$this->load->view('admin/template', $data);
-			} else {
-				redirect('petugas');
-			}
-		} else {
-			redirect('Auth/admoon');
-		}*/
 		if ($this->session->userdata('loggedRole') == 'Admin') {
 			$data['main_view'] = 'admin/dasbor';
 			$data['admin'] = $this->admin_model->getAllAdmin();
@@ -44,13 +31,14 @@ class Admin extends CI_Controller {
 	public function lihatadmin()
 	{
 		$data['main_view'] = 'admin/lihatadmin';
-		$data['admin'] = $this->admin_model->getAllAdmin();
+		$data['admin'] = $this->admin_model->getAdminByRole();
 		$this->load->view('admin/template', $data);
 	}
 
 	public function lihatpetugas()
 	{
 		$data['main_view'] = 'admin/lihatpetugas';
+		$data['admin'] = $this->admin_model->getPetugasByRole();
 		$this->load->view('admin/template', $data);
 	}
 

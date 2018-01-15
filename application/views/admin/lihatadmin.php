@@ -9,7 +9,7 @@
             <table id="datatable-buttons" class="table table-striped table-bordered">
                 <thead>
                   <tr>
-                    <th>Name</th>
+                    <th>Nama</th>
                     <th>NIP</th>
                     <th>Email</th>
                     <th>Aksi</th>
