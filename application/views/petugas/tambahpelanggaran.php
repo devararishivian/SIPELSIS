@@ -9,7 +9,7 @@
                   </div>
                   <div class="x_content">
                     <br />
-                    <form action="<?php echo base_url(); ?>index.php/admin/insertsiswa" method="post" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                    <form action="<?php echo base_url(); ?>index.php/petugas/tambahpelanggaran" method="post" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
                       
                       <div class="form-group">
@@ -53,7 +53,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="JENIS_PELANGGARAN">NAMA PELANGGARAN <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="JENIS_PELANGGARAN" name="JENIS_PELANGGARAN" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="NAMA_PELANGGARAN" name="NAMA_PELANGGARAN" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
 
@@ -75,7 +75,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="POINT">POINT<span class="required"> *</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="number" id="POINT" name="POINT" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="number" id="POINT" name="POINT_PELANGGARAN" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
 
