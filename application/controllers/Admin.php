@@ -111,10 +111,24 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/template', $data);
 	}
 
+	public function kelolaadmin()
+	{
+		$data['main_view'] = 'admin/kelolaadmin';
+		$data['admin'] = $this->admin_model->getDetilAdmin($this->uri->segment(3));
+		$this->load->view('admin/template', $data);
+	}
+
 	public function lihatpetugas()
 	{
 		$data['main_view'] = 'admin/lihatpetugas';
 		$data['admin'] = $this->admin_model->getPetugasByRole();
+		$this->load->view('admin/template', $data);
+	}
+
+	public function kelolapetugas()
+	{
+		$data['main_view'] = 'admin/kelolapetugas';
+		$data['admin'] = $this->admin_model->getDetilAdmin($this->uri->segment(3));
 		$this->load->view('admin/template', $data);
 	}
 
@@ -143,12 +157,6 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/template', $data);
 	}
 
-	public function verifikasipelanggaran()
-	{
-		$data['main_view'] = 'admin/verifpelanggaran';
-		$this->load->view('admin/template', $data);
-	}
-
 	public function kelolasiswa()
 	{
 		$data['main_view'] = 'admin/kelolasiswa';
@@ -156,6 +164,29 @@ class Admin extends CI_Controller {
 		$data['kelas'] = $this->siswa_model->getAllKelas();
 		$data['noabsen'] = $this->siswa_model->getNoAbsen();
 		$this->load->view('admin/template', $data);
+	}
+
+	public function managesiswa()
+	{
+		$data['main_view'] = 'admin/managesiswa';
+		$data['kelas'] = $this->siswa_model->getAllKelas();
+		$data['noabsen'] = $this->siswa_model->getNoAbsen();
+		$data['siswa'] = $this->siswa_model->getDetilSiswa($this->uri->segment(3));
+		$this->load->view('admin/template', $data);
+
+	}
+//$this->Admin_model->update_siswa($id,$data);
+//$this->show_student_id();
+	public function updatesiswa()
+	{
+		if($this->admin_model->updatesiswa($id) == TRUE){
+			$this->session->set_flashdata('success', 'Edit data berhasil');
+			redirect('admin/kelolasiswa');
+		} else {
+			$this->session->set_flashdata('success', 'Edit data berhasil');
+			$data['notif'] = 'gagal';
+		    redirect('admin/kelolasiswa');
+		} 
 	}
 
 	public function logout(){

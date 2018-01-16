@@ -86,7 +86,36 @@ class Admin_model extends CI_Model {
         }
     }
 
-    public function insertpelanggaran()
+    public function updatesiswa($id)
+    {
+        $data = array(
+
+                'IDSISWA'               => $this->input->post('IDSISWA'),
+                'NIS'                   => $this->input->post('NIS'),
+                'NAMA_SISWA'            => $this->input->post('NAMA_SISWA'),
+                'EMAIL_SISWA'           => $this->input->post('EMAIL_SISWA'),
+                'JK_SISWA'              => $this->input->post('JK_SISWA'),
+                'JURUSAN'               => $this->input->post('JURUSAN'),
+                'ANGKATAN'              => $this->input->post('ANGKATAN'),
+                'IDKELAS'               => $this->input->post('IDKELAS'),
+                'IDABSEN'               => $this->input->post('IDABSEN'),
+                'URL_FOTO_SISWA'        => $this->input->post('URL_FOTO_SISWA'),
+                'UNAME_SISWA'           => $this->input->post('UNAME_SISWA'),
+                'PASS_SISWA'            => $this->input->post('PASS_SISWA'),
+
+                );
+
+        $this->db->where('IDSISWA', $id);
+        $this->db->update('TB_SISWA', $data); 
+
+        if ($this->db->affected_rows() > 0) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+
+    /* public function insertpelanggaran()
     {
         $data = array(
                 'NAMA_PELANGGARAN'      => $this->input->post('NAMA_PELANGGARAN'),
@@ -100,7 +129,7 @@ class Admin_model extends CI_Model {
         } else {
             return FALSE;
         }
-    }
+    }*/
 
     public function tambahpelanggaran()
     {
@@ -140,6 +169,11 @@ class Admin_model extends CI_Model {
         return $this->db->get('TB_ADMIN')->result();
     }
 
+    public function getDetilAdmin($IDADMIN)
+    {
+        return $this->db->query("SELECT * FROM TB_ADMIN WHERE IDADMIN='$IDADMIN'")->row();
+    }
+
     public function getAdminByRole()
     {   
         $ROLE = 'Admin';
@@ -151,9 +185,7 @@ class Admin_model extends CI_Model {
     public function getPetugasByRole()
     {   
         $ROLE = 'Petugas';
-        return $this->db
-        ->where('ROLE',$ROLE)
-        ->get('TB_ADMIN')->result();
+        return $this->db->where('ROLE',$ROLE)->get('TB_ADMIN')->result();
     }
 
     public function getAllPelanggaran()

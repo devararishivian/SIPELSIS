@@ -97,11 +97,12 @@
                       </div>
                       <br />  
                                          
-                        <div>
+                        <div class="form-group">
+                          <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3" > 
                           <button type="reset" class="btn btn-primary">Reset</button>
                           <input type="submit" value="Submit" class="btn btn-success">
+                          </div>
                         </div>
-
                     </form>
                     <!-- end form for validations -->
 

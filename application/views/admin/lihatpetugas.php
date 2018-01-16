@@ -24,8 +24,7 @@
                     <td>'.$data->NIP.'</td>
                     <td>'.$data->EMAIL_ADMIN.'</td>
                     <td>
-                      <button type="button" class="btn btn-info btn-xs">Detail</button> 
-                      <button type="button" class="btn btn-success btn-xs">Edit</button>
+                      <a href="'.base_url().'index.php/admin/kelolaadmin/'.$data->IDADMIN.'/" class="btn btn-primary btn-xs">Kelola</a>
                       <button type="button" class="btn btn-danger btn-xs">Delete</button>
                     </td>
                   </tr>

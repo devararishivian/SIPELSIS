@@ -26,8 +26,7 @@
                     <td>'.$data->EMAIL_ADMIN.'</td>
                     <td>'.$data->JK_ADMIN.'</td>
                     <td>
-                      <a href="'.base_url().'index.php/admin/lihatadmin/'.$data->IDADMIN.'/" class="btn btn-primary btn-xs">Detail</a>
-                      <button type="button" class="btn btn-success btn-xs">Edit</button>
+                      <a href="'.base_url().'index.php/admin/kelolaadmin/'.$data->IDADMIN.'/" class="btn btn-primary btn-xs">Kelola</a>
                       <button type="button" class="btn btn-danger btn-xs">Delete</button>
                     </td>
                   </tr>
