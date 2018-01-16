@@ -1,135 +1,43 @@
 <div class="right_col" role="main">
-  <div class="">
-    <div class="col-md-12 col-sm-12 col-xs-12">
-          <div class="x_title">
-            <h2>Lihat Siswa</h2>
-          <div class="clearfix"></div>
-          </div>
-          <div class="x_content">
-            <table id="datatable-buttons" class="table table-striped table-bordered">
-                <thead>
-                  <tr>
-                    <th>NIS</th>
-                    <th>Nama</th>
-                    <th>Kelas</th>
-                    <th>Aksi</th>
-                </thead>
-                <tbody>
-                   <?php 
-                    foreach ($siswa as $data) {
-                      echo '                   
-
-                  <tr>
-                    <td>'.$data->NIS.'</td>
-                    <td>'.$data->NAMA_SISWA.'</td>
-                    <td>'.$data->IDKELAS.'</td>
-                    <td>
-                      <button type="button" class="btn btn-info btn-xs">Detail</button> 
-                      <button type="button" class="btn btn-success btn-xs">Edit</button>
-                      <button type="button" class="btn btn-danger btn-xs">Delete</button>
-                    </td>
-                  </tr>
-                    ';
-                    }
-                  ?>
-                </tbody>
-            </table>
-        </div>
-      </div>
-    </div>
-
+  
     <div class="clearfix"></div>
             <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12">
                   <div class="x_title">
-                    <h2>Tambah Data <small>Siswa</small></h2>
+                    <h2>Tambah Data Pelanggaran<small>Siswa</small></h2>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
                     <br />
                     <form action="<?php echo base_url(); ?>index.php/admin/insertsiswa" method="post" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
+                      
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="IDSISWA">ID Siswa <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="IDSISWA">ID SISWA <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="IDSISWA" required="required" name="IDSISWA" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="IDSISWA" required="required" value="<?php echo $this->uri->segment(3); ?>" name="IDSISWA" class="form-control col-md-7 col-xs-12" disabled>
                         </div>
                       </div>
 
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="NIS">NIS <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="number" id="NIS" required="required" name="NIS" class="form-control col-md-7 col-xs-12">
-                        </div>
-                      </div>
+
+                      
 
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="NAMA_SISWA">Nama <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="NAMA_SISWA" name="NAMA_SISWA" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="NAMA_SISWA" name="NAMA_SISWA" value="<?php echo $siswa->NAMA_SISWA; ?>" required="required" class="form-control col-md-7 col-xs-12" disabled>
                         </div>
                       </div>
 
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="EMAIL_SISWA">Email <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="email" id="EMAIL_SISWA" name="EMAIL_SISWA" required="required" class="form-control col-md-7 col-xs-12">
-                        </div>
-                      </div>
+                     
 
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Jenis Kelamin <span class="required">*</span></label>
-                      <p>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                        Male :
-                        <input type="radio" class="flat" name="JK_SISWA" id="genderM" value="male" required /> Female :
-                        <input type="radio" class="flat" name="JK_SISWA" id="genderF" value="female" />
-                      </div>
-                      </p>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Jurusan <span class="required">*</span></label>
-                      <p>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                        RPL :
-                        <input type="radio" class="flat" name="JURUSAN" id="genderM" value="RPL" required /> 
-                        TKJ :
-                        <input type="radio" class="flat" name="JURUSAN" id="genderF" value="TKJ" />
-                      </div>
-                      </p>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="ANGKATAN">ANGKATAN <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="number" id="ANGKATAN" required="required" name="ANGKATAN" class="form-control col-md-7 col-xs-12">
-                        </div>
-                      </div>
-
+                     
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Kelas <span class="required">*</span></label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select name="KELAS_SISWA" class="select2_group form-control" required="required">
-                            <optgroup label="Kelas X">
-                              <option selected disabled hidden>Pilih Kelas</option>
-                              <option>X RPL 1</option>
-                              <option>X RPL 2</option>
-                            </optgroup>
-                            <optgroup label="Kelas XI">
-                              <option>XI RPL 1</option>
-                              <option>XI RPL 2</option>
-                            </optgroup>
-                            <optgroup label="Kelas XII">
-                              <option>XII RPL 1</option>
-                              <option>XII RPL 2</option>
-                            </optgroup>
-                          </select>
+                          <input type="text" id="KELAS_SISWA" name="NAMA_KELAS" value="<?php echo $siswa->NAMA_KELAS; ?>" required="required" class="form-control col-md-7 col-xs-12" disabled>
                         </div>
                       </div>
 
@@ -137,31 +45,37 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="NOABSEN_SISWA">Nomor Absen <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="number" id="NOABSEN_SISWA" required="required" name="NOABSEN_SISWA" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="NOABSEN_SISWA" required="required" value="<?php echo $siswa->NOMOR_ABSEN; ?>" name="NOABSEN_SISWA" class="form-control col-md-7 col-xs-12" disabled>
                         </div>
                       </div>
 
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="URL_FOTO_SISWA">URL Foto <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="JENIS_PELANGGARAN">NAMA PELANGGARAN <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="URL_FOTO_SISWA" name="URL_FOTO_SISWA" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="JENIS_PELANGGARAN" name="JENIS_PELANGGARAN" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">KATEGORI PELANGGARAN<span class="required"> *</span></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select name="KATEGORI_PELANGGARAN" class="select2_group form-control" required="required">
+                            
+                              <option selected disabled hidden>KATEGORI PELANGGARAN</option>
+                              <option>RINGAN</option>
+                              <option>SEDANG</option>
+                              <OPTION>BERAT</OPTION>
+                            
+                          </select>
                         </div>
                       </div>
 
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="UNAME_SISWA">Username <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="POINT">POINT<span class="required"> *</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="UNAME_SISWA" name="UNAME_SISWA" required="required" class="form-control col-md-7 col-xs-12">
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="PASS_SISWA">Password <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="password" id="PASS_SISWA" name="PASS_SISWA" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="number" id="POINT" name="POINT" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
 
