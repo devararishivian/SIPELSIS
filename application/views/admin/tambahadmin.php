@@ -65,24 +65,43 @@
                       </div>
                       </div>
 
-                      <label for="UNAME_ADMIN">Username * :</label>
+                      <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="UNAME_ADMIN">Username * :
+                      </label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
                       <input type="text" id="UNAME_ADMIN" class="form-control" name="UNAME_ADMIN" required />
+                      </div>
+                      </div>
 
-                      <label for="PASS_ADMIN">Password * :</label>
+                      <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="PASS_ADMIN">Password * :</label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
                       <input type="password" id="PASS_ADMIN" class="form-control" name="PASS_ADMIN" required />
+                      </div>
+                      </div>
 
-                      <label for="ROLE">ROLE * :</label>
+                      <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="ROLE">ROLE * :</label>
                       <p>
+                      <div class="col-md-6 col-sm-6 col-xs-12"> 
                       <input type="radio" class="flat" name="ROLE" id="ROLE" value="Admin" checked="TRUE"/> Admin
                       </p>
+                      </div>
+                      </div>
 
-                      <label>Upload Foto * :</label>
+                      <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12">Upload Foto * :</label>
+                      <div class="col-md-6 col-sm-6 col-xs-12"> 
                       <input type="file" name="FOTO_ADMIN" />
+                      </div>
+                      </div>
                       <br /> 
                                          
-                        <div>
+                        <div class="form-group">
+                          <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3" > 
                           <button type="reset" class="btn btn-primary">Reset</button>
                           <input type="submit" value="Submit" class="btn btn-success">
+                          </div>
                         </div>
 
                     </form>

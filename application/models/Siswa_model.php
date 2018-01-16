@@ -92,4 +92,9 @@ class Siswa_model extends CI_Model{
     public function getAllSiswa(){
         return $this->db->get('TB_SISWA')->result();
     }
+
+    public function getAllKelas(){
+
+        return $this->db->get('TB_SISWA')->result();
+    }
 }

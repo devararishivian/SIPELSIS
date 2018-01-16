@@ -31,15 +31,27 @@
                 ?>
 
                     <!-- start form for validation -->
-                    <form action="<?php echo base_url(); ?>index.php/admin/insertpetugas" method="post" enctype="multipart/form-data" id="demo-form">
-                      <label for="NAMA_ADMIN">Nama * :</label>
+                    <form action="<?php echo base_url(); ?>index.php/admin/insertpetugas" method="post" enctype="multipart/form-data" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left"> 
+                      <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="NAMA_ADMIN">Nama * :</label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
                       <input type="text" id="NAMA_ADMIN" class="form-control" name="NAMA_ADMIN" required />
+                      </div>
+                      </div>
 
-                      <label for="EMAIL_ADMIN">Email * :</label>
+                      <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="EMAIL_ADMIN">Email * :</label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
                       <input type="email" id="EMAIL_ADMIN" class="form-control" name="EMAIL_ADMIN" data-parsley-trigger="change" required />
+                      </div>
+                      </div>
 
-                      <label for="NIP">NIP * :</label>
+                      <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="NIP">NIP * :</label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
                       <input type="number" id="NIP" class="form-control" name="NIP" required="required"/>
+                      </div>
+                      </div>
 
                       <label>Jenis Kelamin * :</label>
                       <p>

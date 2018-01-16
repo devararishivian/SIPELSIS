@@ -131,6 +131,11 @@ class Admin_model extends CI_Model {
         return $this->db->get('TB_PELANGGARAN')->result();
     }
 
+    public function getKategoriPelanggaran()
+    {
+        return $this->db->get('TB_PELANGGARAN')->row()->KATEGORI_PELANGGARAN;
+    }
+
     public function total_admin()
     {
         $role = 'Admin';

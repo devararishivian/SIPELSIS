@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 15, 2018 at 05:52 AM
+-- Generation Time: Jan 16, 2018 at 03:05 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 5.6.32
 
@@ -22,24 +22,6 @@ SET time_zone = "+00:00";
 -- Database: `db_sipelsis`
 --
 
--- --------------------------------------------------------
-
---
--- Table structure for table `TB_ADMIN`
---
-
-CREATE TABLE `TB_ADMIN` (
-  `IDADMIN` int(11) NOT NULL,
-  `NIP` varchar(32) DEFAULT NULL,
-  `NAMA_ADMIN` varchar(255) DEFAULT NULL,
-  `EMAIL_ADMIN` varchar(255) DEFAULT NULL,
-  `JK_ADMIN` varchar(20) DEFAULT NULL,
-  `FOTO_ADMIN` text,
-  `UNAME_ADMIN` varchar(32) DEFAULT NULL,
-  `PASS_ADMIN` varchar(32) DEFAULT NULL,
-  `ROLE` varchar(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 --
 -- Dumping data for table `TB_ADMIN`
 --
@@ -49,127 +31,23 @@ INSERT INTO `TB_ADMIN` (`IDADMIN`, `NIP`, `NAMA_ADMIN`, `EMAIL_ADMIN`, `JK_ADMIN
 (100002, '7543524', 'Rofiqut Thoriq', 'thoriq@smktelkom-mlg.sch.id', 'Laki - laki', 'thoriq.jpg', 'thoriq', 'thoriq', 'Admin'),
 (100003, '235352', 'Petugas 1', 'petugas1@smktelkom-mlg.sch.id', 'Laki - laki', 'p1.jpg', 'petugas1', 'petugas1', 'Petugas');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `TB_CAPELSIS`
---
-
-CREATE TABLE `TB_CAPELSIS` (
-  `IDCAPELSIS` int(11) NOT NULL,
-  `IDADMIN` int(11) DEFAULT NULL,
-  `IDPELANGGARAN` int(11) DEFAULT NULL,
-  `IDSISWA` varchar(255) DEFAULT NULL,
-  `STATUS_CAPELSIS` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `TB_PELANGGARAN`
---
-
-CREATE TABLE `TB_PELANGGARAN` (
-  `IDPELANGGARAN` int(11) NOT NULL,
-  `NAMA_PELANGGARAN` varchar(50) DEFAULT NULL,
-  `POINT_PELANGGARAN` int(11) DEFAULT NULL,
-  `KATEGORI_PELANGGARAN` varchar(12) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 --
 -- Dumping data for table `TB_PELANGGARAN`
 --
 
 INSERT INTO `TB_PELANGGARAN` (`IDPELANGGARAN`, `NAMA_PELANGGARAN`, `POINT_PELANGGARAN`, `KATEGORI_PELANGGARAN`) VALUES
-(1001, 'Datang Terlambat', 10, 'Ringan');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `TB_SISWA`
---
-
-CREATE TABLE `TB_SISWA` (
-  `IDSISWA` varchar(255) NOT NULL,
-  `OAUTH_PROVIDER` varchar(255) DEFAULT NULL,
-  `NIS` varchar(32) DEFAULT NULL,
-  `NAMA_SISWA` varchar(255) DEFAULT NULL,
-  `EMAIL_SISWA` varchar(255) DEFAULT NULL,
-  `JK_SISWA` varchar(255) DEFAULT NULL,
-  `JURUSAN` varchar(255) DEFAULT NULL,
-  `ANGKATAN` varchar(10) DEFAULT NULL,
-  `KELAS_SISWA` varchar(10) DEFAULT NULL,
-  `NOABSEN_SISWA` int(11) DEFAULT NULL,
-  `URL_FOTO_SISWA` varchar(255) DEFAULT NULL,
-  `URL_PROFIL_SISWA` varchar(255) DEFAULT NULL,
-  `UNAME_SISWA` varchar(32) DEFAULT NULL,
-  `PASS_SISWA` varchar(32) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+(1001, 'Datang Terlambat', 10, 'Ringan'),
+(1002, 'Atribut Tidak Lengkap', 10, 'Ringan'),
+(1003, NULL, NULL, NULL);
 
 --
--- Indexes for dumped tables
+-- Dumping data for table `TB_SISWA`
 --
 
---
--- Indexes for table `TB_ADMIN`
---
-ALTER TABLE `TB_ADMIN`
-  ADD PRIMARY KEY (`IDADMIN`);
-
---
--- Indexes for table `TB_CAPELSIS`
---
-ALTER TABLE `TB_CAPELSIS`
-  ADD PRIMARY KEY (`IDCAPELSIS`),
-  ADD KEY `FK_RELATIONSHIP_3` (`IDSISWA`),
-  ADD KEY `FK_RELATIONSHIP_5` (`IDADMIN`),
-  ADD KEY `FK_RELATIONSHIP_4` (`IDPELANGGARAN`);
-
---
--- Indexes for table `TB_PELANGGARAN`
---
-ALTER TABLE `TB_PELANGGARAN`
-  ADD PRIMARY KEY (`IDPELANGGARAN`);
-
---
--- Indexes for table `TB_SISWA`
---
-ALTER TABLE `TB_SISWA`
-  ADD PRIMARY KEY (`IDSISWA`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `TB_ADMIN`
---
-ALTER TABLE `TB_ADMIN`
-  MODIFY `IDADMIN` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100004;
-
---
--- AUTO_INCREMENT for table `TB_CAPELSIS`
---
-ALTER TABLE `TB_CAPELSIS`
-  MODIFY `IDCAPELSIS` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `TB_PELANGGARAN`
---
-ALTER TABLE `TB_PELANGGARAN`
-  MODIFY `IDPELANGGARAN` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1002;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `TB_CAPELSIS`
---
-ALTER TABLE `TB_CAPELSIS`
-  ADD CONSTRAINT `FK_RELATIONSHIP_3` FOREIGN KEY (`IDSISWA`) REFERENCES `TB_SISWA` (`IDSISWA`),
-  ADD CONSTRAINT `FK_RELATIONSHIP_4` FOREIGN KEY (`IDPELANGGARAN`) REFERENCES `TB_PELANGGARAN` (`IDPELANGGARAN`),
-  ADD CONSTRAINT `FK_RELATIONSHIP_5` FOREIGN KEY (`IDADMIN`) REFERENCES `TB_ADMIN` (`IDADMIN`);
+INSERT INTO `TB_SISWA` (`IDSISWA`, `OAUTH_PROVIDER`, `NIS`, `NAMA_SISWA`, `EMAIL_SISWA`, `JK_SISWA`, `JURUSAN`, `ANGKATAN`, `KELAS_SISWA`, `NOABSEN_SISWA`, `URL_FOTO_SISWA`, `URL_PROFIL_SISWA`, `UNAME_SISWA`, `PASS_SISWA`) VALUES
+('100226635222306593612', 'google', '48041523070', 'Qaisha Muhammada Devvara Rishivian', 'qaisha_rishivian_24rpl@student.smktelkom-mlg.sch.id', 'male', 'RPL', '24', 'XII RPL 1', 25, 'https://lh4.googleusercontent.com/-7y6-czREqxs/AAAAAAAAAAI/AAAAAAAAAFU/IyD-DWPZxVc/photo.jpg', 'https://plus.google.com/100226635222306593612', 'qaisha_rishivian_24rpl', 'qaisha_rishivian'),
+('101177830012522300057', 'google', '47071523070', 'SA\'ADATUL SHOLEHAH', 'saadatul_sholehah_24rpl@student.smktelkom-mlg.sch.id', 'female', 'RPL', '24', 'XII RPL 1', 29, 'https://lh3.googleusercontent.com/-RbR16x9XKOw/AAAAAAAAAAI/AAAAAAAAADA/dcavwthgruk/photo.jpg', '', 'saadatul_sholehah_24rpl', 'saadatul_sholehah'),
+('6363633', 'google', '41414', 'Mangkurondo Limo', 'mangkuwanito@student.smktelkom-mlg.sch.id', 'female', 'TKJ', '24', 'XII RPL 1', 32, 'hgdfasfafa', NULL, 'mangkuwanito', 'mangkuwanito');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
