@@ -66,17 +66,18 @@
                                 <form role="form" action="<?php echo base_url(); ?>index.php/auth/loginsiswa" method="post" class="login-form" enctype="multipart/form-data">
                                     <div class="form-group">
                                         <label class="sr-only" for="UNAME_SISWA">Username</label>
-                                        <input type="text" name="UNAME_SISWA" placeholder="qaisha_rishivian_24rpl" class="form-username form-control" id="UNAME_SISWA">
+                                        <input type="text" name="UNAME_SISWA" placeholder="nama_kamu_24rpl" class="form-username form-control" id="UNAME_SISWA" required>
                                     </div>
                                     <div class="form-group">
                                         <label class="sr-only" for="PASS_SISWA">Password</label>
-                                        <input type="password" name="PASS_SISWA" placeholder="password ... " class="form-password form-control" id="PASS_SISWA">
+                                        <input type="password" name="PASS_SISWA" placeholder="password " class="form-password form-control" id="PASS_SISWA" required="">
                                     </div>
                                     <button type="submit" class="btn">Masuk</button>
                                 </form>
                             </div>
                         </div>
                     </div>
+                    <!-- tutup sementara 
                     <div class="row">
                         <div class="col-sm-6 col-sm-offset-3 social-login">
                             <div class="social-login-buttons">
@@ -86,6 +87,7 @@
                             </div>
                         </div>
                     </div>
+                    -->
                 </div>
             </div>
             

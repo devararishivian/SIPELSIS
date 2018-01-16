@@ -151,6 +151,25 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/template', $data);
 	}
 
+	public function updateadmin()
+	{
+
+		$config['upload_path'] = './uploads/';
+        $config['allowed_types'] = 'gif|jpg|png|jpeg';
+        $config['max_size']  = '2000';
+        $this->upload->initialize($config);
+        $this->load->library('upload', $config);
+
+        if($this->upload->do_upload('FOTO_ADMIN')){
+			if($this->admin_model->updateadmin($this->upload->data(), $this->uri->segment(3)) == TRUE){
+				redirect('admin/lihatadmin');
+			} else {
+			$this->session->set_flashdata('failed', $this->upload->display_errors());
+	        redirect('admin/lihatadmin');
+			}
+		}
+	}
+
 	public function lihatpetugas()
 	{
 		$data['main_view'] = 'admin/lihatpetugas';
@@ -164,6 +183,26 @@ class Admin extends CI_Controller {
 		$data['admin'] = $this->admin_model->getDetilAdmin($this->uri->segment(3));
 		$this->load->view('admin/template', $data);
 	}
+
+	public function updatepetugas()
+	{
+
+		$config['upload_path'] = './uploads/';
+        $config['allowed_types'] = 'gif|jpg|png|jpeg';
+        $config['max_size']  = '2000';
+        $this->upload->initialize($config);
+        $this->load->library('upload', $config);
+
+        if($this->upload->do_upload('FOTO_ADMIN')){
+			if($this->admin_model->updatepetugas($this->upload->data(), $this->uri->segment(3)) == TRUE){
+				redirect('admin/lihatpetugas');
+			} else {
+			$this->session->set_flashdata('failed', $this->upload->display_errors());
+	        redirect('admin/lihatpetugas');
+			}
+		}
+	}
+
 
 	public function lihatpelanggaran()
 	{

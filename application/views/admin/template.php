@@ -60,7 +60,7 @@
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="<?php echo base_url(); ?>uploads/<?php echo $this->session->userdata('FOTO_ADMIN'); ?>" alt="..." class="img-circle profile_img">
+                <img src="<?php echo base_url(); ?>uploads/<?php echo $this->session->userdata('FOTO_ADMIN'); ?>" alt="FOTO_ADMIN" class="img-circle profile_img">
               </div>
               <div class="profile_info">
                 <span>

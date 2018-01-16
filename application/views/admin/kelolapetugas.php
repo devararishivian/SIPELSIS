@@ -32,7 +32,7 @@
                 ?>
 
                     <!-- start form for validation -->
-                    <form action="<?php echo base_url(); ?>index.php/admin/updatepetugas" method="post" enctype="multipart/form-data" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                    <form action="<?php echo base_url(); ?>index.php/admin/updatepetugas/<?php echo $admin->IDADMIN;?>" method="post" enctype="multipart/form-data" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
                       <div class="form-group">
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="NAMA_ADMIN">Nama * :</label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
@@ -61,7 +61,17 @@
                         Laki - laki:
                         <input type="radio" class="flat"  name="JK_ADMIN" id="genderM" required="required" value="Laki - Laki" <?php echo ($admin->JK_ADMIN == 'Laki - laki')?'checked':'' ?> /> 
                         Perempuan:
-                        <input type="radio" class="flat"  name="JK_ADMIN" id="genderF" required="required" value="Laki - Laki" <?php echo ($admin->JK_ADMIN == 'Perempuan')?'checked':'' ?> /
+                        <input type="radio" class="flat"  name="JK_ADMIN" id="genderF" value="Laki - Laki" <?php echo ($admin->JK_ADMIN == 'Perempuan')?'checked':'' ?> />
+                      </p>
+                      </div>
+                      </div>
+
+                      <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12">Role * :</label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                      <p>
+                        Petugas : 
+                        <input type="radio" class="flat"  name="ROLE" id="ROLE" required="required" value="Petugas" <?php echo ($admin->ROLE == 'Petugas')?'checked':'' ?> />
                       </p>
                       </div>
                       </div>

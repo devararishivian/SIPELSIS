@@ -27,7 +27,7 @@
                     <td>'.$data->JK_ADMIN.'</td>
                     <td>
                       <a href="'.base_url().'index.php/admin/kelolaadmin/'.$data->IDADMIN.'/" class="btn btn-primary btn-xs">Kelola</a>
-                      <a href="'.base_url().'index.php/admin/deleteadmin/'.$data->IDADMIN.'" class="btn btn-danger btn-xs">Delete</a>
+                      <a href="'.base_url().'index.php/admin/deleteadmin/'.$data->IDADMIN.'" class="btn btn-danger btn-xs">Hapus</a>
                     </td>
                   </tr>
 
