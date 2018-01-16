@@ -182,8 +182,8 @@ class Admin_model extends CI_Model {
         $mexyplusplus = $mexypely + 1;
 
         $data1 = array(
-                'IDSISWA'               => $this->input->post('IDSISWA'),
                 'IDPELANGGARAN'         => $mexyplusplus,
+                'IDSISWA'               => $this->input->post('IDSISWA'),
                 'IDADMIN'               => $this->session->userdata('loggedID'),
         );
         $this->db->insert('TB_CAPELSIS', $data1);
@@ -191,7 +191,7 @@ class Admin_model extends CI_Model {
         $data2 = array(
                 'NAMA_PELANGGARAN'      => $this->input->post('NAMA_PELANGGARAN'),
                 'POINT_PELANGGARAN'     => $this->input->post('POINT_PELANGGARAN'),
-                'KATEGORI_PELANGGARAN'  => $this->input->post('KATEGORI_PELANGGARAN'),
+                'IDKATEGORI'            => $this->input->post('KATEGORI_PELANGGARAN'),
         );
 
         $this->db->insert('TB_PELANGGARAN', $data2);
@@ -272,7 +272,7 @@ class Admin_model extends CI_Model {
 
     public function getKategoriPelanggaran()
     {
-        return $this->db->get('TB_PELANGGARAN')->row()->KATEGORI_PELANGGARAN;
+        return $this->db->get('TB_KAPEL')->result();
     }
 
     public function total_admin()

@@ -55,9 +55,11 @@
                           <select name="KATEGORI_PELANGGARAN" class="select2_group form-control" required="required">
                             
                               <option selected disabled hidden>KATEGORI PELANGGARAN</option>
-                              <option>RINGAN</option>
-                              <option>SEDANG</option>
-                              <OPTION>BERAT</OPTION>
+                              <?php 
+                              foreach ($kapel as $data){
+                                echo '
+                                      <option value="'.$data->IDKATEGORI.'" >'.$data->KATEGORI_PELANGGARAN.'</option>
+                              '; } ?>
                             
                           </select>
                         </div>

@@ -49,6 +49,7 @@ class Petugas extends CI_Controller {
     public function tambahpelanggaran(){
     	$data['main_view'] = 'petugas/tambahpelanggaran';
     	$data['siswa'] = $this->siswa_model->getDetilSiswa($this->uri->segment(3));
+    	$data['kapel'] = $this->admin_model->getKategoriPelanggaran();
         $this->load->view('petugas/template', $data);
     }
 
