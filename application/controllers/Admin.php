@@ -7,7 +7,7 @@ class Admin extends CI_Controller {
 	{
 		parent::__construct();
 		if (! $this->session->userdata('loggedIn') || $this->session->userdata('loggedIn') == null) {
-			redirect('/');
+			redirect('auth/admin');
 		}
 		$this->load->model('admin_model');
 		$this->load->model('siswa_model');
@@ -25,6 +25,81 @@ class Admin extends CI_Controller {
 		} else {
 				redirect('petugas');
 			}
+
+		//$this->form_validation->set_value('NAMA_ADMIN','NAMA', 'trim|required');
+
+		/*if($this->input->post('submit')){			
+
+			if ($this->form_validation->run() == TRUE) {
+
+				if($this->admin_model->insertadmin() == TRUE)
+				{
+					$this->load->view('admin/lihatadmin');
+				} else {
+						$this->load->view('admin/tambahadmin');
+				
+			} else {
+					$this->load->view('admin/tambahadmin');
+			} */
+
+	}
+
+	public function insertadmin()
+	{
+        $config['upload_path'] = './uploads/';
+        $config['allowed_types'] = 'gif|jpg|png|jpeg';
+        $config['max_size']  = '2000';
+        $this->upload->initialize($config);
+        $this->load->library('upload', $config);
+
+        if($this->upload->do_upload('FOTO_ADMIN')){
+			if($this->admin_model->insertadmin($this->upload->data()) == TRUE){
+				redirect('admin/lihatadmin');
+			} else {
+				redirect('admin/tambahadmin');
+			}
+		} else {
+			$this->session->set_flashdata('failed', $this->upload->display_errors());
+	        redirect('admin/tambahadmin');
+		}
+	}
+
+	public function insertpetugas()
+	{
+		$config['upload_path'] = './uploads/';
+        $config['allowed_types'] = 'gif|jpg|png|jpeg';
+        $config['max_size']  = '2000';
+        $this->upload->initialize($config);
+        $this->load->library('upload', $config);
+
+        if($this->upload->do_upload('FOTO_ADMIN')){
+			if($this->admin_model->insertadmin($this->upload->data()) == TRUE){
+				redirect('admin/lihatpetugas');
+			} else {
+				redirect('admin/tambahpetugas');
+			}
+		} else {
+			$this->session->set_flashdata('failed', $this->upload->display_errors());
+	        redirect('admin/tambahpetugas');
+		}
+	}
+
+	public function insertpelanggaran()
+	{
+		if($this->admin_model->insertpelanggaran() == TRUE){
+			redirect('admin/lihatpelanggaran');
+		} else {
+			redirect('admin/tambahpelanggaran');
+		}
+	}
+
+	public function insertsiswa()
+	{
+		if($this->admin_model->insertsiswa() == TRUE){
+			redirect('admin/kelolasiswa');
+		} else {
+			redirect('admin/kelolasiswa');
+		}
 	}
 
 
@@ -76,6 +151,7 @@ class Admin extends CI_Controller {
 	public function kelolasiswa()
 	{
 		$data['main_view'] = 'admin/kelolasiswa';
+		$data['siswa'] = $this->siswa_model->getAllSiswa();
 		$this->load->view('admin/template', $data);
 	}
 
@@ -89,6 +165,7 @@ class Admin extends CI_Controller {
         //redirect to login page
         redirect('Auth/admin');
     }
+		
 
 }
 

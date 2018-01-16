@@ -18,6 +18,13 @@
     <link href="<?php echo base_url(); ?>assets/gentelella/vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- iCheck -->
     <link href="<?php echo base_url(); ?>assets/gentelella/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+
+    <!-- bootstrap-wysiwyg -->
+    <link href="<?php echo base_url(); ?>assets/gentelella/vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
+    <!-- Select2 -->
+    <link href="<?php echo base_url(); ?>assets/gentelella/vendors/select2/dist/css/select2.min.css" rel="stylesheet">
+    <!-- Switchery -->
+    <link href="<?php echo base_url(); ?>assets/gentelella/vendors/switchery/dist/switchery.min.css" rel="stylesheet">
 	
     <!-- bootstrap-progressbar -->
     <link href="<?php echo base_url(); ?>assets/gentelella/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
@@ -25,6 +32,13 @@
     <link href="<?php echo base_url(); ?>assets/gentelella/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
     <!-- bootstrap-daterangepicker -->
     <link href="<?php echo base_url(); ?>assets/gentelella/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+
+    <!-- bootstrap-wysiwyg -->
+    <link href="<?php echo base_url(); ?>assets/gentelella/vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
+    <!-- Select2 -->
+    <link href="<?php echo base_url(); ?>assets/gentelella/vendors/select2/dist/css/select2.min.css" rel="stylesheet">
+    <!-- Switchery -->
+    <link href="<?php echo base_url(); ?>assets/gentelella/vendors/switchery/dist/switchery.min.css" rel="stylesheet">
 
     <!-- Table css -->
     <link href="<?php echo base_url(); ?>assets/gentelella/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
@@ -126,7 +140,7 @@
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
                     <li><a href="javascript:;"> Profile</a></li>
-                    <li><a href="<?php echo base_url(); ?>index.php/admin/logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                    <li><a href="<?php echo base_url(); ?>index.php/petugas/logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                   </ul>
                 </li>
               </ul>
@@ -203,6 +217,23 @@
     <script src="<?php echo base_url(); ?>assets/gentelella/vendors/pdfmake/build/vfs_fonts.js"></script>
     <!-- validator -->
     <script src="<?php echo base_url(); ?>assets/gentelella/vendors/validator/validator.js"></script>
+
+    <!-- bootstrap-wysiwyg -->
+    <script src="<?php echo base_url(); ?>assets/gentelella/vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/gentelella/vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
+    <script src="<?php echo base_url(); ?>assets/gentelella/vendors/google-code-prettify/src/prettify.js"></script>
+    <!-- jQuery Tags Input -->
+    <script src=".<?php echo base_url(); ?>assets/gentelella/vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
+    <!-- Switchery -->
+    <script src="<?php echo base_url(); ?>assets/gentelella/vendors/switchery/dist/switchery.min.js"></script>
+    <!-- Select2 -->
+    <script src="<?php echo base_url(); ?>assets/gentelella/vendors/select2/dist/js/select2.full.min.js"></script>
+    <!-- Parsley -->
+    <script src="<?php echo base_url(); ?>assets/gentelella/vendors/parsleyjs/dist/parsley.min.js"></script>
+    <!-- Autosize -->
+    <script src="<?php echo base_url(); ?>assets/gentelella/vendors/autosize/dist/autosize.min.js"></script>
+    <!-- jQuery autocomplete -->
+    <script src="<?php echo base_url(); ?>assets/gentelella/vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
 
 
     <!-- Custom Theme Scripts -->

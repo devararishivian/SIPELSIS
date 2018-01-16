@@ -3,66 +3,80 @@
           <div class="">
             <div class="clearfix"></div>
             <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12">
+
+                <div class="x_panel">
                   <div class="x_title">
-                    <h2>Tambah Data <small>Petugas</small></h2>
+                    <h2>Tambah Petugas</h2>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    <form class="form-horizontal form-label-left" novalidate>
+                    <?php
+                  $failed = $this->session->flashdata('failed');
+                    if(!empty($failed)){
+                      echo '<div class="alert alert-danger alert-dismissable" style="margin-top: 10px">';
+                      echo '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>';
+                      echo '<i class="icon fa fa-warning"></i>';
+                      echo $failed;
+                      echo '</div>';
+                    }
 
-                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nama_petugas">Nama <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="nama_petugas" class="form-control col-md-7 col-xs-12" name="nama_petugas" required="required" type="text">
+                  $success = $this->session->flashdata('success');
+                  if(!empty($success)){
+                      echo '<div class="alert alert-success alert-dismissable" style="margin-top: 10px">';
+                      echo '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>';
+                      echo '<i class="icon fa fa-check"></i>';
+                      echo $success;
+                      echo '</div>';
+                  }
+                ?>
+
+                    <!-- start form for validation -->
+                    <form action="<?php echo base_url(); ?>index.php/admin/insertpetugas" method="post" enctype="multipart/form-data" id="demo-form">
+                      <label for="NAMA_ADMIN">Nama * :</label>
+                      <input type="text" id="NAMA_ADMIN" class="form-control" name="NAMA_ADMIN" required />
+
+                      <label for="EMAIL_ADMIN">Email * :</label>
+                      <input type="email" id="EMAIL_ADMIN" class="form-control" name="EMAIL_ADMIN" data-parsley-trigger="change" required />
+
+                      <label for="NIP">NIP * :</label>
+                      <input type="number" id="NIP" class="form-control" name="NIP" required="required"/>
+
+                      <label>Jenis Kelamin * :</label>
+                      <p>
+                        Laki - laki:
+                        <input type="radio" class="flat" name="JK_ADMIN" id="genderM" value="Laki - laki" required="required" /> Perempuan:
+                        <input type="radio" class="flat" name="JK_ADMIN" id="genderF" value="Perempuan" />
+                      </p>
+
+                      <label for="UNAME_ADMIN">Username * :</label>
+                      <input type="text" id="UNAME_ADMIN" class="form-control" name="UNAME_ADMIN" required />
+
+                      <label for="PASS_ADMIN">Password * :</label>
+                      <input type="password" id="PASS_ADMIN" class="form-control" name="PASS_ADMIN" required />
+
+                      <label for="ROLE">ROLE * :</label>
+                      <p>
+                      <input type="radio" class="flat" name="ROLE" id="ROLE" value="Petugas" checked="TRUE"/> Petugas
+                      </p>
+
+                      <label>Upload Foto * :</label>
+                      <input type="file" name="FOTO_ADMIN" />
+                      <br /> 
+                                         
+                        <div>
+                          <button type="reset" class="btn btn-primary">Reset</button>
+                          <input type="submit" value="Submit" class="btn btn-success">
                         </div>
-                      </div>
-                      <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email_petugas">Email <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="email_petugas" id="email_petugas" name="email_petugas" required="required" class="form-control col-md-7 col-xs-12">
-                        </div>
-                      </div>
-                      <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="idpetugas">ID Petugas <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="idpetugas" name="idpetugas" required="required" class="form-control col-md-7 col-xs-12" disabled>
-                        </div>
-                      </div>
-                      <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="uname_petugas">Username <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="uname_petugas" class="form-control col-md-7 col-xs-12" name="uname_petugas" placeholder="qaisha_rishivian_24rpl" required="required" type="text">
-                        </div>
-                      </div>
-                      <div class="item form-group">
-                        <label for="pass_petugas" class="control-label col-md-3">Password <span class="required">*</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="pass_petugas" type="password" name="pass_petugas" class="form-control col-md-7 col-xs-12" required="required">
-                        </div>
-                      </div>
-                      <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="foto_petugas">Foto</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                        <form action="#" method="post" enctype="multipart/form-data">
-                          <input type="file" name="foto_petugas">
-                        </form>
-                        </div>
-                      </div>
-                      <div class="ln_solid"></div>
-                      <div class="form-group">
-                        <div class="col-md-6 col-md-offset-3">
-                          <button type="submit" class="btn btn-primary">Cancel</button>
-                          <button id="submit" type="submit" class="btn btn-success">Submit</button>
-                        </div>
-                      </div>
+
                     </form>
+                    <!-- end form for validations -->
+
                   </div>
+                </div>
+
+
+              </div>
+
                 </div>
               </div>
           </div>
