@@ -63,7 +63,7 @@
                                 </div>
                             </div>
                             <div class="form-bottom">
-                                <form role="form" action="<?php echo base_url(); ?>index.php/Auth/loginsiswa" method="post" class="login-form" enctype="multipart/form-data">
+                                <form role="form" action="<?php echo base_url(); ?>index.php/auth/loginsiswa" method="post" class="login-form" enctype="multipart/form-data">
                                     <div class="form-group">
                                         <label class="sr-only" for="UNAME_SISWA">Username</label>
                                         <input type="text" name="UNAME_SISWA" placeholder="qaisha_rishivian_24rpl" class="form-username form-control" id="UNAME_SISWA">
@@ -79,10 +79,9 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-6 col-sm-offset-3 social-login">
-                            <h3>...or login with:</h3>
                             <div class="social-login-buttons">
                                 <a class="btn btn-link-1 btn-link-1-google-plus" href="<?php echo $loginURL; ?>">
-                                    <i class="fa fa-google-plus"></i> Google Plus
+                                    <i class="fa fa-google-plus"></i> Register with Google Plus
                                 </a>
                             </div>
                         </div>

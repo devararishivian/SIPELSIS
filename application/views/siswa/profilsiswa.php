@@ -21,7 +21,7 @@
                       <div class="profile_img">
                         <div id="crop-avatar">
                           <!-- Current avatar -->
-                          <img class="img-responsive avatar-view" src="<?php echo base_url(); ?>assets/gentelella/production/images/picture.jpg" alt="Avatar" title="Change the avatar">
+                          <img class="img-responsive avatar-view" src="<?php echo $siswa->URL_FOTO_SISWA; ?>" alt="Avatar" title="Change the avatar">
                         </div>
                       </div>
                       <h3><?php 
@@ -54,43 +54,39 @@
                           <div role="tabpanel" class="tab-pane fade " id="tab_content2" aria-labelledby="home-tab">
 
                             <!-- start recent activity -->
-                            <ul class="messages">
-                              <li>
-                                <img src="<?php echo base_url(); ?>assets/gentelella/production/images/img.jpg" class="avatar" alt="Avatar">
-                                <div class="message_date">
-                                  <h3 class="date text-info">24</h3>
-                                  <p class="month">May</p>
-                                </div>
-                                <div class="message_wrapper">
-                                  <h4 class="heading">Desmond Davison</h4>
-                                  <blockquote class="message">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth.</blockquote>
-                                  <br />
-                                  <p class="url">
-                                    <span class="fs1 text-info" aria-hidden="true" data-icon=""></span>
-                                    <i class="fa fa-paperclip"></i> Pelanggaran Ringan
-                                    <i class="fa fa-paperclip"></i> Point : 10
-                                  </p>
-                                </div>
-                              </li>
-                              <li>
-                                <img src="<?php echo base_url(); ?>assets/gentelella/production/images/img.jpg" class="avatar" alt="Avatar">
-                                <div class="message_date">
-                                  <h3 class="date text-error">21</h3>
-                                  <p class="month">May</p>
-                                </div>
-                                <div class="message_wrapper">
-                                  <h4 class="heading">Brian Michaels</h4>
-                                  <blockquote class="message">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth.</blockquote>
-                                  <br />
-                                  <p class="url">
-                                    <span class="fs1 text-info" aria-hidden="true" data-icon=""></span>
-                                    <i class="fa fa-paperclip"></i> Pelanggaran Ringan
-                                    <i class="fa fa-paperclip"></i> Point : 10
-                                  </p>
-                                </div>
-                              </li>
+                            <div class="x_title">
+                            <div class="clearfix"></div>
+                          </div>
+                          <div class="x_content">
 
-                            </ul>
+                            <table class="table">
+                              <thead>
+                                <tr>
+                                  <th>#</th>
+                                  <th>Nama Pelanggaran</th>
+                                  <th>Kategori Pelanggaran</th>
+                                  <th>Point</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <?php 
+                                $no =1;
+                                foreach ($capelsis as $data){
+                                  echo '
+                                
+                                <tr>
+                                  <td>'.$no.'</td>
+                                  <td>'.$data->IDCAPELSIS.'</td>
+                                  <td>'.$data->IDPELANGGARAN.'</td>
+                                  <td>'.$data->IDSISWA.'</td>
+                                </tr>
+
+
+                                '; $no++; }  ?>
+                              </tbody>
+                            </table>
+
+                          </div>
                             <!-- end recent activity -->
 
                           </div>
@@ -102,58 +98,62 @@
                   <div class="x_content">
                     <form class="form-horizontal form-label-left" novalidate>
 
-
                       <div class="item form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nis">NIS</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="nis" name="nis" disabled class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="nis" name="nis" value="<?php echo $siswa->NIS; ?>" disabled class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                        <div class="item form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nama_siswa">Nama
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="nama_siswa" class="form-control col-md-7 col-xs-12" name="nama_siswa" disabled type="text">
+                          <input id="nama_siswa" class="form-control col-md-7 col-xs-12" value="<?php echo $siswa->NAMA_SISWA; ?>" name="nama_siswa" disabled type="text">
                         </div>
                       </div>
+
                       <div class="item form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="kelas_siswa">Kelas
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="kelas_siswa" class="form-control col-md-7 col-xs-12" name="kelas_siswa" disabled type="text">
+                          <input id="kelas_siswa" class="form-control col-md-7 col-xs-12" value="<?php echo $kelas->NAMA_KELAS; ?>" name="kelas_siswa" disabled type="text">
                         </div>
                       </div>
                       <div class="item form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="noabsen_siswa">Nomer Absen
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="noabsen_siswa" class="form-control col-md-7 col-xs-12" name="noabsen_siswa" disabled type="text">
+                          <input id="noabsen_siswa" class="form-control col-md-7 col-xs-12" value="<?php echo $noabsen->NOMOR_ABSEN; ?>" name="noabsen_siswa" disabled type="text">
                         </div>
                       </div>
                       <div class="item form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="idsiswa">ID Siswa</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="idsiswa" name="idsiswa" required="required" class="form-control col-md-7 col-xs-12" disabled>
+                          <input type="text" id="idsiswa" name="idsiswa" value="<?php echo $siswa->IDSISWA; ?>" required="required" class="form-control col-md-7 col-xs-12" disabled>
                         </div>
                       </div>
                       <div class="item form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="uname_siswa">Username</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="uname_siswa" class="form-control col-md-7 col-xs-12" name="uname_siswa" placeholder="qaisha_rishivian_24rpl" disabled type="text">
+                          <input id="uname_siswa" class="form-control col-md-7 col-xs-12" name="uname_siswa" value="<?php echo $siswa->UNAME_SISWA; ?>" placeholder="qaisha_rishivian_24rpl" disabled type="text">
                         </div>
                       </div>
                       <div class="item form-group">
                         <label for="pass_admin" class="control-label col-md-3">Password</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="pass_siswa" type="password" name="pass_siswa" class="form-control col-md-7 col-xs-12" disabled>
+                          <input id="pass_siswa" type="password" value="<?php echo $siswa->PASS_SISWA; ?>" name="pass_siswa" class="form-control col-md-7 col-xs-12" disabled>
                         </div>
                       </div>
                       <div class="item form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email_siswa">Email</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="email_siswa" id="email_siswa" name="email_siswa" disabled class="form-control col-md-7 col-xs-12">
+                          <input type="email_siswa" id="email_siswa" value="<?php echo $siswa->EMAIL_SISWA; ?>" name="email_siswa" disabled class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
+                      
+
+                      </form>
+
                      
                       
                             <!-- end user projects -->

@@ -15,12 +15,12 @@ class Auth extends CI_Controller {
         if ($this->session->userdata('loggedIn') == TRUE) {
 
             if($this->session->userdata('loggedRole') == 'Siswa'){
-                redirect('siswa');
+                $this->load->view('siswa/registerok');
             } else {
                 $data['loginURL'] = $this->google->loginURL();
         
                 //load google login view
-                $this->load->view('siswa/login',$data);
+                $this->load->view('siswa/login', $data);
             }
         	
         }
@@ -54,7 +54,8 @@ class Auth extends CI_Controller {
 			$this->session->set_userdata('userData', $userData);
 			
 			//redirect to profile page
-			redirect('siswa');
+			//redirect('siswa');
+            $this->load->view('siswa/registerok');
 			} else {
 				$data['loginURL'] = $this->google->loginURL();
 		
@@ -131,6 +132,9 @@ class Auth extends CI_Controller {
         //delete login status & user info from session
         $this->session->unset_userdata('loggedIn');
         $this->session->unset_userdata('loggedRole');
+        $this->session->unset_userdata('loggedID');
+        $this->session->unset_userdata('loggedAdminName');
+        $this->session->unset_userdata('loggedSiswaName');
         $this->session->unset_userdata('userData');
         $this->session->sess_destroy();
         

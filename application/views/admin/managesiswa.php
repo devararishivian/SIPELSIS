@@ -11,7 +11,7 @@
                  
                   <div class="x_content">
                     <br />
-                    <form action="<?php echo base_url(); ?>index.php/admin/updatesiswa/<?php echo $siswa->IDSISWA; ?>" method="post" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                    <form method="post" action="<?php echo base_url(); ?>index.php/admin/updatesiswa/<?php echo $siswa->IDSISWA;?>" data-parsley-validate class="form-horizontal form-label-left">
 
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="IDSISWA">ID Siswa <span class="required">*</span>
@@ -62,9 +62,9 @@
                       <p>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                         RPL
-                        <input type="radio" class="flat"  name="RPL" id="RPL" required="required" value="RPL" <?php echo ($siswa->JURUSAN == 'RPL')?'checked':'' ?> /> 
+                        <input type="radio" class="flat"  name="JURUSAN" id="RPL" required="required" value="RPL" <?php echo ($siswa->JURUSAN == 'RPL')?'checked':'' ?> /> 
                         TKJ:
-                        <input type="radio" class="flat"  name="TKJ" id="TKJ"  value="TKJ" <?php echo ($siswa->JURUSAN == 'TKJ')?'checked':'' ?> />
+                        <input type="radio" class="flat"  name="JURUSAN" id="TKJ"  value="TKJ" <?php echo ($siswa->JURUSAN == 'TKJ')?'checked':'' ?> />
                       </div>
                       </p>
                       </div>
@@ -136,7 +136,7 @@
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <input type="submit" value="update" class="btn btn-success">
+                          <input type="submit" value="PERBARUI PROFIL" class="btn btn-success">
                         </div>
                       </div>
 

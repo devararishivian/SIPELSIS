@@ -104,9 +104,28 @@ class Siswa_model extends CI_Model{
         return $this->db->get('TB_KELAS')->result();
     }
 
+    public function getDataSiswa(){
+        return $this->db->query("SELECT * FROM TB_SISWA A LEFT JOIN TB_KELAS B ON A.IDKELAS = B.IDKELAS")->row();
+    }
+
+    public function getDataKelas(){
+
+        return $this->db->query("SELECT * FROM TB_SISWA A LEFT JOIN TB_KELAS B ON A.IDKELAS = B.IDKELAS")->row();
+    }
+
+    public function getDataAbsen(){
+
+        return $this->db->query("SELECT * FROM TB_SISWA A LEFT JOIN TB_ABSEN B ON A.IDABSEN = B.IDABSEN")->row();
+    }
+
     public function getNoAbsen(){
 
         return $this->db->get('TB_ABSEN')->result();
+    }
+
+    public function getDataPelSis(){
+
+        return $this->db->query("SELECT * FROM TB_SISWA A LEFT JOIN TB_CAPELSIS B ON A.IDSISWA = B.IDSISWA")->result();
     }
 
     public function getDetilSiswa($idsiswa){

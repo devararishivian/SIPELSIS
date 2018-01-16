@@ -89,7 +89,6 @@ class Admin_model extends CI_Model {
     public function updatesiswa($id)
     {
         $data = array(
-
                 'IDSISWA'               => $this->input->post('IDSISWA'),
                 'NIS'                   => $this->input->post('NIS'),
                 'NAMA_SISWA'            => $this->input->post('NAMA_SISWA'),
@@ -101,8 +100,7 @@ class Admin_model extends CI_Model {
                 'IDABSEN'               => $this->input->post('IDABSEN'),
                 'URL_FOTO_SISWA'        => $this->input->post('URL_FOTO_SISWA'),
                 'UNAME_SISWA'           => $this->input->post('UNAME_SISWA'),
-                'PASS_SISWA'            => $this->input->post('PASS_SISWA'),
-
+                'PASS_SISWA'            => $this->input->post('PASS_SISWA')
                 );
 
         $this->db->where('IDSISWA', $id);
@@ -167,6 +165,39 @@ class Admin_model extends CI_Model {
 
 		return $this->db->get()->result(); */
         return $this->db->get('TB_ADMIN')->result();
+    }
+
+    public function deleteadmin($id)
+    {
+        $this->db->where('IDADMIN', $id)->delete('TB_ADMIN');
+
+        if($this->db->affected_rows() > 0){
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+
+    public function deletepetugas($id)
+    {
+        $this->db->where('IDADMIN', $id)->delete('TB_ADMIN');
+
+        if($this->db->affected_rows() > 0){
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+
+    public function deletesiswa($id)
+    {
+        $this->db->where('IDSISWA', $id)->delete('TB_SISWA');
+
+        if($this->db->affected_rows() > 0){
+            return TRUE;
+        } else {
+            return FALSE;
+        }
     }
 
     public function getDetilAdmin($IDADMIN)

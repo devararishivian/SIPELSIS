@@ -111,6 +111,39 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/template', $data);
 	}
 
+	public function deleteadmin($id)
+	{
+		if($this->admin_model->deleteadmin($id) == TRUE){
+			$this->session->set_flashdata('success', 'Siswa Berhasil Dihapus');
+			redirect('admin/lihatadmin');
+		} else {
+			$this->session->set_flashdata('failed', 'Siswa Gagal Dihapus');
+			redirect('admin/lihatadmin');
+		}
+	}
+
+	public function deletepetugas($id)
+	{
+		if($this->admin_model->deletepetugas($id) == TRUE){
+			$this->session->set_flashdata('success', 'Siswa Berhasil Dihapus');
+			redirect('admin/lihatpetugas');
+		} else {
+			$this->session->set_flashdata('failed', 'Siswa Gagal Dihapus');
+			redirect('admin/lihatpetugas');
+		}
+	}
+
+	public function deletesiswa($id)
+	{
+		if($this->admin_model->deletesiswa($id) == TRUE){
+			$this->session->set_flashdata('success', 'Siswa Berhasil Dihapus');
+			redirect('admin/kelolasiswa');
+		} else {
+			$this->session->set_flashdata('failed', 'Siswa Gagal Dihapus');
+			redirect('admin/lihatkelolasiswa');
+		}
+	}
+
 	public function kelolaadmin()
 	{
 		$data['main_view'] = 'admin/kelolaadmin';
@@ -179,7 +212,7 @@ class Admin extends CI_Controller {
 //$this->show_student_id();
 	public function updatesiswa()
 	{
-		if($this->admin_model->updatesiswa($id) == TRUE){
+		if($this->admin_model->updatesiswa($this->uri->segment(3)) == TRUE){
 			$this->session->set_flashdata('success', 'Edit data berhasil');
 			redirect('admin/kelolasiswa');
 		} else {

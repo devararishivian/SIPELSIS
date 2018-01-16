@@ -25,7 +25,7 @@
                     <td>'.$data->IDKELAS.'</td>
                     <td>
                       <a href="'.base_url().'index.php/admin/managesiswa/'.$data->IDSISWA.'/" class="btn btn-primary btn-xs">Kelola</a>
-                      <button type="button" class="btn btn-danger btn-xs">Delete</button>
+                      <a href="'.base_url().'index.php/admin/deletesiswa/'.$data->IDSISWA.'" class="btn btn-danger btn-xs">Delete</a>
                     </td>
                   </tr>
                     ';
@@ -151,8 +151,7 @@
                               <option selected disabled hidden>Nomor Absen</option>
                             <?php 
                               foreach ($noabsen as $data) {
-                               echo '
-                              
+                               echo '                              
                               <option value="'.$data->IDABSEN.'">'.$data->NOMOR_ABSEN.'</option>
                               ';
                             } ?>

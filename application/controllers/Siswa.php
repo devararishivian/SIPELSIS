@@ -18,6 +18,10 @@ class Siswa extends CI_Controller {
 	{
 		if ($this->session->userdata('loggedIn') == TRUE) {
 			$data['main_view'] = 'siswa/profilsiswa';
+			$data['siswa'] = $this->siswa_model->getDataSiswa();
+			$data['kelas'] = $this->siswa_model->getDataKelas();
+			$data['noabsen'] = $this->siswa_model->getDataAbsen();
+			$data['capelsis'] = $this->siswa_model->getDataPelSis();
 			$this->load->view('siswa/template', $data);
 		} else {
 				redirect('auth');
@@ -27,7 +31,11 @@ class Siswa extends CI_Controller {
 
 	public function profil()
 	{
-		$data['main_view'] = 'siswa/profilsiswa';
+		$data['main_view'] = 'siswa/profilsiswa';		
+		$data['siswa'] = $this->siswa_model->getDataSiswa();
+		$data['kelas'] = $this->siswa_model->getDataKelas();
+		$data['noabsen'] = $this->siswa_model->getDataAbsen();
+		$data['capelsis'] = $this->siswa_model->getDataPelSis();
 		$this->load->view('siswa/template', $data);
 	}
 
