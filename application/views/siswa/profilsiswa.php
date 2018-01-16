@@ -7,12 +7,13 @@
             <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12">
                   <div class="x_title">
-                    <h2>Profil Siswa <small><?php 
-                        //foreach ($admin as $data){
-                          //echo $admin->NAMA_ADMIN;
+                    <h2>Profil Siswa <small>
+                      <?php 
                       echo $this->session->userdata('loggedSiswaName');
-                        //} 
-                      ?></small></h2>
+                       
+                      ?>
+                        
+                      </small></h2>
                     </ul>
                     <div class="clearfix"></div>
                   </div>
@@ -21,7 +22,7 @@
                       <div class="profile_img">
                         <div id="crop-avatar">
                           <!-- Current avatar -->
-                          <img class="img-responsive avatar-view" src="<?php echo $siswa->URL_FOTO_SISWA; ?>" alt="Avatar" title="Change the avatar">
+                          <img class="img-responsive avatar-view" src="<?php echo $siswa->URL_FOTO_SISWA; ?>" alt="TIDAK ADA FOTO" title="Change the avatar">
                         </div>
                       </div>
                       <h3><?php 
@@ -76,9 +77,9 @@
                                 
                                 <tr>
                                   <td>'.$no.'</td>
-                                  <td>'.$data->IDCAPELSIS.'</td>
+                                  <td>'.$data->NAMA_PELANGGARAN.'</td>
                                   <td>'.$data->IDPELANGGARAN.'</td>
-                                  <td>'.$data->IDSISWA.'</td>
+                                  <td>'.$data->POINT_PELANGGARAN.'</td>
                                 </tr>
 
 
@@ -101,14 +102,14 @@
                       <div class="item form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nis">NIS</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="nis" name="nis" value="<?php echo $siswa->NIS; ?>" disabled class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="nis" name="nis" value="<?php echo $siswaall->NIS; ?>" disabled class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                        <div class="item form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nama_siswa">Nama
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="nama_siswa" class="form-control col-md-7 col-xs-12" value="<?php echo $siswa->NAMA_SISWA; ?>" name="nama_siswa" disabled type="text">
+                          <input id="nama_siswa" class="form-control col-md-7 col-xs-12" value="<?php echo $siswaall->NAMA_SISWA; ?>" name="nama_siswa" disabled type="text">
                         </div>
                       </div>
 
@@ -116,38 +117,38 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="kelas_siswa">Kelas
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="kelas_siswa" class="form-control col-md-7 col-xs-12" value="<?php echo $kelas->NAMA_KELAS; ?>" name="kelas_siswa" disabled type="text">
+                          <input id="kelas_siswa" class="form-control col-md-7 col-xs-12" value="<?php echo $siswaall->KELAS; ?>" name="kelas_siswa" disabled type="text">
                         </div>
                       </div>
                       <div class="item form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="noabsen_siswa">Nomer Absen
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="noabsen_siswa" class="form-control col-md-7 col-xs-12" value="<?php echo $noabsen->NOMOR_ABSEN; ?>" name="noabsen_siswa" disabled type="text">
+                          <input id="noabsen_siswa" class="form-control col-md-7 col-xs-12" value="<?php echo $siswaall->NOABSEN; ?>" name="noabsen_siswa" disabled type="text">
                         </div>
                       </div>
                       <div class="item form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="idsiswa">ID Siswa</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="idsiswa" name="idsiswa" value="<?php echo $siswa->IDSISWA; ?>" required="required" class="form-control col-md-7 col-xs-12" disabled>
+                          <input type="text" id="idsiswa" name="idsiswa" value="<?php echo $siswaall->IDSISWA; ?>" required="required" class="form-control col-md-7 col-xs-12" disabled>
                         </div>
                       </div>
                       <div class="item form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="uname_siswa">Username</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="uname_siswa" class="form-control col-md-7 col-xs-12" name="uname_siswa" value="<?php echo $siswa->UNAME_SISWA; ?>" placeholder="qaisha_rishivian_24rpl" disabled type="text">
+                          <input id="uname_siswa" class="form-control col-md-7 col-xs-12" name="uname_siswa" value="<?php echo $siswaall->UNAME_SISWA; ?>" placeholder="qaisha_rishivian_24rpl" disabled type="text">
                         </div>
                       </div>
                       <div class="item form-group">
                         <label for="pass_admin" class="control-label col-md-3">Password</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="pass_siswa" type="password" value="<?php echo $siswa->PASS_SISWA; ?>" name="pass_siswa" class="form-control col-md-7 col-xs-12" disabled>
+                          <input id="pass_siswa" type="password" value="<?php echo $siswaall->PASS_SISWA; ?>" name="pass_siswa" class="form-control col-md-7 col-xs-12" disabled>
                         </div>
                       </div>
                       <div class="item form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email_siswa">Email</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="email_siswa" id="email_siswa" value="<?php echo $siswa->EMAIL_SISWA; ?>" name="email_siswa" disabled class="form-control col-md-7 col-xs-12">
+                          <input type="email_siswa" id="email_siswa" value="<?php echo $siswaall->EMAIL_SISWA; ?>" name="email_siswa" disabled class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       

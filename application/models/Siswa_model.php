@@ -85,6 +85,7 @@ class Siswa_model extends CI_Model{
         			'UNAME_SISWA'	=> $UNAME_SISWA,
         			'loggedIn'		=> TRUE,
                     'loggedRole'    => 'Siswa',
+                    'loggedID'      => $result['IDSISWA'],
                     'loggedSiswaName'    => $result['NAMA_SISWA']
         	);
         	$this->session->set_userdata($data);
@@ -123,9 +124,11 @@ class Siswa_model extends CI_Model{
         return $this->db->get('TB_ABSEN')->result();
     }
 
-    public function getDataPelSis(){
+    public function getCaPelSis($idsiswa){
 
-        return $this->db->query("SELECT * FROM TB_SISWA A LEFT JOIN TB_CAPELSIS B ON A.IDSISWA = B.IDSISWA")->result();
+        return $this->db->query("SELECT * FROM TB_SISWA A LEFT JOIN TB_CAPELSIS B ON A.IDSISWA = B.IDSISWA 
+            LEFT JOIN TB_PELANGGARAN C ON B.IDPELANGGARAN = C.IDPELANGGARAN
+            WHERE A.IDSISWA='$idsiswa'")->result();
     }
 
     public function getDetilSiswa($idsiswa){
