@@ -13,7 +13,7 @@ class Auth extends CI_Controller {
 
 	// versi findco
 	public function index() {
-        if ($this->session->userdata('loggedIn') == true) {
+        if ($this->session->userdata('loggedIn') == TRUE) {
 
             if($this->session->userdata('loggedRole') == 'Siswa'){
                 redirect('siswa');

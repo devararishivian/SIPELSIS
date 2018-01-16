@@ -16,7 +16,7 @@ class Siswa extends CI_Controller {
 
 	public function index()
 	{
-		if ($this->session->userdata('loggedRole') == 'Siswa') {
+		if ($this->session->userdata('loggedIn') == TRUE) {
 			$data['main_view'] = 'siswa/profilsiswa';
 			$this->load->view('siswa/template', $data);
 		} else {
@@ -41,7 +41,9 @@ class Siswa extends CI_Controller {
         //delete login status & user info from session
         $this->session->unset_userdata('loggedIn');
         $this->session->unset_userdata('loggedRole');
-        $this->session->unset_userdata('userData');
+        $this->session->unset_userdata('userData');        
+        $this->session->unset_userdata('loggedID');
+        $this->session->unset_userdata('loggedSiswaName');
         $this->session->sess_destroy();
         
         //redirect to login page

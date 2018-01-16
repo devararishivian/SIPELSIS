@@ -54,11 +54,12 @@ class Siswa_model extends CI_Model{
 	 	$query = $this->db->get();
 	 	$row = $query->num_rows();
 
-	 	if ($row > 0) {
+	 	if ($this->db->affected_rows() == 1) {
 	 	$result = $query->row_array();
         $update = $this->db->update('TB_SISWA', $data, array('IDSISWA' => $result['IDSISWA']));
         $userID = $result['IDSISWA'];
         $loggedRole = 'Siswa';
+        $loggedIn = TRUE;
         $loggedSiswaName = $result['NAMA_SISWA'];
 	 	}else{
             $insert = $this->db->insert('TB_SISWA', $data);
