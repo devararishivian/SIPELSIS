@@ -20,7 +20,9 @@ class Petugas extends CI_Controller {
 			$data['admin'] = $this->admin_model->getAllAdmin();
 			$data['siswa'] = $this->siswa_model->getAllSiswa();
 			$data['kelas'] = $this->siswa_model->getAllKelas();
+			$data['absen'] = $this->siswa_model->getDataAbsen();
 			$data['kapel'] = $this->admin_model->getKategoriPelanggaran();
+
 			$this->load->view('petugas/template', $data);
 
 		} else {

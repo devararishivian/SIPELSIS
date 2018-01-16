@@ -37,15 +37,7 @@
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Kelas <span class="required">*</span></label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="KELAS_SISWA" name="NAMA_KELAS" value="<?php echo $siswa->NAMA_KELAS; ?>" required="required" class="form-control col-md-7 col-xs-12" disabled>
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="NOABSEN_SISWA">Nomor Absen <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="NOABSEN_SISWA" required="required" value="<?php echo $siswa->NOMOR_ABSEN; ?>" name="NOABSEN_SISWA" class="form-control col-md-7 col-xs-12" disabled>
+                          <input type="text" id="KELAS" name="KELAS" value="<?php echo $siswa->KELAS; ?>" required="required" class="form-control col-md-7 col-xs-12" disabled>
                         </div>
                       </div>
 

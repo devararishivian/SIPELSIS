@@ -129,8 +129,8 @@ class Siswa_model extends CI_Model{
     }
 
     public function getDetilSiswa($idsiswa){
-        return $this->db->query("SELECT * FROM TB_SISWA A LEFT JOIN TB_KELAS B ON A.IDKELAS = B.IDKELAS 
-            LEFT JOIN TB_ABSEN C ON A.IDABSEN = C.IDABSEN
+        return $this->db->query("SELECT * FROM TB_SISWA A LEFT JOIN TB_KELAS B ON A.KELAS = B.KELAS 
+            LEFT JOIN TB_ABSEN C ON A.NOABSEN = C.NOABSEN
             WHERE A.IDSISWA='$idsiswa'")->row();
     }
 }

@@ -22,7 +22,7 @@
                   <tr>
                     <td>'.$data->NIS.'</td>
                     <td>'.$data->NAMA_SISWA.'</td>
-                    <td>'.$data->NAMA_KELAS.'</td>
+                    <td>'.$data->KELAS.'</td>
                     <td>
                       
                       <a href="'.base_url().'index.php/petugas/tambahpelanggaran/'.$data->IDSISWA.'/" class="btn btn-primary btn">Tambah Pelanggaran</a>
