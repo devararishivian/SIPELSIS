@@ -53,27 +53,49 @@
                       </div>
                       </div>
 
-                      <label>Jenis Kelamin * :</label>
+                      <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12">Jenis Kelamin * :</label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
                       <p>
                         Laki - laki:
                         <input type="radio" class="flat" name="JK_ADMIN" id="genderM" value="Laki - laki" required="required" /> Perempuan:
                         <input type="radio" class="flat" name="JK_ADMIN" id="genderF" value="Perempuan" />
                       </p>
+                      </div>
+                      </div>
 
-                      <label for="UNAME_ADMIN">Username * :</label>
+                      <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="UNAME_ADMIN">Username * :
+                      </label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
                       <input type="text" id="UNAME_ADMIN" class="form-control" name="UNAME_ADMIN" required />
+                      </div>
+                      </div>
 
-                      <label for="PASS_ADMIN">Password * :</label>
+                      <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="PASS_ADMIN">Password * :</label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
                       <input type="password" id="PASS_ADMIN" class="form-control" name="PASS_ADMIN" required />
-
-                      <label for="ROLE">ROLE * :</label>
+                      </div>
+                      </div>
+                      
+                      <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="ROLE">ROLE * :</label>
                       <p>
+                      <div class="col-md-6 col-sm-6 col-xs-12"> 
                       <input type="radio" class="flat" name="ROLE" id="ROLE" value="Petugas" checked="TRUE"/> Petugas
                       </p>
+                      </div>
+                      </div>
 
-                      <label>Upload Foto * :</label>
+
+                      <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12">Upload Foto * :</label>
+                      <div class="col-md-6 col-sm-6 col-xs-12"> 
                       <input type="file" name="FOTO_ADMIN" />
-                      <br /> 
+                      </div>
+                      </div>
+                      <br />  
                                          
                         <div>
                           <button type="reset" class="btn btn-primary">Reset</button>
