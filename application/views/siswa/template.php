@@ -36,7 +36,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-university"></i> <span>SIPELSIS</span></a>
+              <a href="<?php echo base_url(); ?>index.php/siswa/profil"" class="site_title"><i class="fa fa-university"></i> <span>SIPELSIS</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -60,7 +60,7 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a href="<?php echo base_url(); ?>index.php/siswa"><i class="fa fa-home"></i> Dashboard </a></li>
+                  <!-- <li><a href="<?php echo base_url(); ?>index.php/siswa"><i class="fa fa-home"></i> Dashboard </a></li>-->
                   <li><a href="<?php echo base_url(); ?>index.php/siswa/profil"><i class="fa fa-user"></i> Profil Siswa</a></li>
                 </ul>
               </div>
