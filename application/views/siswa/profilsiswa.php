@@ -107,29 +107,17 @@
                         </div>
                       </div>
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Kelas</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="kelas_siswa">Kelas
+                        </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select name="kelas_siswa" id="kelas_siswa" class="select2_group form-control">
-                            <optgroup label="Kelas X">
-                              <option value="X">X RPL 1</option>
-                            </optgroup>
-                            <optgroup label="Kelas XI">
-                              <option value="XI">XI RPL 1</option>
-                            </optgroup>
-                            <optgroup label="Kelas XII">
-                              <option value="XII">XII RPL 1</option>
-                            </optgroup>
-                          </select>
+                          <input id="kelas_siswa" class="form-control col-md-7 col-xs-12" name="kelas_siswa" disabled type="text">
                         </div>
                       </div>
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Nomor Absen</label>
-                        <div class="ccol-md-6 col-sm-6 col-xs-12">
-                          <select name="noabsen_siswa" class="form-control">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                          </select>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="noabsen_siswa">Nomer Absen
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="noabsen_siswa" class="form-control col-md-7 col-xs-12" name="noabsen_siswa" disabled type="text">
                         </div>
                       </div>
                       <div class="item form-group">
@@ -147,7 +135,7 @@
                       <div class="item form-group">
                         <label for="pass_admin" class="control-label col-md-3">Password</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="pass_siswa" type="password" name="pass_siswa" class="form-control col-md-7 col-xs-12">
+                          <input id="pass_siswa" type="password" name="pass_siswa" class="form-control col-md-7 col-xs-12" disabled>
                         </div>
                       </div>
                       <div class="item form-group">
@@ -156,23 +144,8 @@
                           <input type="email_siswa" id="email_siswa" name="email_siswa" disabled class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
-                      <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="foto_siswa">Foto</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                        <form action="#" method="post" enctype="multipart/form-data">
-                          <input type="file" name="foto_siswa">
-                        </form>
-                        </div>
-                      </div>
-                      <div class="ln_solid"></div>
-                      <div class="form-group">
-                        <div class="col-md-6 col-md-offset-3">
-                          <button id="submit" type="submit" class="btn btn-success">Perbarui Profil</button>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
+                     
+                      
                             <!-- end user projects -->
 
                           </div>
