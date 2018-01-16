@@ -22,7 +22,7 @@
                   <tr>
                     <td>'.$data->NIS.'</td>
                     <td>'.$data->NAMA_SISWA.'</td>
-                    <td>'.$data->IDKELAS.'</td>
+                    <td>'.$data->KELAS.'</td>
                     <td>
                       <a href="'.base_url().'index.php/admin/managesiswa/'.$data->IDSISWA.'/" class="btn btn-primary btn-xs">Kelola</a>
                       <a href="'.base_url().'index.php/admin/deletesiswa/'.$data->IDSISWA.'" class="btn btn-danger btn-xs">Delete</a>
@@ -128,14 +128,14 @@
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Kelas <span class="required">*</span></label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select name="IDKELAS" class="select2_group form-control" required="required">
+                          <select name="KELAS" class="select2_group form-control" required="required">
                             
                               <option selected disabled hidden>Pilih Kelas</option>
                             <?php 
                               foreach ($kelas as $data) {
                                echo '
                               
-                              <option value="'.$data->IDKELAS.'">'.$data->NAMA_KELAS.'</option>
+                              <option value="'.$data->IDKELAS.'">'.$data->KELAS.'</option>
                               ';
                             } ?>
                           </select>
@@ -146,13 +146,13 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="IDABSEN">Nomor Absen <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select name="IDABSEN" class="select2_group form-control" required="required">
+                          <select name="ABSEN" class="select2_group form-control" required="required">
                             
                               <option selected disabled hidden>Nomor Absen</option>
                             <?php 
                               foreach ($noabsen as $data) {
                                echo '                              
-                              <option value="'.$data->IDABSEN.'">'.$data->NOMOR_ABSEN.'</option>
+                              <option value="'.$data->IDABSEN.'">'.$data->NOABSEN.'</option>
                               ';
                             } ?>
                           </select></div>

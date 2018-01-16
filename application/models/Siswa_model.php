@@ -96,7 +96,7 @@ class Siswa_model extends CI_Model{
     }
 
     public function getAllSiswa(){
-        return $this->db->query("SELECT * FROM TB_SISWA A LEFT JOIN TB_KELAS B ON A.IDKELAS = B.IDKELAS")->result();
+        return $this->db->query("SELECT * FROM TB_SISWA A LEFT JOIN TB_KELAS B ON A.KELAS = B.KELAS")->result();
     }
 
     public function getAllKelas(){
@@ -105,17 +105,17 @@ class Siswa_model extends CI_Model{
     }
 
     public function getDataSiswa(){
-        return $this->db->query("SELECT * FROM TB_SISWA A LEFT JOIN TB_KELAS B ON A.IDKELAS = B.IDKELAS")->row();
+        return $this->db->query("SELECT * FROM TB_SISWA A LEFT JOIN TB_KELAS B ON A.KELAS = B.KELAS")->row();
     }
 
     public function getDataKelas(){
 
-        return $this->db->query("SELECT * FROM TB_SISWA A LEFT JOIN TB_KELAS B ON A.IDKELAS = B.IDKELAS")->row();
+        return $this->db->query("SELECT * FROM TB_SISWA A LEFT JOIN TB_KELAS B ON A.KELAS = B.KELAS")->row();
     }
 
     public function getDataAbsen(){
 
-        return $this->db->query("SELECT * FROM TB_SISWA A LEFT JOIN TB_ABSEN B ON A.IDABSEN = B.IDABSEN")->row();
+        return $this->db->query("SELECT * FROM TB_SISWA A LEFT JOIN TB_ABSEN B ON A.NOABSEN = B.NOABSEN")->row();
     }
 
     public function getNoAbsen(){

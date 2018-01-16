@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 16, 2018 at 02:51 PM
+-- Generation Time: Jan 16, 2018 at 03:52 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 5.6.32
 
@@ -30,14 +30,14 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `TB_ABSEN` (
   `IDABSEN` varchar(255) NOT NULL,
-  `NOMOR_ABSEN` int(11) DEFAULT NULL
+  `NOABSEN` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `TB_ABSEN`
 --
 
-INSERT INTO `TB_ABSEN` (`IDABSEN`, `NOMOR_ABSEN`) VALUES
+INSERT INTO `TB_ABSEN` (`IDABSEN`, `NOABSEN`) VALUES
 ('NOAB01', 1),
 ('NOAB02', 2);
 
@@ -65,9 +65,9 @@ CREATE TABLE `TB_ADMIN` (
 
 INSERT INTO `TB_ADMIN` (`IDADMIN`, `NIP`, `NAMA_ADMIN`, `EMAIL_ADMIN`, `JK_ADMIN`, `FOTO_ADMIN`, `UNAME_ADMIN`, `PASS_ADMIN`, `ROLE`) VALUES
 (100001, '8869352', 'Sisworoso', 'sisworoso@smktelkom-mlg.sch.id', 'Laki - laki', 'sisworoso.jpg', 'sisworoso', 'sisworoso', 'Admin'),
-(100002, '7543524', 'Rofiqut Thoriq', 'thoriq@smktelkom-mlg.sch.id', 'Laki - laki', 'thoriq.jpeg', 'thoriq', 'thoriq', 'Admin'),
+(100002, '99999', 'Rofiqut Thoriq', 'thoriq@smktelkom-mlg.sch.id', 'Laki - Laki', 'thoriq8.jpeg', 'thoriq', 'thoriq', 'Admin'),
 (100003, '235352', 'Petugas 1', 'petugas1@smktelkom-mlg.sch.id', 'Laki - laki', 'p1.jpg', 'petugas1', 'petugas1', 'Petugas'),
-(100004, '23423525114', 'Petugas 2', 'petugas2@smktelkom-mlg.sch.id', 'Perempuan', 'vito.jpg', 'petugas2', 'petugas2', 'Petugas');
+(100004, '111111', 'Petugas 2', 'petugas2@smktelkom-mlg.sch.id', 'Laki - Laki', 'sisworoso1.jpg', 'petugas2', 'petugas2', 'Petugas');
 
 -- --------------------------------------------------------
 
@@ -117,15 +117,18 @@ INSERT INTO `TB_KAPEL` (`IDKATEGORI`, `KATEGORI_PELANGGARAN`) VALUES
 
 CREATE TABLE `TB_KELAS` (
   `IDKELAS` varchar(255) NOT NULL,
-  `NAMA_KELAS` varchar(255) DEFAULT NULL
+  `KELAS` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `TB_KELAS`
 --
 
-INSERT INTO `TB_KELAS` (`IDKELAS`, `NAMA_KELAS`) VALUES
-('IDKELAS01', 'XII RPL 1');
+INSERT INTO `TB_KELAS` (`IDKELAS`, `KELAS`) VALUES
+('IDKELAS01', 'XII RPL 1'),
+('IDKELAS02', 'XII RPL 2'),
+('IDKELAS03', 'XII RPL 3'),
+('IDKELAS04', 'XII RPL 4');
 
 -- --------------------------------------------------------
 
@@ -163,8 +166,6 @@ INSERT INTO `TB_PELANGGARAN` (`IDPELANGGARAN`, `IDKATEGORI`, `NAMA_PELANGGARAN`,
 
 CREATE TABLE `TB_SISWA` (
   `IDSISWA` varchar(255) NOT NULL,
-  `IDABSEN` varchar(255) DEFAULT NULL,
-  `IDKELAS` varchar(255) DEFAULT NULL,
   `OAUTH_PROVIDER` varchar(255) DEFAULT NULL,
   `NIS` varchar(32) DEFAULT NULL,
   `NAMA_SISWA` varchar(255) DEFAULT NULL,
@@ -175,16 +176,17 @@ CREATE TABLE `TB_SISWA` (
   `URL_FOTO_SISWA` varchar(255) DEFAULT NULL,
   `URL_PROFIL_SISWA` varchar(255) DEFAULT NULL,
   `UNAME_SISWA` varchar(32) DEFAULT NULL,
-  `PASS_SISWA` varchar(32) DEFAULT NULL
+  `PASS_SISWA` varchar(32) DEFAULT NULL,
+  `NOABSEN` int(11) NOT NULL,
+  `KELAS` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `TB_SISWA`
 --
 
-INSERT INTO `TB_SISWA` (`IDSISWA`, `IDABSEN`, `IDKELAS`, `OAUTH_PROVIDER`, `NIS`, `NAMA_SISWA`, `EMAIL_SISWA`, `JK_SISWA`, `JURUSAN`, `ANGKATAN`, `URL_FOTO_SISWA`, `URL_PROFIL_SISWA`, `UNAME_SISWA`, `PASS_SISWA`) VALUES
-('100226635222306593612', '67', 'IDKELAS01', 'google', '48041523068', 'Qaisha Muhammada Devvara Rishivian', 'qaisha_rishivian_24rpl@student.smktelkom-mlg.sch.id', 'male', 'RPL', '24', 'https://lh4.googleusercontent.com/-7y6-czREqxs/AAAAAAAAAAI/AAAAAAAAAFU/IyD-DWPZxVc/photo.jpg', 'https://plus.google.com/100226635222306593612', 'qaisha_rishivian_24rpl', 'qaisha_rishivian'),
-('101177830012522300057', NULL, NULL, 'google', NULL, 'SA\'ADATUL SHOLEHAH', 'saadatul_sholehah_24rpl@student.smktelkom-mlg.sch.id', '', 'RPL', '24', 'https://lh3.googleusercontent.com/-RbR16x9XKOw/AAAAAAAAAAI/AAAAAAAAADA/dcavwthgruk/photo.jpg', '', 'saadatul_sholehah_24rpl', 'saadatul_sholehah');
+INSERT INTO `TB_SISWA` (`IDSISWA`, `OAUTH_PROVIDER`, `NIS`, `NAMA_SISWA`, `EMAIL_SISWA`, `JK_SISWA`, `JURUSAN`, `ANGKATAN`, `URL_FOTO_SISWA`, `URL_PROFIL_SISWA`, `UNAME_SISWA`, `PASS_SISWA`, `NOABSEN`, `KELAS`) VALUES
+('100226635222306593612', 'google', '48041523068', 'Qaisha Muhammada Devvara Rishivian', 'qaisha_rishivian_24rpl@student.smktelkom-mlg.sch.id', 'male', 'RPL', '24', 'https://lh4.googleusercontent.com/-7y6-czREqxs/AAAAAAAAAAI/AAAAAAAAAFU/IyD-DWPZxVc/photo.jpg', 'https://plus.google.com/100226635222306593612', 'qaisha_rishivian_24rpl', 'qaisha_rishivian', 25, 'XII RPL 1');
 
 --
 -- Indexes for dumped tables
@@ -234,9 +236,7 @@ ALTER TABLE `TB_PELANGGARAN`
 -- Indexes for table `TB_SISWA`
 --
 ALTER TABLE `TB_SISWA`
-  ADD PRIMARY KEY (`IDSISWA`),
-  ADD KEY `FK_RELATIONSHIP_6` (`IDABSEN`),
-  ADD KEY `FK_RELATIONSHIP_7` (`IDKELAS`);
+  ADD PRIMARY KEY (`IDSISWA`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -246,7 +246,7 @@ ALTER TABLE `TB_SISWA`
 -- AUTO_INCREMENT for table `TB_ADMIN`
 --
 ALTER TABLE `TB_ADMIN`
-  MODIFY `IDADMIN` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100007;
+  MODIFY `IDADMIN` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100008;
 
 --
 -- AUTO_INCREMENT for table `TB_CAPELSIS`
@@ -263,12 +263,6 @@ ALTER TABLE `TB_PELANGGARAN`
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `TB_CAPELSIS`
---
-ALTER TABLE `TB_CAPELSIS`
-  ADD CONSTRAINT `FK_RELATIONSHIP_5` FOREIGN KEY (`IDADMIN`) REFERENCES `TB_ADMIN` (`IDADMIN`);
 
 --
 -- Constraints for table `TB_PELANGGARAN`
