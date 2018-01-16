@@ -59,6 +59,7 @@ class Siswa_model extends CI_Model{
         $update = $this->db->update('TB_SISWA', $data, array('IDSISWA' => $result['IDSISWA']));
         $userID = $result['IDSISWA'];
         $loggedRole = 'Siswa';
+        $loggedSiswaName = $result['NAMA_SISWA'];
 	 	}else{
             $insert = $this->db->insert('TB_SISWA', $data);
             $userID = $this->db->insert_id();
@@ -75,11 +76,15 @@ class Siswa_model extends CI_Model{
         				->where('PASS_SISWA', $PASS_SISWA)
         				->get('TB_SISWA');
 
-        if ($query->num_rows() > 0) {
+        if ($this->db->affected_rows() == 1) {
+
+            $result = $query->row_array();
+
         	$data = array(
         			'UNAME_SISWA'	=> $UNAME_SISWA,
         			'loggedIn'		=> TRUE,
-                    'loggedRole'    => 'Siswa'
+                    'loggedRole'    => 'Siswa',
+                    'loggedSiswaName'    => $result['NAMA_SISWA']
         	);
         	$this->session->set_userdata($data);
         	return true;

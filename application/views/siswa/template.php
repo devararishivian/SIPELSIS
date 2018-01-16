@@ -47,8 +47,21 @@
                 <img src="<?php echo base_url(); ?>assets/gentelella/production/images/img.jpg" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
-                <span>Siswa</span>
-                <h2>Paijo</h2>
+               <span>
+                      <?php 
+                        //foreach ($admin as $data){
+                          //echo $admin->ROLE;
+                      echo $this->session->userdata('loggedRole'); 
+                        //} 
+                        //$this->session->userdata('loggedRole');
+                      ?>
+                </span>
+                <h2><?php 
+                        //foreach ($admin as $data){
+                          //echo $admin->NAMA_ADMIN;
+                      echo $this->session->userdata('loggedSiswaName');
+                        //} 
+                      ?></h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -80,12 +93,17 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="images/img.jpg" alt="">Paijo
+                    <img src="images/img.jpg" alt=""><?php 
+                        //foreach ($admin as $data){
+                          //echo $admin->NAMA_ADMIN;
+                      echo $this->session->userdata('loggedSiswaName');
+                        //} 
+                      ?>
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
                     <li><a href="<?php echo base_url(); ?>index.php/siswa/profil"> Profile</a></li>
-                    <li><a href="javascript:;"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                    <li><a href="<?php echo base_url(); ?>index.php/siswa/logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                   </ul>
                 </li>
               </ul>

@@ -6,13 +6,23 @@ class Siswa extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		if (! $this->session->userdata('loggedIn') || $this->session->userdata('loggedIn') == null) {
+			redirect('auth');
+		}
+		$this->load->model('admin_model');
+		$this->load->model('siswa_model');
 		//Do your magic here
 	}
 
 	public function index()
 	{
-		$data['main_view'] = 'siswa/dasbor';
-		$this->load->view('siswa/template', $data);
+		if ($this->session->userdata('loggedRole') == 'Siswa') {
+			$data['main_view'] = 'siswa/dasbor';
+			$this->load->view('siswa/template', $data);
+		} else {
+				redirect('auth');
+			}
+
 	}
 
 	public function profil()

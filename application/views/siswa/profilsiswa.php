@@ -7,7 +7,12 @@
             <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12">
                   <div class="x_title">
-                    <h2>Profil Siswa <small>Raden Mas Vian Direwanginotobotolimo</small></h2>
+                    <h2>Profil Siswa <small><?php 
+                        //foreach ($admin as $data){
+                          //echo $admin->NAMA_ADMIN;
+                      echo $this->session->userdata('loggedSiswaName');
+                        //} 
+                      ?></small></h2>
                     </ul>
                     <div class="clearfix"></div>
                   </div>
@@ -19,7 +24,12 @@
                           <img class="img-responsive avatar-view" src="<?php echo base_url(); ?>assets/gentelella/production/images/picture.jpg" alt="Avatar" title="Change the avatar">
                         </div>
                       </div>
-                      <h3>Raden Mas Vian Direwanginotobotolimo</h3>
+                      <h3><?php 
+                        //foreach ($admin as $data){
+                          //echo $admin->NAMA_ADMIN;
+                      echo $this->session->userdata('loggedSiswaName');
+                        //} 
+                      ?></h3>
 
                       <ul class="list-unstyled user_data">
 
