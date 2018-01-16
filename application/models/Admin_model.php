@@ -25,6 +25,7 @@ class Admin_model extends CI_Model {
         			'loggedIn'		   => TRUE,
         			'loggedRole'	   => $result['ROLE'],
                     'loggedAdminName'  => $result['NAMA_ADMIN'],
+                    'loggedID'         => $result['IDADMIN'],
                     'FOTO_ADMIN'       => $result['FOTO_ADMIN'],
         	);
         	$this->session->set_userdata($session);
@@ -100,6 +101,31 @@ class Admin_model extends CI_Model {
         }
     }
 
+    public function tambahpelanggaran()
+    {
+        $data1 = array(
+                'IDSISWA'               => $this->input->post('IDSISWA'),
+                'IDADMIN'               => $this->session->userdata('loggedID'),
+                'KATEGORI_PELANGGARAN'  => $this->input->post('KATEGORI_PELANGGARAN'),
+        );
+
+        $this->db->insert('TB_CAPELSIS', $data1);
+
+        $data2 = array(
+                'NAMA_PELANGGARAN'      => $this->input->post('NAMA_PELANGGARAN'),
+                'POINT_PELANGGARAN'     => $this->input->post('POINT_PELANGGARAN'),
+                'KATEGORI_PELANGGARAN'  => $this->input->post('KATEGORI_PELANGGARAN'),
+        );
+
+        $this->db->insert('TB_PELANGGARAN', $data2);
+
+        if ($this->db->affected_rows() > 0) {
+            return TRUE;            
+        } else {
+            return FALSE;
+        }
+    }
+
     public function getAllAdmin(){
         /*$ROLE = 'Admin';
     	$this->db->select('*')->where('ROLE', $ROLE);
@@ -129,6 +155,11 @@ class Admin_model extends CI_Model {
     public function getAllPelanggaran()
     {
         return $this->db->get('TB_PELANGGARAN')->result();
+    }
+
+    public function getKategoriPelanggaran()
+    {
+        return $this->db->get('TB_PELANGGARAN')->row()->KATEGORI_PELANGGARAN;
     }
 
     public function total_admin()

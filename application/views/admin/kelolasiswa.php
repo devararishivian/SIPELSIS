@@ -22,7 +22,7 @@
                   <tr>
                     <td>'.$data->NIS.'</td>
                     <td>'.$data->NAMA_SISWA.'</td>
-                    <td>'.$data->KELAS_SISWA.'</td>
+                    <td>'.$data->IDKELAS.'</td>
                     <td>
                       <button type="button" class="btn btn-info btn-xs">Detail</button> 
                       <button type="button" class="btn btn-success btn-xs">Edit</button>

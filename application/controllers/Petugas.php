@@ -18,7 +18,11 @@ class Petugas extends CI_Controller {
 		if ($this->session->userdata('loggedRole') == 'Petugas') {
 			$data['main_view'] = 'petugas/dasbor';
 			$data['admin'] = $this->admin_model->getAllAdmin();
+			$data['siswa'] = $this->siswa_model->getAllSiswa();
+			$data['kelas'] = $this->siswa_model->getAllKelas();
+			$data['kapel'] = $this->admin_model->getKategoriPelanggaran();
 			$this->load->view('petugas/template', $data);
+
 		} else {
 				redirect('admin');
 			}
@@ -34,6 +38,21 @@ class Petugas extends CI_Controller {
         //redirect to login page
         redirect('Auth/admin');
     }
+
+    public function tambahpelanggaran(){
+    	$data['main_view'] = 'petugas/tambahpelanggaran';
+    	$data['siswa'] = $this->siswa_model->getDetilSiswa($this->uri->segment(3));
+        $this->load->view('petugas/template', $data);
+    }
+
+    public function insertpelanggaran()
+	{
+		if($this->admin_model->tambahpelanggaran() == TRUE){
+			redirect('petugas');
+		} else {
+			redirect('petugas/tambahpelanggaran');
+		}
+	}
 
 } 
 
