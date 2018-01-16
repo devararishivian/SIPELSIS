@@ -17,7 +17,7 @@ class Siswa extends CI_Controller {
 	public function index()
 	{
 		if ($this->session->userdata('loggedRole') == 'Siswa') {
-			$data['main_view'] = 'siswa/dasbor';
+			$data['main_view'] = 'siswa/profilsiswa';
 			$this->load->view('siswa/template', $data);
 		} else {
 				redirect('auth');

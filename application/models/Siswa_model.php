@@ -100,7 +100,12 @@ class Siswa_model extends CI_Model{
 
     public function getAllKelas(){
 
-        return $this->db->get('TB_SISWA')->result();
+        return $this->db->get('TB_KELAS')->result();
+    }
+
+    public function getNoAbsen(){
+
+        return $this->db->get('TB_ABSEN')->result();
     }
 
     public function getDetilSiswa($idsiswa){

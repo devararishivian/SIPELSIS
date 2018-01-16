@@ -152,6 +152,8 @@ class Admin extends CI_Controller {
 	{
 		$data['main_view'] = 'admin/kelolasiswa';
 		$data['siswa'] = $this->siswa_model->getAllSiswa();
+		$data['kelas'] = $this->siswa_model->getAllKelas();
+		$data['noabsen'] = $this->siswa_model->getNoAbsen();
 		$this->load->view('admin/template', $data);
 	}
 

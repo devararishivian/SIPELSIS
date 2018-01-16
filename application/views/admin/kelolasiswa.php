@@ -115,30 +115,35 @@
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Kelas <span class="required">*</span></label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select name="KELAS_SISWA" class="select2_group form-control" required="required">
-                            <optgroup label="Kelas X">
+                          <select name="IDKELAS" class="select2_group form-control" required="required">
+                            
                               <option selected disabled hidden>Pilih Kelas</option>
-                              <option>X RPL 1</option>
-                              <option>X RPL 2</option>
-                            </optgroup>
-                            <optgroup label="Kelas XI">
-                              <option>XI RPL 1</option>
-                              <option>XI RPL 2</option>
-                            </optgroup>
-                            <optgroup label="Kelas XII">
-                              <option>XII RPL 1</option>
-                              <option>XII RPL 2</option>
-                            </optgroup>
+                            <?php 
+                              foreach ($kelas as $data) {
+                               echo '
+                              
+                              <option value="'.$data->IDKELAS.'">'.$data->NAMA_KELAS.'</option>
+                              ';
+                            } ?>
                           </select>
                         </div>
                       </div>
 
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="NOABSEN_SISWA">Nomor Absen <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="IDABSEN">Nomor Absen <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="number" id="NOABSEN_SISWA" required="required" name="NOABSEN_SISWA" class="form-control col-md-7 col-xs-12">
-                        </div>
+                          <select name="IDABSEN" class="select2_group form-control" required="required">
+                            
+                              <option selected disabled hidden>Nomor Absen</option>
+                            <?php 
+                              foreach ($noabsen as $data) {
+                               echo '
+                              
+                              <option value="'.$data->IDABSEN.'">'.$data->NOMOR_ABSEN.'</option>
+                              ';
+                            } ?>
+                          </select></div>
                       </div>
 
                       <div class="form-group">
