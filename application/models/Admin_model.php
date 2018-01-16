@@ -97,7 +97,7 @@ class Admin_model extends CI_Model {
                 'JURUSAN'               => $this->input->post('JURUSAN'),
                 'ANGKATAN'              => $this->input->post('ANGKATAN'),
                 'KELAS'                 => $this->input->post('KELAS'),
-                'ABSEN'                 => $this->input->post('ABSEN'),
+                'NOABSEN'               => $this->input->post('NOABSEN'),
                 'URL_FOTO_SISWA'        => $this->input->post('URL_FOTO_SISWA'),
                 'UNAME_SISWA'           => $this->input->post('UNAME_SISWA'),
                 'PASS_SISWA'            => $this->input->post('PASS_SISWA')

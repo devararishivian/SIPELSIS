@@ -50,9 +50,9 @@
                       <p>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                         Laki - laki:
-                        <input type="radio" class="flat"  name="JK_SISWA" id="genderM" required="required" value="Laki - Laki" <?php echo ($siswa->JK_SISWA == 'male')?'checked':'' ?> /> 
+                        <input type="radio" class="flat" name="JK_SISWA" id="genderM" required="required" value="male" <?php echo ($siswa->JK_SISWA == 'male')?'checked':'' ?> /> 
                         Perempuan:
-                        <input type="radio" class="flat"  name="JK_SISWA" id="genderF" required="required" value="Laki - Laki" <?php echo ($siswa->JK_SISWA == 'female')?'checked':'' ?> />
+                        <input type="radio" class="flat" name="JK_SISWA" id="genderF"  value="female" <?php echo ($siswa->JK_SISWA == 'female')?'checked':'' ?> />
                       </div>
                       </p>
                       </div>
@@ -80,13 +80,12 @@
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Kelas <span class="required">*</span></label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select name="IDKELAS" class="select2_group form-control" required="required">
-                            
+                          <select name="KELAS" class="select2_group form-control" required="required">
+                            <option selected disabled hidden><?php echo $kelsis->KELAS; ?></option>
                             <?php 
                               foreach ($kelas as $data) {
                                echo '
-                              <option value="'.$siswa->IDKELAS.'?>">'.$data->NAMA_KELAS.'</option>
-                              <option value="'.$data->IDKELAS.'">'.$data->NAMA_KELAS.'</option>
+                                    <option value="'.$data->KELAS.'">'.$data->KELAS.'</option>
                               ';
                             } ?>
                           </select>
@@ -97,13 +96,12 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="IDABSEN">Nomor Absen <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select name="IDABSEN" class="select2_group form-control" required="required">
-                            
+                          <select name="NOABSEN" class="select2_group form-control" required="required">
+                            <option selected disabled hidden><?php echo $nosis->NOABSEN; ?></option>
                             <?php 
                               foreach ($noabsen as $data) {
-                               echo '
-                              <option value="'.$siswa->IDABSEN.'?>">'.$data->NOMOR_ABSEN.'</option>
-                              <option value="'.$data->IDABSEN.'">'.$data->NOMOR_ABSEN.'</option>
+                               echo '                             
+                                    <option value="'.$data->NOABSEN.'">'.$data->NOABSEN.'</option>
                               ';
                             } ?>
                           </select></div>

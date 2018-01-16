@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 16, 2018 at 03:52 PM
+-- Generation Time: Jan 16, 2018 at 06:54 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 5.6.32
 
@@ -39,7 +39,45 @@ CREATE TABLE `TB_ABSEN` (
 
 INSERT INTO `TB_ABSEN` (`IDABSEN`, `NOABSEN`) VALUES
 ('NOAB01', 1),
-('NOAB02', 2);
+('NOAB02', 2),
+('NOAB03', 3),
+('NOAB04', 4),
+('NOAB05', 5),
+('NOAB06', 6),
+('NOAB07', 7),
+('NOAB08', 8),
+('NOAB09', 9),
+('NOAB10', 10),
+('NOAB11', 11),
+('NOAB12', 12),
+('NOAB13', 13),
+('NOAB14', 14),
+('NOAB15', 15),
+('NOAB16', 16),
+('NOAB17', 17),
+('NOAB18', 18),
+('NOAB19', 19),
+('NOAB20', 20),
+('NOAB21', 21),
+('NOAB22', 22),
+('NOAB23', 23),
+('NOAB24', 24),
+('NOAB25', 25),
+('NOAB26', 26),
+('NOAB27', 27),
+('NOAB28', 28),
+('NOAB29', 29),
+('NOAB30', 30),
+('NOAB31', 31),
+('NOAB32', 32),
+('NOAB33', 33),
+('NOAB34', 34),
+('NOAB35', 35),
+('NOAB36', 36),
+('NOAB37', 37),
+('NOAB38', 38),
+('NOAB39', 39),
+('NOAB40', 40);
 
 -- --------------------------------------------------------
 
@@ -125,10 +163,42 @@ CREATE TABLE `TB_KELAS` (
 --
 
 INSERT INTO `TB_KELAS` (`IDKELAS`, `KELAS`) VALUES
-('IDKELAS01', 'XII RPL 1'),
-('IDKELAS02', 'XII RPL 2'),
-('IDKELAS03', 'XII RPL 3'),
-('IDKELAS04', 'XII RPL 4');
+('IDKELASXIIR1', 'XII RPL 1'),
+('IDKELASXIIR2', 'XII RPL 2'),
+('IDKELASXIIR3', 'XII RPL 3'),
+('IDKELASXIIR4', 'XII RPL 4'),
+('IDKELASXIIR5', 'XII RPL 5'),
+('IDKELASXIIR6', 'XII RPL 6'),
+('IDKELASXIIT1', 'XII TKJ 1'),
+('IDKELASXIIT2', 'XII TKJ 2'),
+('IDKELASXIIT3', 'XII TKJ 3'),
+('IDKELASXIIT4', 'XII TKJ 4'),
+('IDKELASXIIT5', 'XII TKJ 5'),
+('IDKELASXIIT6', 'XII TKJ 6'),
+('IDKELASXIR1', 'XI RPL 1'),
+('IDKELASXIR2', 'XI RPL 2'),
+('IDKELASXIR3', 'XI RPL 3'),
+('IDKELASXIR4', 'XI RPL 4'),
+('IDKELASXIR5', 'XI RPL 5'),
+('IDKELASXIR6', 'XI RPL 6'),
+('IDKELASXIT1', 'XI TKJ 1'),
+('IDKELASXIT2', 'XI TKJ 2'),
+('IDKELASXIT3', 'XI TKJ 3'),
+('IDKELASXIT4', 'XI TKJ 4'),
+('IDKELASXIT5', 'XI TKJ 5'),
+('IDKELASXIT6', 'XI TKJ 6'),
+('IDKELASXR1', 'X RPL 1'),
+('IDKELASXR2', 'X RPL 2'),
+('IDKELASXR3', 'X RPL 3'),
+('IDKELASXR4', 'X RPL 4'),
+('IDKELASXR5', 'X RPL 5'),
+('IDKELASXR6', 'X RPL 6'),
+('IDKELASXT1', 'X TKJ 1'),
+('IDKELASXT2', 'X TKJ 2'),
+('IDKELASXT3', 'X TKJ 3'),
+('IDKELASXT4', 'X TKJ 4'),
+('IDKELASXT5', 'X TKJ 5'),
+('IDKELASXT6', 'X TKJ 6');
 
 -- --------------------------------------------------------
 
@@ -186,7 +256,8 @@ CREATE TABLE `TB_SISWA` (
 --
 
 INSERT INTO `TB_SISWA` (`IDSISWA`, `OAUTH_PROVIDER`, `NIS`, `NAMA_SISWA`, `EMAIL_SISWA`, `JK_SISWA`, `JURUSAN`, `ANGKATAN`, `URL_FOTO_SISWA`, `URL_PROFIL_SISWA`, `UNAME_SISWA`, `PASS_SISWA`, `NOABSEN`, `KELAS`) VALUES
-('100226635222306593612', 'google', '48041523068', 'Qaisha Muhammada Devvara Rishivian', 'qaisha_rishivian_24rpl@student.smktelkom-mlg.sch.id', 'male', 'RPL', '24', 'https://lh4.googleusercontent.com/-7y6-czREqxs/AAAAAAAAAAI/AAAAAAAAAFU/IyD-DWPZxVc/photo.jpg', 'https://plus.google.com/100226635222306593612', 'qaisha_rishivian_24rpl', 'qaisha_rishivian', 25, 'XII RPL 1');
+('100226635222306593612', 'google', '48041523068', 'Qaisha Muhammada Devvara Rishivian', 'qaisha_rishivian_24rpl@student.smktelkom-mlg.sch.id', 'male', 'RPL', '24', 'https://lh4.googleusercontent.com/-7y6-czREqxs/AAAAAAAAAAI/AAAAAAAAAFU/IyD-DWPZxVc/photo.jpg', 'https://plus.google.com/100226635222306593612', 'qaisha_rishivian_24rpl', 'qaisha_rishivian', 25, 'XII RPL 1'),
+('1231313131', 'google', '3551341', 'cak haris', 'jancok@jancok.com', 'male', 'TKJ', '24', '13131', NULL, 'asdad', 'adas', 12, 'XII TKJ 6');
 
 --
 -- Indexes for dumped tables

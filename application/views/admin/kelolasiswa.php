@@ -110,9 +110,9 @@
                       <p>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                         RPL :
-                        <input type="radio" class="flat" name="JURUSAN" id="genderM" value="RPL" required /> 
+                        <input type="radio" class="flat" name="JURUSAN" value="RPL" required /> 
                         TKJ :
-                        <input type="radio" class="flat" name="JURUSAN" id="genderF" value="TKJ" />
+                        <input type="radio" class="flat" name="JURUSAN" value="TKJ" />
                       </div>
                       </p>
                       </div>
@@ -135,7 +135,7 @@
                               foreach ($kelas as $data) {
                                echo '
                               
-                              <option value="'.$data->IDKELAS.'">'.$data->KELAS.'</option>
+                              <option value="'.$data->KELAS.'">'.$data->KELAS.'</option>
                               ';
                             } ?>
                           </select>
@@ -152,7 +152,7 @@
                             <?php 
                               foreach ($noabsen as $data) {
                                echo '                              
-                              <option value="'.$data->IDABSEN.'">'.$data->NOABSEN.'</option>
+                              <option value="'.$data->NOABSEN.'">'.$data->NOABSEN.'</option>
                               ';
                             } ?>
                           </select></div>

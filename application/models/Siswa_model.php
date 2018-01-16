@@ -133,4 +133,14 @@ class Siswa_model extends CI_Model{
             LEFT JOIN TB_ABSEN C ON A.NOABSEN = C.NOABSEN
             WHERE A.IDSISWA='$idsiswa'")->row();
     }
+
+    public function getNosis($idsiswa){
+        return $this->db->query("SELECT * FROM TB_SISWA A LEFT JOIN TB_ABSEN B ON A.NOABSEN = B.NOABSEN 
+            WHERE A.IDSISWA='$idsiswa'")->row();
+    }
+
+    public function getKelsis($idsiswa){
+        return $this->db->query("SELECT * FROM TB_SISWA A LEFT JOIN TB_KELAS B ON A.KELAS = B.KELAS 
+            WHERE A.IDSISWA='$idsiswa'")->row();
+    }
 }
