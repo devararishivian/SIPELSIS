@@ -21,6 +21,7 @@ class Admin extends CI_Controller {
 			$data['admin'] = $this->admin_model->getAllAdmin();
 			$data['total_a'] = $this->admin_model->total_admin();
 			$data['total_p'] = $this->admin_model->total_petugas();
+			$data['total_s'] = $this->admin_model->total_siswa();
 			$this->load->view('admin/template', $data);
 		} else {
 				redirect('petugas');
@@ -160,6 +161,10 @@ class Admin extends CI_Controller {
         $this->session->unset_userdata('loggedIn');
         $this->session->unset_userdata('loggedRole');
         $this->session->unset_userdata('userData');
+        $this->session->unset_userdata('loggedID');
+        $this->session->unset_userdata('loggedAdminName');
+        $this->session->unset_userdata('FOTO_ADMIN');
+
         $this->session->sess_destroy();
         
         //redirect to login page

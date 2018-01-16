@@ -9,14 +9,14 @@
                   </div>
                   <div class="x_content">
                     <br />
-                    <form action="<?php echo base_url(); ?>index.php/petugas/tambahpelanggaran" method="post" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                    <form action="<?php echo base_url(); ?>index.php/petugas/insertpelanggaran" method="post" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
                       
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="IDSISWA">ID SISWA <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="IDSISWA" required="required" value="<?php echo $this->uri->segment(3); ?>" name="IDSISWA" class="form-control col-md-7 col-xs-12" disabled>
+                          <input type="text" id="IDSISWA" required="required" value="<?php echo $this->uri->segment(3); ?>" name="IDSISWA" class="form-control col-md-7 col-xs-12" readonly="true">
                         </div>
                       </div>
 
