@@ -33,7 +33,12 @@ class Petugas extends CI_Controller {
         $this->session->unset_userdata('loggedIn');
         $this->session->unset_userdata('loggedRole');
         $this->session->unset_userdata('userData');
+        $this->session->unset_userdata('loggedID');
+        $this->session->unset_userdata('loggedAdminName');
+        $this->session->unset_userdata('FOTO_ADMIN');
+
         $this->session->sess_destroy();
+        
         
         //redirect to login page
         redirect('Auth/admin');

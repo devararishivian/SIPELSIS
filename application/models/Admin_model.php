@@ -104,12 +104,15 @@ class Admin_model extends CI_Model {
 
     public function tambahpelanggaran()
     {
+        $mexypely = $this->db->query('SELECT MAX(`IDPELANGGARAN`) AS `MEXYPELY` FROM TB_PELANGGARAN')->row()->MEXYPELY;
+
+        $mexyplusplus = $mexypely + 1;
+
         $data1 = array(
                 'IDSISWA'               => $this->input->post('IDSISWA'),
+                'IDPELANGGARAN'         => $mexyplusplus,
                 'IDADMIN'               => $this->session->userdata('loggedID'),
-                'KATEGORI_PELANGGARAN'  => $this->input->post('KATEGORI_PELANGGARAN'),
         );
-
         $this->db->insert('TB_CAPELSIS', $data1);
 
         $data2 = array(
@@ -173,6 +176,12 @@ class Admin_model extends CI_Model {
     {
         $role = 'Petugas';
         return $this->db->from('TB_ADMIN')->where('ROLE', $role)->count_all_results();
+    }
+
+    public function total_siswa()
+    {
+        $OAUTH_PROVIDER = 'google';
+        return $this->db->from('TB_SISWA')->where('OAUTH_PROVIDER', $OAUTH_PROVIDER)->count_all_results();
     }
 
     /*public function loginadmin($UNAME_ADMIN,$PASS_ADMIN)
