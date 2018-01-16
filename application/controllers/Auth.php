@@ -11,7 +11,6 @@ class Auth extends CI_Controller {
 		$this->load->model('admin_model');
 	}
 
-	// versi findco
 	public function index() {
         if ($this->session->userdata('loggedIn') == TRUE) {
 
