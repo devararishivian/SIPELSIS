@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 16, 2018 at 08:01 PM
+-- Generation Time: Jan 17, 2018 at 01:01 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 5.6.32
 
@@ -258,7 +258,8 @@ CREATE TABLE `TB_SISWA` (
 
 INSERT INTO `TB_SISWA` (`IDSISWA`, `OAUTH_PROVIDER`, `NIS`, `NAMA_SISWA`, `EMAIL_SISWA`, `JK_SISWA`, `JURUSAN`, `ANGKATAN`, `URL_FOTO_SISWA`, `URL_PROFIL_SISWA`, `UNAME_SISWA`, `PASS_SISWA`, `NOABSEN`, `KELAS`) VALUES
 ('100226635222306593612', 'google', '48041523068', 'Qaisha Muhammada Devvara Rishivian', 'qaisha_rishivian_24rpl@student.smktelkom-mlg.sch.id', 'male', 'RPL', '24', 'https://lh4.googleusercontent.com/-7y6-czREqxs/AAAAAAAAAAI/AAAAAAAAAFU/IyD-DWPZxVc/photo.jpg', 'https://plus.google.com/100226635222306593612', 'qaisha_rishivian_24rpl', 'qaisha_rishivian', 25, 'XII RPL 1'),
-('1231313131', 'google', '3551341', 'cak haris', 'jancok@jancok.com', 'male', 'TKJ', '24', '13131', NULL, 'asdad', 'adas', 12, 'XII TKJ 6');
+('17252985295825289', 'google', '46691388070', 'Arik Nur Khoiriyah', 'arik_khoiriyah_24rpl@student.smktelkom-mlg.sch.id', 'female', 'RPL', '24', 'https://lh3.googleusercontent.com/7eelOUF6cePNeWb-poyDHC-NVAPlqce0ctotbtjOKnpUqwure7V8opKMFKVUOwpe8Uts7Q8HmmQp=s647-no', 'https://plus.google.com/u/1/105085156526066723725', 'arik_khoiriyah_24rpl', 'arik_khoiriyah', 2, 'XII RPL 1'),
+('1897234234221', 'google', '47461465070', 'Maghrisya Amalia Wardana', 'maghrisya_wardana_24rpl@student.smktelkom-mlg.sch.id', 'female', 'RPL', '24', 'https://lh3.googleusercontent.com/icHg2svqvQUlFh-hl9MIAKscqtgoNZmMQkhw9XNYCJAEwpyU5vI8MEgg202XBu8NbAk84F5Lb82hjw=w963-h960-no', 'https://plus.google.com/u/1/114112256604064636627', 'maghrisya_wardana_24rpl', 'maghrisya_wardana', 19, 'XII RPL 1');
 
 --
 -- Indexes for dumped tables
