@@ -2,7 +2,7 @@
 <div class="right_col" role="main">
   <div class="">
     <div class="x_title">
-        <h2>Data Pelanggaran <small><?php echo $siswa->NAMA_SISWA; ?></small></h2>
+        <h2>Data Catatan Pelanggaran Siswa</small></h2>
         <div class="clearfix"></div>
     </div>
     <div class="x_content">
@@ -10,6 +10,7 @@
         <thead>
           <tr>
             <th>#</th>
+            <th>Nama Siswa</th>
             <th>Nama Pelanggaran</th>
             <th>Kategori Pelanggaran</th>
             <th>Point Pelanggaran</th>
@@ -19,10 +20,11 @@
         <tbody>                  
           <?php 
             $no =1;
-            foreach ($capelsis as $data){
+            foreach ($allcapelsis as $data){
             echo '
               <tr>
                 <td>'.$no.'</td>
+                <td>'.$data->NAMA_SISWA.'</td>
                 <td>'.$data->NAMA_PELANGGARAN.'</td>
                 <td>'.$data->KATEGORI_PELANGGARAN.'</td>
                 <td>'.$data->POINT_PELANGGARAN.'</td>

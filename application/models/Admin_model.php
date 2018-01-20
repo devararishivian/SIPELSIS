@@ -275,6 +275,15 @@ class Admin_model extends CI_Model {
         return $this->db->get('TB_KAPEL')->result();
     }
 
+    public function getAllCapelsis()
+    {
+        return $this->db->query("SELECT * FROM TB_CAPELSIS A LEFT JOIN TB_SISWA B ON A.IDSISWA = B.IDSISWA 
+            LEFT JOIN TB_ADMIN C ON A.IDADMIN = C.IDADMIN 
+            LEFT JOIN TB_PELANGGARAN D ON D.IDPELANGGARAN = A.IDPELANGGARAN
+            LEFT JOIN TB_KAPEL E ON E.IDKATEGORI = D.IDKATEGORI
+            WHERE A.STATUS_CAPELSIS='OK'")->result();
+    }
+
     public function total_admin()
     {
         $role = 'Admin';

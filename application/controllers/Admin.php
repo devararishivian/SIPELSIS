@@ -248,6 +248,13 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/template', $data);
 	}
 
+	public function lihatcapelsis()
+	{
+		$data['main_view'] = 'admin/lihatcapelsis';		
+		$data['allcapelsis'] = $this->admin_model->getAllCapelsis();
+		$this->load->view('admin/template', $data);
+	}
+
 	public function managesiswa()
 	{
 		$data['main_view'] = 'admin/managesiswa';

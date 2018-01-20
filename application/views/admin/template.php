@@ -95,7 +95,7 @@
                       <li><a href="<?php echo base_url(); ?>index.php/admin/lihatadmin">Data Admin</a></li>
                       <li><a href="<?php echo base_url(); ?>index.php/admin/lihatpetugas">Data Petugas</a></li>
                       <li><a href="<?php echo base_url(); ?>index.php/admin/lihatsiswa">Data Siswa</a></li>
-                      <li><a href="<?php echo base_url(); ?>index.php/admin/lihatsiswa">Data Catatan Pelanggaran</a></li>
+                      <li><a href="<?php echo base_url(); ?>index.php/admin/lihatcapelsis">Data Catatan Pelanggaran</a></li>
                       <!--<li><a href="<?php echo base_url(); ?>index.php/admin/lihatpelanggaran">Data Pelanggaran</a></li>-->
                     </ul>
                   </li>

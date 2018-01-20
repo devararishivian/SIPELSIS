@@ -134,7 +134,8 @@ class Siswa_model extends CI_Model{
     public function getCaPelSisOk($idsiswa){
 
         return $this->db->query("SELECT * FROM TB_SISWA A LEFT JOIN TB_CAPELSIS B ON A.IDSISWA = B.IDSISWA 
-            LEFT JOIN TB_PELANGGARAN C ON B.IDPELANGGARAN = C.IDPELANGGARAN
+            LEFT JOIN TB_PELANGGARAN C ON B.IDPELANGGARAN = C.IDPELANGGARAN 
+            LEFT JOIN TB_KAPEL D ON D.IDKATEGORI = C.IDKATEGORI
             WHERE A.IDSISWA='$idsiswa' && B.STATUS_CAPELSIS='OK'")->result();
     }
 
