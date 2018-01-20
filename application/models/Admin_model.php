@@ -284,6 +284,32 @@ class Admin_model extends CI_Model {
             WHERE A.STATUS_CAPELSIS='OK'")->result();
     }
 
+    public function getAllCapelsisNotOk()
+    {
+        return $this->db->query("SELECT * FROM TB_CAPELSIS A LEFT JOIN TB_SISWA B ON A.IDSISWA = B.IDSISWA 
+            LEFT JOIN TB_ADMIN C ON A.IDADMIN = C.IDADMIN 
+            LEFT JOIN TB_PELANGGARAN D ON D.IDPELANGGARAN = A.IDPELANGGARAN
+            LEFT JOIN TB_KAPEL E ON E.IDKATEGORI = D.IDKATEGORI
+            WHERE A.STATUS_CAPELSIS='NOT_OK'")->result();
+    }
+
+    public function konfirmasicapelsis($id)
+    {
+        $data = array(
+                'IDCAPELSIS'      => $this->uri->segment(3),
+                'STATUS_CAPELSIS' => 'OK',
+        );
+
+        $this->db->where('IDCAPELSIS', $id);
+        $this->db->update('TB_CAPELSIS', $data); 
+
+        if ($this->db->affected_rows() > 0) {
+            return TRUE;            
+        } else {
+            return FALSE;
+        }
+    }
+
     public function total_admin()
     {
         $role = 'Admin';

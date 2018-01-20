@@ -255,6 +255,23 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/template', $data);
 	}
 
+	public function konfirmasipelsis()
+	{
+		$data['main_view'] = 'admin/konfirmasipelsis';		
+		$data['allcapelsis'] = $this->admin_model->getAllCapelsisNotOk();
+		$this->load->view('admin/template', $data);
+	}
+
+	public function konfirmasicapelsis()
+	{
+		if($this->admin_model->konfirmasicapelsis($this->uri->segment(3)) == TRUE){
+			redirect('admin/lihatcapelsis');
+		} else {
+			$this->session->set_flashdata('failed');
+	        redirect('admin/konfirmasipelsis');
+		}
+	}
+
 	public function managesiswa()
 	{
 		$data['main_view'] = 'admin/managesiswa';
@@ -285,7 +302,7 @@ class Admin extends CI_Controller {
 	{
 		if($this->siswa_model->deletecapelsis($id) == TRUE){
 			$this->session->set_flashdata('success', 'Siswa Berhasil Dihapus');
-			redirect('admin/lihatsiswa');
+			redirect('admin/lihatcapelsis');
 		} else {
 			$this->session->set_flashdata('failed', 'Siswa Gagal Dihapus');
 			redirect('admin/dasbor');
