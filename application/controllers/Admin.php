@@ -223,15 +223,24 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/template', $data);
 	}
 
-	public function tambahpelanggaran()
+	/*public function tambahpelanggaran()
 	{
 		$data['main_view'] = 'admin/tambahpelanggaran';
 		$this->load->view('admin/template', $data);
+	}*/
+
+	public function tambahsiswa()
+	{
+		$data['main_view'] = 'admin/tambahsiswa';
+		$data['siswa'] = $this->siswa_model->getAllSiswa();
+		$data['kelas'] = $this->siswa_model->getAllKelas();
+		$data['noabsen'] = $this->siswa_model->getNoAbsen();
+		$this->load->view('admin/template', $data);
 	}
 
-	public function kelolasiswa()
+	public function lihatsiswa()
 	{
-		$data['main_view'] = 'admin/kelolasiswa';
+		$data['main_view'] = 'admin/lihatsiswa';
 		$data['siswa'] = $this->siswa_model->getAllSiswa();
 		$data['kelas'] = $this->siswa_model->getAllKelas();
 		$data['noabsen'] = $this->siswa_model->getNoAbsen();

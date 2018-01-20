@@ -94,6 +94,7 @@
                     <ul class="nav child_menu">
                       <li><a href="<?php echo base_url(); ?>index.php/admin/lihatadmin">Data Admin</a></li>
                       <li><a href="<?php echo base_url(); ?>index.php/admin/lihatpetugas">Data Petugas</a></li>
+                      <li><a href="<?php echo base_url(); ?>index.php/admin/lihatsiswa">Data Siswa</a></li>
                       <!--<li><a href="<?php echo base_url(); ?>index.php/admin/lihatpelanggaran">Data Pelanggaran</a></li>-->
                     </ul>
                   </li>
@@ -101,6 +102,7 @@
                     <ul class="nav child_menu">
                       <li><a href="<?php echo base_url(); ?>index.php/admin/tambahadmin">Data Admin</a></li>
                       <li><a href="<?php echo base_url(); ?>index.php/admin/tambahpetugas">Data Petugas</a></li>
+                      <li><a href="<?php echo base_url(); ?>index.php/admin/tambahsiswa">Data Siswa</a></li>
                       <!--<li><a href="<?php echo base_url(); ?>index.php/admin/tambahpelanggaran">Data Pelanggaran</a></li>-->
                     </ul>
                   </li>
