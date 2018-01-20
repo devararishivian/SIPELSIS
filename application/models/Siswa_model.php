@@ -131,6 +131,24 @@ class Siswa_model extends CI_Model{
             WHERE A.IDSISWA='$idsiswa'")->result();
     }
 
+    public function getCaPelSisOk($idsiswa){
+
+        return $this->db->query("SELECT * FROM TB_SISWA A LEFT JOIN TB_CAPELSIS B ON A.IDSISWA = B.IDSISWA 
+            LEFT JOIN TB_PELANGGARAN C ON B.IDPELANGGARAN = C.IDPELANGGARAN
+            WHERE A.IDSISWA='$idsiswa' && B.STATUS_CAPELSIS='OK'")->result();
+    }
+
+    public function deletecapelsis($id)
+    {
+        $this->db->where('IDCAPELSIS', $id)->delete('TB_CAPELSIS');
+
+        if($this->db->affected_rows() > 0){
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+
     public function getDetilSiswa($idsiswa){
         return $this->db->query("SELECT * FROM TB_SISWA A LEFT JOIN TB_KELAS B ON A.KELAS = B.KELAS 
             LEFT JOIN TB_ABSEN C ON A.NOABSEN = C.NOABSEN

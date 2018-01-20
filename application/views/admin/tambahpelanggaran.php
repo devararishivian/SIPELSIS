@@ -1,94 +1,92 @@
-<!-- page content -->
-        <div class="right_col" role="main">
-          <div class="">
-            <div class="clearfix"></div>
+<div class="right_col" role="main">
+<div class="clearfix"></div>
             <div class="row">
-
-                <div class="x_panel">
+              <div class="col-md-12 col-sm-12 col-xs-12">
                   <div class="x_title">
-                    <h2>Tambah Pelanggaran</h2>
+                    <h2>Tambah Data Pelanggaran<small>Siswa</small></h2>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-
-                    <!-- start form for validation -->
-                    <form action="<?php echo base_url(); ?>index.php/admin/insertpelanggaran" method="post" id="demo-form">
-                      <label for="NAMA_PELANGGARAN">Nama * :</label>
-                      <input type="text" id="NAMA_PELANGGARAN" class="form-control" name="NAMA_PELANGGARAN" required />
-
-                      <div class="form-group">
-                      <label for="KATEGORI_PELANGGARAN">Kategori * :</label>
-                      <div class="form-group">
-                        <div>
-                          <select id="KATEGORI_PELANGGARAN" name="KATEGORI_PELANGGARAN" class="form-control" required> 
-                            <option selected disabled hidden>Pilih Kategori</option>
-                            <option value="Ringan">Ringan</option>
-                            <option value="Sedang">Sedang</option>
-                            <option value="Berat">Berat</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                      <!--
-                      <div class="form-group">
-                        <label class="control-label">Point Pelanggaran</label>
-                        <div>
-                          <select class="select2_group form-control">
-                            <option selected disabled hidden>Pilih Point Pelanggaran</option>
-                            <optgroup label="Ringan">
-                              <option value="10">10</option>
-                            </optgroup>
-                            <optgroup label="Sedang">
-                              <option value="20">20</option>
-                            </optgroup>
-                            <optgroup label="Berat">
-                              <option value="45">45</option>
-                            </optgroup>
-                          </select>
-                        </div>
-                      </div>
-                    -->
-
-                      <div class="form-group">
-                      <label for="POINT_PELANGGARAN">Point * :</label>
-                      <div class="radio">
-                        <label>
-                            <input type="radio" class="flat" value="10" name="POINT_PELANGGARAN" required="required"> 10 : Ringan
-                        </label>
-                      </div>
-                      <div class="radio">
-                        <label>
-                            <input type="radio" class="flat" value="20" name="POINT_PELANGGARAN"> 20 : Sedang
-                        </label>
-                      </div>
-                      <div class="radio">
-                        <label>
-                            <input type="radio" class="flat" value="45" name="POINT_PELANGGARAN"> 45 : Berat
-                        </label>
-                      </div>
-                    </div>
+                    <br />
+                    <form action="<?php echo base_url(); ?>index.php/petugas/insertpelanggaran" method="post" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
                       
-                      <br /> 
-                                         
                       <div class="form-group">
-                        <div>
-                          <button type="reset" class="btn btn-primary">Reset</button>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="IDSISWA">ID SISWA <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="IDSISWA" required="required" value="<?php echo $this->uri->segment(3); ?>" name="IDSISWA" class="form-control col-md-7 col-xs-12" readonly="true">
+                        </div>
+                      </div>
+
+
+                      
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="NAMA_SISWA">Nama <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="NAMA_SISWA" name="NAMA_SISWA" value="<?php echo $siswa->NAMA_SISWA; ?>" required="required" class="form-control col-md-7 col-xs-12" disabled>
+                        </div>
+                      </div>
+
+                     
+
+                     
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Kelas <span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="KELAS" name="KELAS" value="<?php echo $siswa->KELAS; ?>" required="required" class="form-control col-md-7 col-xs-12" disabled>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="JENIS_PELANGGARAN">NAMA PELANGGARAN <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="NAMA_PELANGGARAN" name="NAMA_PELANGGARAN" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">KATEGORI PELANGGARAN<span class="required"> *</span></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select name="KATEGORI_PELANGGARAN" class="select2_group form-control" required="required">
+                            
+                              <option selected disabled hidden>KATEGORI PELANGGARAN</option>
+                              <?php 
+                              foreach ($kapel as $data){
+                                echo '
+                                      <option value="'.$data->IDKATEGORI.'" >'.$data->KATEGORI_PELANGGARAN.'</option>
+                              '; } ?>
+                            
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="POINT">POINT<span class="required"> *</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="number" id="POINT" name="POINT_PELANGGARAN" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+
+                      <div class="ln_solid"></div>
+                      <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                          <button class="btn btn-primary" type="reset">Reset</button>
                           <input type="submit" value="Submit" class="btn btn-success">
                         </div>
                       </div>
 
                     </form>
-                    <!-- end form for validations -->
+                  </div>
+                </div>
+              </div>
+            </div>
+
 
                   </div>
                 </div>
-
-
               </div>
-
-                </div>
-              </div>
-          </div>
-        </div>
-        <!-- /page content -->

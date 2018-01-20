@@ -22,6 +22,7 @@ class Admin extends CI_Controller {
 			$data['total_a'] = $this->admin_model->total_admin();
 			$data['total_p'] = $this->admin_model->total_petugas();
 			$data['total_s'] = $this->admin_model->total_siswa();
+			$data['total_pelok'] = $this->admin_model->total_pelanggaran();
 			$this->load->view('admin/template', $data);
 		} else {
 				redirect('petugas');
@@ -258,6 +259,39 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/template', $data);
 
 	}
+
+	public function managepelanggaran()
+	{
+		$data['main_view'] = 'admin/managepelanggaran';
+		$data['kelas'] = $this->siswa_model->getAllKelas();
+		$data['noabsen'] = $this->siswa_model->getNoAbsen();
+		$data['kelsis'] = $this->siswa_model->getKelsis($this->uri->segment(3));
+		$data['nosis'] = $this->siswa_model->getNosis($this->uri->segment(3));
+		$data['siswa'] = $this->siswa_model->getDetilSiswa($this->uri->segment(3));
+		$data['capelsis'] = $this->siswa_model->getCaPelSisOk($this->uri->segment(3));
+		$data['kapel'] = $this->admin_model->getKategoriPelanggaran();
+		$this->load->view('admin/template', $data);
+
+	}
+
+	public function deletecapelsis($id)
+	{
+		if($this->siswa_model->deletecapelsis($id) == TRUE){
+			$this->session->set_flashdata('success', 'Siswa Berhasil Dihapus');
+			redirect('admin/lihatsiswa');
+		} else {
+			$this->session->set_flashdata('failed', 'Siswa Gagal Dihapus');
+			redirect('admin/dasbor');
+		}
+	}
+
+	public function tambahpelanggaran(){
+    	$data['main_view'] = 'admin/tambahpelanggaran';
+    	$data['siswa'] = $this->siswa_model->getDetilSiswa($this->uri->segment(3));
+    	$data['kapel'] = $this->admin_model->getKategoriPelanggaran();
+        $this->load->view('admin/template', $data);
+    }
+
 //$this->Admin_model->update_siswa($id,$data);
 //$this->show_student_id();
 	public function updatesiswa()

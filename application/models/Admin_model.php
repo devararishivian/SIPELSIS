@@ -293,6 +293,11 @@ class Admin_model extends CI_Model {
         return $this->db->from('TB_SISWA')->where('OAUTH_PROVIDER', $OAUTH_PROVIDER)->count_all_results();
     }
 
+    public function total_pelanggaran()
+    {
+        $STATUS_CAPELSIS = 'OK';
+        return $this->db->from('TB_CAPELSIS')->where('STATUS_CAPELSIS', $STATUS_CAPELSIS)->count_all_results();
+    }
     /*public function loginadmin($UNAME_ADMIN,$PASS_ADMIN)
     {
         $query = $this->db->where('UNAME_ADMIN', $this->db->escape_str($username))

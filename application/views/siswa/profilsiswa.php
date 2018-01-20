@@ -66,7 +66,7 @@
                                   <th>#</th>
                                   <th>Nama Pelanggaran</th>
                                   <th>Kategori Pelanggaran</th>
-                                  <th>Point</th>
+                                  <th>Point Pelanggaran</th>
                                 </tr>
                               </thead>
                               <tbody>

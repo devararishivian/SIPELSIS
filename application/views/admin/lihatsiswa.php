@@ -24,8 +24,10 @@
                     <td>'.$data->NAMA_SISWA.'</td>
                     <td>'.$data->KELAS.'</td>
                     <td>
-                      <a href="'.base_url().'index.php/admin/managesiswa/'.$data->IDSISWA.'/" class="btn btn-primary btn-xs">Kelola</a>
-                      <a href="'.base_url().'index.php/admin/deletesiswa/'.$data->IDSISWA.'" class="btn btn-danger btn-xs">Delete</a>
+                      <a href="'.base_url().'index.php/admin/managesiswa/'.$data->IDSISWA.'/" class="btn btn-primary btn-xs">KELOLA DATA</a>
+                      <a href="'.base_url().'index.php/admin/managepelanggaran/'.$data->IDSISWA.'/" class="btn btn-warning btn-xs">KELOLA PELANGGARAN</a>
+                      <a href="'.base_url().'index.php/admin/tambahpelanggaran/'.$data->IDSISWA.'/" class="btn btn-success btn-xs">TAMBAH PELANGGARAN</a>
+                      <a href="'.base_url().'index.php/admin/deletesiswa/'.$data->IDSISWA.'" class="btn btn-danger btn-xs">HAPUS</a>
                     </td>
                   </tr>
                     ';

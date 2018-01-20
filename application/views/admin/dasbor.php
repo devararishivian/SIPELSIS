@@ -2,25 +2,32 @@
         <div class="right_col" role="main">
           <div class="">
             <div class="row top_tiles">
-              <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
+              <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="tile-stats">
-                  <a href="<?php echo base_url(); ?>index.php/admin/kelolasiswa" class="icon"><i class="fa fa-users"></i></a>
-                  <a href="<?php echo base_url(); ?>index.php/admin/kelolasiswa" class="count"><?php echo $total_s; ?></a>                 
-                  <h3>Siswa SMK Telkom</h3>
+                  <a href="<?php echo base_url(); ?>index.php/admin/lihatsiswa" class="icon"><i class="fa fa-users"></i></a>
+                  <a href="<?php echo base_url(); ?>index.php/admin/lihatsiswa" class="count"><?php echo $total_s; ?></a>                 
+                  <h3>Siswa</h3>
                 </div>
               </div>
-              <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
+              <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="tile-stats">
-                  <a href="<?php echo base_url(); ?>index.php/admin/lihatadmin" class="icon"><i class="fa fa-user"></i></a>
+                  <a href="<?php echo base_url(); ?>index.php/admin/lihatadmin" class="icon"><i class="fa fa-user-md"></i></a>
                   <a href="<?php echo base_url(); ?>index.php/admin/lihatadmin" class="count"><?php echo $total_a; ?></a>
                   <h3>Admin</h3>
                 </div>
               </div>
-              <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
+              <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="tile-stats">
                   <a href="<?php echo base_url(); ?>index.php/admin/lihatpetugas" class="icon"><i class="fa fa-user"></i></a>
                   <a href="<?php echo base_url(); ?>index.php/admin/lihatpetugas" class="count"><?php echo $total_p; ?></a>
                   <h3>Petugas</h3>
+                </div>
+              </div>
+              <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="tile-stats">
+                  <a href="<?php echo base_url(); ?>index.php/admin/lihatcapelsis" class="icon"><i class="fa fa-list"></i></a>
+                  <a href="<?php echo base_url(); ?>index.php/admin/lihatcapelsis" class="count"><?php echo $total_pelok; ?></a>
+                  <h3>Capelsis</h3>
                 </div>
               </div>
               <!--

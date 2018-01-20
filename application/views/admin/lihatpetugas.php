@@ -24,8 +24,8 @@
                     <td>'.$data->NIP.'</td>
                     <td>'.$data->EMAIL_ADMIN.'</td>
                     <td>
-                      <a href="'.base_url().'index.php/admin/kelolapetugas/'.$data->IDADMIN.'/" class="btn btn-primary btn-xs">Kelola</a>
-                      <a href="'.base_url().'index.php/admin/deleteadmin/'.$data->IDADMIN.'" class="btn btn-danger btn-xs">Hapus</a>
+                      <a href="'.base_url().'index.php/admin/kelolapetugas/'.$data->IDADMIN.'/" class="btn btn-primary btn-xs">KELOLA</a>
+                      <a href="'.base_url().'index.php/admin/deleteadmin/'.$data->IDADMIN.'" class="btn btn-danger btn-xs">HAPUS</a>
                     </td>
                   </tr>
                     ';

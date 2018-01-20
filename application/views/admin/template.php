@@ -95,6 +95,7 @@
                       <li><a href="<?php echo base_url(); ?>index.php/admin/lihatadmin">Data Admin</a></li>
                       <li><a href="<?php echo base_url(); ?>index.php/admin/lihatpetugas">Data Petugas</a></li>
                       <li><a href="<?php echo base_url(); ?>index.php/admin/lihatsiswa">Data Siswa</a></li>
+                      <li><a href="<?php echo base_url(); ?>index.php/admin/lihatsiswa">Data Catatan Pelanggaran</a></li>
                       <!--<li><a href="<?php echo base_url(); ?>index.php/admin/lihatpelanggaran">Data Pelanggaran</a></li>-->
                     </ul>
                   </li>
@@ -108,12 +109,13 @@
                   </li>
                 </ul>
               </div>
-              <div class="menu_section">
-                <h3>Lain-lain</h3>
-                <ul class="nav side-menu">
-                  <li><a href="<?php echo base_url(); ?>index.php/admin/kelolasiswa"><i class="fa fa-laptop"></i> Kelola Data Siswa </a></li>
-                </ul>
-              </div>
+
+              <div class="menu_section"> 
+                <h3>Lain-lain</h3> 
+                <ul class="nav side-menu"> 
+                  <li><a href="<?php echo base_url(); ?>index.php/admin/konfirmasipelsis"><i class="fa fa-laptop"></i> Konfirmasi Pelanggaran </a></li> 
+                </ul> 
+              </div> 
 
             </div>
             <!-- /sidebar menu -->
