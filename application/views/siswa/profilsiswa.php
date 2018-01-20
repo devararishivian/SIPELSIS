@@ -72,13 +72,13 @@
                               <tbody>
                                 <?php 
                                 $no =1;
-                                foreach ($capelsis as $data){
+                                foreach ($allcapelsis as $data){
                                   echo '
                                 
                                 <tr>
                                   <td>'.$no.'</td>
                                   <td>'.$data->NAMA_PELANGGARAN.'</td>
-                                  <td>'.$data->IDPELANGGARAN.'</td>
+                                  <td>'.$data->KATEGORI_PELANGGARAN.'</td>
                                   <td>'.$data->POINT_PELANGGARAN.'</td>
                                 </tr>
 

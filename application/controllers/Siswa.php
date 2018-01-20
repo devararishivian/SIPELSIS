@@ -20,7 +20,7 @@ class Siswa extends CI_Controller {
 			$data['main_view'] = 'siswa/profilsiswa';
 			$data['siswa'] = $this->siswa_model->getDetilSiswa($this->session->userdata('loggedID'));
 			$data['siswaall'] = $this->siswa_model->getDataSiswa();
-			$data['capelsis'] = $this->siswa_model->getCaPelSis($this->session->userdata('loggedID'));
+			$data['allcapelsis'] = $this->siswa_model->getCaPelSisOk($this->session->userdata('loggedID'));
 			$this->load->view('siswa/template', $data);
 		} else {
 				redirect('auth');
@@ -33,7 +33,7 @@ class Siswa extends CI_Controller {
 		$data['main_view'] = 'siswa/profilsiswa';		
 		$data['siswa'] = $this->siswa_model->getDetilSiswa($this->session->userdata('loggedID'));
 		$data['siswaall'] = $this->siswa_model->getDataSiswa();
-		$data['capelsis'] = $this->siswa_model->getCaPelSis($this->session->userdata('loggedID'));
+		$data['allcapelsis'] = $this->siswa_model->getCaPelSisOk($this->session->userdata('loggedID'));
 		$this->load->view('siswa/template', $data);
 	}
 
