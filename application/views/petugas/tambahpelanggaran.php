@@ -37,7 +37,7 @@
         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="KATEGORI_PELANGGARAN">KATEGORI PELANGGARAN <span class="required">*</span>
         </label>
         <div class="col-md-6 col-sm-6 col-xs-12">
-        <select name="KATEGORI_PELANGGARAN" id="kapel" class="select2_group form-control" required="required">
+        <select name="IDKATEGORI" id="kapel" class="select2_group form-control" required="required">
           <option selected disabled hidden>KATEGORI PELANGGARAN</option>
             <?php
               foreach ($kapel as $katpel) {
@@ -54,7 +54,7 @@
         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="NAMA_PELANGGARAN">NAMA PELANGGARAN <span class="required">*</span>
         </label>
         <div class="col-md-6 col-sm-6 col-xs-12">
-        <select name="NAMA_PELANGGARAN" id="napel" class="select2_group form-control" required="required">
+        <select name="IDPELANGGARAN" id="napel" class="select2_group form-control" required="required">
           <option selected disabled hidden>NAMA PELANGGARAN</option>
             <?php
               foreach ($pel as $pela) {
@@ -66,23 +66,6 @@
         </select>
         </div>
         </div>
-
-
-        <!-- Memanggil file jquer -->
-<script src="<?php echo base_url(); ?>assets/jquery.min.js"></script>
-  
-  <script type="text/javascript" src="<?php echo base_url(); ?>assets/jquery.chained.min.js"></script>
-    
-  <!-- Fungsi javascript untuk onchange -->
-  <script type="text/javascript">
-     
-    $("#napel").chained("#kapel"); <!-- parameter yang digunakan mesti sama dengan id select list-->
-   
-   /* Arti dari script diatas yaitu select list kota akan menampilkan data yang mempunyai id_provinsi
-      yang sama pada table kota dengan table provinsi
-   */   
-      
-  </script>
 
         <div class="ln_solid"></div>
         <div class="form-group">
@@ -98,5 +81,21 @@
   </div>
 </div>
 
+<!-- Memanggil file jquer -->
+<script src="<?php echo base_url(); ?>assets/jquery.min.js"></script>
+  
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/jquery.chained.min.js"></script>
+    
+<!-- Fungsi javascript untuk onchange -->
+<script type="text/javascript">
+     
+  $("#napel").chained("#kapel"); 
+  <!-- parameter yang digunakan mesti sama dengan id select list-->
+   
+   /* Arti dari script diatas yaitu select list kota akan menampilkan data yang mempunyai id_provinsi
+      yang sama pada table kota dengan table provinsi
+   */   
+      
+</script>
 
 

@@ -30,6 +30,24 @@ class Petugas extends CI_Controller {
 			}
 	}
 
+    public function tambahpelanggaran(){
+    	$data['main_view'] = 'petugas/tambahpelanggaran';
+		$data['siswa'] = $this->siswa_model->getDetilSiswa($this->uri->segment(3));
+		$data['kapel'] = $this->pelanggaran_model->getKaPel();
+		$data['pel'] = $this->pelanggaran_model->getPel();
+		$data['popel'] = $this->pelanggaran_model->getPoPel();
+        $this->load->view('petugas/template', $data);
+    }
+
+    public function insertpelanggaran()
+	{
+		if($this->pelanggaran_model->petugasinsertpelanggaran() == TRUE){
+			redirect('petugas');
+		} else {
+			redirect('petugas/tambahpelanggaran');
+		}
+	}
+
 	public function logout(){
         //delete login status & user info from session
         $this->session->unset_userdata('loggedIn');
@@ -45,23 +63,6 @@ class Petugas extends CI_Controller {
         //redirect to login page
         redirect('Auth/admin');
     }
-
-    public function tambahpelanggaran(){
-    	$data['main_view'] = 'petugas/tambahpelanggaran';
-		$data['siswa'] = $this->siswa_model->getDetilSiswa($this->uri->segment(3));
-		$data['kapel'] = $this->pelanggaran_model->getKaPel();
-		$data['pel'] = $this->pelanggaran_model->getPel();
-        $this->load->view('petugas/template', $data);
-    }
-
-    public function insertpelanggaran()
-	{
-		if($this->admin_model->tambahpelanggaran() == TRUE){
-			redirect('petugas');
-		} else {
-			redirect('petugas/tambahpelanggaran');
-		}
-	}
 
 } 
 
