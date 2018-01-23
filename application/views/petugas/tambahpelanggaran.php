@@ -34,36 +34,55 @@
         </div>
 
         <div class="form-group">
-        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="JENIS_PELANGGARAN">NAMA PELANGGARAN <span class="required">*</span>
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="KATEGORI_PELANGGARAN">KATEGORI PELANGGARAN <span class="required">*</span>
         </label>
         <div class="col-md-6 col-sm-6 col-xs-12">
-        <input type="text" id="NAMA_PELANGGARAN" name="NAMA_PELANGGARAN"  required="required" class="form-control col-md-7 col-xs-12">
-        </div>
-        </div>
-
-        <div class="form-group">
-        <label class="control-label col-md-3 col-sm-3 col-xs-12">KATEGORI PELANGGARAN<span class="required"> *</span></label>
-        <div class="col-md-6 col-sm-6 col-xs-12">
-        <select name="KATEGORI_PELANGGARAN" class="select2_group form-control" required="required">
-                           
+        <select name="KATEGORI_PELANGGARAN" id="kapel" class="select2_group form-control" required="required">
           <option selected disabled hidden>KATEGORI PELANGGARAN</option>
-            <?php 
-                foreach ($kapel as $data){
-                  echo '
-                        <option value="'.$data->IDKATEGORI.'" >'.$data->KATEGORI_PELANGGARAN.'</option>
-                       '; } ?>
-                           
+            <?php
+              foreach ($kapel as $katpel) {
+                echo '
+                  <option value="'.$katpel->IDKATEGORI.'">'.$katpel->NAMA_KATEGORI.'</option>
+                    ';
+              }
+            ?>                           
         </select>
         </div>
         </div>
 
         <div class="form-group">
-        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="POINT">POINT<span class="required"> *</span>
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="NAMA_PELANGGARAN">NAMA PELANGGARAN <span class="required">*</span>
         </label>
         <div class="col-md-6 col-sm-6 col-xs-12">
-        <input type="number" id="POINT" name="POINT_PELANGGARAN" required="required" class="form-control col-md-7 col-xs-12">
+        <select name="NAMA_PELANGGARAN" id="napel" class="select2_group form-control" required="required">
+          <option selected disabled hidden>NAMA PELANGGARAN</option>
+            <?php
+              foreach ($pel as $pela) {
+                echo '
+                  <option class="'.$pela->IDKATEGORI.'" value="'.$pela->IDPELANGGARAN.'">'.$pela->NAMA_PELANGGARAN.'</option>
+                    ';
+              }
+            ?>                           
+        </select>
         </div>
         </div>
+
+
+        <!-- Memanggil file jquer -->
+<script src="<?php echo base_url(); ?>assets/jquery.min.js"></script>
+  
+  <script type="text/javascript" src="<?php echo base_url(); ?>assets/jquery.chained.min.js"></script>
+    
+  <!-- Fungsi javascript untuk onchange -->
+  <script type="text/javascript">
+     
+    $("#napel").chained("#kapel"); <!-- parameter yang digunakan mesti sama dengan id select list-->
+   
+   /* Arti dari script diatas yaitu select list kota akan menampilkan data yang mempunyai id_provinsi
+      yang sama pada table kota dengan table provinsi
+   */   
+      
+  </script>
 
         <div class="ln_solid"></div>
         <div class="form-group">
@@ -78,3 +97,6 @@
     </div>
   </div>
 </div>
+
+
+

@@ -11,6 +11,7 @@ class Petugas extends CI_Controller {
 		}
 		$this->load->model('admin_model');
 		$this->load->model('siswa_model');
+		$this->load->model('pelanggaran_model');
 	}
 
 	public function index()
@@ -21,7 +22,6 @@ class Petugas extends CI_Controller {
 			$data['siswa'] = $this->siswa_model->getAllSiswa();
 			$data['kelas'] = $this->siswa_model->getAllKelas();
 			$data['absen'] = $this->siswa_model->getDataAbsen();
-			$data['kapel'] = $this->admin_model->getKategoriPelanggaran();
 
 			$this->load->view('petugas/template', $data);
 
@@ -48,9 +48,9 @@ class Petugas extends CI_Controller {
 
     public function tambahpelanggaran(){
     	$data['main_view'] = 'petugas/tambahpelanggaran';
-    	$data['siswa'] = $this->siswa_model->getDetilSiswa($this->uri->segment(3));
-		$data['kapel'] = $this->admin_model->getKategoriPelanggaran();
-		$data['pel'] = $this->admin_model->getAllPelanggaran();
+		$data['siswa'] = $this->siswa_model->getDetilSiswa($this->uri->segment(3));
+		$data['kapel'] = $this->pelanggaran_model->getKaPel();
+		$data['pel'] = $this->pelanggaran_model->getPel();
         $this->load->view('petugas/template', $data);
     }
 
