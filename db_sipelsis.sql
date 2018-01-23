@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 23, 2018 at 03:14 PM
+-- Generation Time: Jan 23, 2018 at 04:38 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -127,9 +127,9 @@ CREATE TABLE `TB_CAPELSIS` (
 --
 
 INSERT INTO `TB_CAPELSIS` (`IDCAPELSIS`, `IDADMIN`, `IDPELANGGARAN`, `IDSISWA`, `STATUS_CAPELSIS`, `TGL_CAPELSIS`) VALUES
-(300004, 100003, 700005, '100226635222306593612', 'OK', '2018-01-18'),
-(300005, 100003, 700006, '100226635222306593612', 'NOT_OK', '2018-01-01'),
-(300008, 100003, 700006, '100226635222306593612', 'OK', '2018-01-03');
+(300009, 100003, 1, '100226635222306593612', 'OK', '0000-00-00'),
+(300010, 100003, 6, '100226635222306593612', 'OK', '2018-01-23'),
+(300011, 100001, 3, '100226635222306593612', 'OK', '2018-01-23');
 
 -- --------------------------------------------------------
 
@@ -139,17 +139,18 @@ INSERT INTO `TB_CAPELSIS` (`IDCAPELSIS`, `IDADMIN`, `IDPELANGGARAN`, `IDSISWA`, 
 
 CREATE TABLE `TB_KATEGORI` (
   `IDKATEGORI` int(11) NOT NULL,
-  `NAMA_KATEGORI` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `NAMA_KATEGORI` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `POINT` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `TB_KATEGORI`
 --
 
-INSERT INTO `TB_KATEGORI` (`IDKATEGORI`, `NAMA_KATEGORI`) VALUES
-(1, 'Ringan'),
-(2, 'Sedang'),
-(3, 'Berat');
+INSERT INTO `TB_KATEGORI` (`IDKATEGORI`, `NAMA_KATEGORI`, `POINT`) VALUES
+(1, 'Ringan', 5),
+(2, 'Sedang', 15),
+(3, 'Berat', 40);
 
 -- --------------------------------------------------------
 
@@ -231,6 +232,26 @@ INSERT INTO `TB_PELANGGARAN` (`IDPELANGGARAN`, `IDKATEGORI`, `NAMA_PELANGGARAN`)
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `TB_POINT`
+--
+
+CREATE TABLE `TB_POINT` (
+  `IDPOINT` int(11) NOT NULL,
+  `POINT` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `TB_POINT`
+--
+
+INSERT INTO `TB_POINT` (`IDPOINT`, `POINT`) VALUES
+(1, 5),
+(2, 15),
+(3, 40);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `TB_SISWA`
 --
 
@@ -304,6 +325,12 @@ ALTER TABLE `TB_PELANGGARAN`
   ADD PRIMARY KEY (`IDPELANGGARAN`);
 
 --
+-- Indexes for table `TB_POINT`
+--
+ALTER TABLE `TB_POINT`
+  ADD PRIMARY KEY (`IDPOINT`);
+
+--
 -- Indexes for table `TB_SISWA`
 --
 ALTER TABLE `TB_SISWA`
@@ -323,7 +350,7 @@ ALTER TABLE `TB_ADMIN`
 -- AUTO_INCREMENT for table `TB_CAPELSIS`
 --
 ALTER TABLE `TB_CAPELSIS`
-  MODIFY `IDCAPELSIS` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=300009;
+  MODIFY `IDCAPELSIS` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=300012;
 
 --
 -- AUTO_INCREMENT for table `TB_PELANGGARAN`

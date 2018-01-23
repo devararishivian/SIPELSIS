@@ -30,8 +30,8 @@
                 <td>'.$data->KELAS.'</td>
                 <td>'.$data->NOABSEN.'</td> 
                 <td>'.$data->NAMA_PELANGGARAN.'</td>
-                <td>'.$data->KATEGORI_PELANGGARAN.'</td>
-                <td>'.$data->POINT_PELANGGARAN.'</td>
+                <td>'.$data->NAMA_KATEGORI.'</td>
+                <td>'.$data->POINT.'</td>
                 <td>
                   <a href="'.base_url().'index.php/admin/konfirmasicapelsis/'.$data->IDCAPELSIS.'" class="btn btn-success btn-xs">KONFIRMASI</a>
                   <a href="'.base_url().'index.php/admin/deletecapelsis/'.$data->IDCAPELSIS.'" class="btn btn-danger btn-xs">HAPUS</a>

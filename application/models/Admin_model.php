@@ -272,7 +272,7 @@ class Admin_model extends CI_Model {
 
     public function getKategoriPelanggaran()
     {
-        return $this->db->get('TB_KAPEL')->result();
+        return $this->db->get('TB_KATEGORI')->result();
     }
 
     public function getAllCapelsis()
@@ -280,7 +280,7 @@ class Admin_model extends CI_Model {
         return $this->db->query("SELECT * FROM TB_CAPELSIS A LEFT JOIN TB_SISWA B ON A.IDSISWA = B.IDSISWA 
             LEFT JOIN TB_ADMIN C ON A.IDADMIN = C.IDADMIN 
             LEFT JOIN TB_PELANGGARAN D ON D.IDPELANGGARAN = A.IDPELANGGARAN
-            LEFT JOIN TB_KAPEL E ON E.IDKATEGORI = D.IDKATEGORI
+            LEFT JOIN TB_KATEGORI E ON E.IDKATEGORI = D.IDKATEGORI
             WHERE A.STATUS_CAPELSIS='OK'")->result();
     }
 
@@ -289,7 +289,7 @@ class Admin_model extends CI_Model {
         return $this->db->query("SELECT * FROM TB_CAPELSIS A LEFT JOIN TB_SISWA B ON A.IDSISWA = B.IDSISWA 
             LEFT JOIN TB_ADMIN C ON A.IDADMIN = C.IDADMIN 
             LEFT JOIN TB_PELANGGARAN D ON D.IDPELANGGARAN = A.IDPELANGGARAN
-            LEFT JOIN TB_KAPEL E ON E.IDKATEGORI = D.IDKATEGORI
+            LEFT JOIN TB_KATEGORI E ON E.IDKATEGORI = D.IDKATEGORI
             WHERE A.STATUS_CAPELSIS='NOT_OK'")->result();
     }
 

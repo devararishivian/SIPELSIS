@@ -40,6 +40,11 @@
                       </ul>
                       <br />
 
+                      <p>Total Point : 60</p>    
+                      <div class="progress">
+                        <div class="progress-bar progress-bar-primary" data-transitiongoal="60"></div>
+                      </div>
+
                     </div>
                     <div class="col-md-9 col-sm-9 col-xs-12">
 
@@ -67,6 +72,7 @@
                                   <th>Nama Pelanggaran</th>
                                   <th>Kategori Pelanggaran</th>
                                   <th>Point Pelanggaran</th>
+                                  <th>Tanggal</th>
                                 </tr>
                               </thead>
                               <tbody>
@@ -78,8 +84,9 @@
                                 <tr>
                                   <td>'.$no.'</td>
                                   <td>'.$data->NAMA_PELANGGARAN.'</td>
-                                  <td>'.$data->KATEGORI_PELANGGARAN.'</td>
-                                  <td>'.$data->POINT_PELANGGARAN.'</td>
+                                  <td>'.$data->NAMA_KATEGORI.'</td>
+                                  <td>'.$data->POINT.'</td>
+                                  <td>'.$data->TGL_CAPELSIS.'</td>
                                 </tr>
 
 

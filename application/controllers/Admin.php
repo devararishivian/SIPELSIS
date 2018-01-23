@@ -11,7 +11,7 @@ class Admin extends CI_Controller {
 		}
 		$this->load->model('admin_model');
 		$this->load->model('siswa_model');
-		//Do your magic here
+		$this->load->model('pelanggaran_model');
 	}
 
 	public function index()
@@ -88,8 +88,8 @@ class Admin extends CI_Controller {
 
 	public function insertpelanggaran()
 	{
-		if($this->admin_model->insertpelanggaran() == TRUE){
-			redirect('admin/lihatpelanggaran');
+		if($this->pelanggaran_model->admininsertpelanggaran() == TRUE){
+			redirect('admin/lihatsiswa');
 		} else {
 			redirect('admin/tambahpelanggaran');
 		}
@@ -293,7 +293,6 @@ class Admin extends CI_Controller {
 		$data['nosis'] = $this->siswa_model->getNosis($this->uri->segment(3));
 		$data['siswa'] = $this->siswa_model->getDetilSiswa($this->uri->segment(3));
 		$data['capelsis'] = $this->siswa_model->getCaPelSisOk($this->uri->segment(3));
-		$data['kapel'] = $this->admin_model->getKategoriPelanggaran();
 		$this->load->view('admin/template', $data);
 
 	}
@@ -311,8 +310,10 @@ class Admin extends CI_Controller {
 
 	public function tambahpelanggaran(){
     	$data['main_view'] = 'admin/tambahpelanggaran';
-    	$data['siswa'] = $this->siswa_model->getDetilSiswa($this->uri->segment(3));
-    	$data['kapel'] = $this->admin_model->getKategoriPelanggaran();
+		$data['siswa'] = $this->siswa_model->getDetilSiswa($this->uri->segment(3));
+		$data['kapel'] = $this->pelanggaran_model->getKaPel();
+		$data['pel'] = $this->pelanggaran_model->getPel();
+		$data['popel'] = $this->pelanggaran_model->getPoPel();
         $this->load->view('admin/template', $data);
     }
 

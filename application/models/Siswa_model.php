@@ -135,7 +135,7 @@ class Siswa_model extends CI_Model{
 
         return $this->db->query("SELECT * FROM TB_SISWA A LEFT JOIN TB_CAPELSIS B ON A.IDSISWA = B.IDSISWA 
             LEFT JOIN TB_PELANGGARAN C ON B.IDPELANGGARAN = C.IDPELANGGARAN 
-            LEFT JOIN TB_KAPEL D ON D.IDKATEGORI = C.IDKATEGORI
+            LEFT JOIN TB_KATEGORI D ON D.IDKATEGORI = C.IDKATEGORI
             WHERE A.IDSISWA='$idsiswa' && B.STATUS_CAPELSIS='OK'")->result();
     }
 
@@ -164,5 +164,11 @@ class Siswa_model extends CI_Model{
     public function getKelsis($idsiswa){
         return $this->db->query("SELECT * FROM TB_SISWA A LEFT JOIN TB_KELAS B ON A.KELAS = B.KELAS 
             WHERE A.IDSISWA='$idsiswa'")->row();
+    }
+
+    public function total_point($id)
+    {   
+        $STATUS_CAPELSIS = 'OK';
+        return $this->db->from('TB_CAPELSIS')->where('STATUS_CAPELSIS', $STATUS_CAPELSIS)->count_all_results();
     }
 }
