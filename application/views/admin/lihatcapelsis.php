@@ -16,6 +16,7 @@
             <th>Nama Pelanggaran</th>
             <th>Kategori Pelanggaran</th>
             <th>Point Pelanggaran</th>
+            <th>Tanggal</th>
             <th>Aksi</th>
           </tr>
         </thead>
@@ -32,6 +33,7 @@
                 <td>'.$data->NAMA_PELANGGARAN.'</td>
                 <td>'.$data->NAMA_KATEGORI.'</td>
                 <td>'.$data->POINT.'</td>
+                <td>'.$data->TGL_CAPELSIS.'</td>
                 <td>
                   <a href="'.base_url().'index.php/admin/deletecapelsis/'.$data->IDCAPELSIS.'" class="btn btn-danger btn-xs">HAPUS</a>
                 </td>

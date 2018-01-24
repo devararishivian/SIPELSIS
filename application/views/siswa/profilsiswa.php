@@ -42,7 +42,11 @@
 
                       <p>Total Point : <?php echo $total_po; ?></p>    
                       <div class="progress">
-                        <div class="progress-bar progress-bar-primary" data-transitiongoal="<?php echo $total_po; ?>"></div>
+                        <div class="progress-bar progress-bar-<?php 
+                        if($total_po >= 0 && $total_po <= 25){echo "success";} 
+                        if($total_po >= 26 && $total_po <= 50){echo "warning";} 
+                        if($total_po >= 51 && $total_po <= 100){echo "danger";} 
+                        ?>" data-transitiongoal="<?php echo $total_po; ?>"></div>
                       </div>
 
                     </div>

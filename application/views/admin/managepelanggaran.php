@@ -6,6 +6,14 @@
         <div class="clearfix"></div>
     </div>
     <div class="x_content">
+    <p>Total Point : <?php echo $total_po; ?></p>    
+                      <div class="progress">
+                        <div class="progress-bar progress-bar-<?php 
+                        if($total_po >= 0 && $total_po <= 25){echo "success";} 
+                        if($total_po >= 26 && $total_po <= 50){echo "warning";} 
+                        if($total_po >= 51 && $total_po <= 100){echo "danger";} 
+                        ?>" data-transitiongoal="<?php echo $total_po; ?>"></div>
+                      </div>
       <table id="datatable-buttons" class="table table-striped table-bordered">
         <thead>
           <tr>
@@ -13,6 +21,7 @@
             <th>Nama Pelanggaran</th>
             <th>Kategori Pelanggaran</th>
             <th>Point Pelanggaran</th>
+            <th>Tanggal</th>
             <th>Aksi</th>
           </tr>
         </thead>
@@ -26,6 +35,7 @@
                 <td>'.$data->NAMA_PELANGGARAN.'</td>
                 <td>'.$data->NAMA_KATEGORI.'</td>
                 <td>'.$data->POINT.'</td>
+                <td>'.$data->TGL_CAPELSIS.'</td>
                 <td>
                   <a href="'.base_url().'index.php/admin/deletecapelsis/'.$data->IDCAPELSIS.'" class="btn btn-danger btn-xs">HAPUS</a>
                 </td>

@@ -293,6 +293,7 @@ class Admin extends CI_Controller {
 		$data['nosis'] = $this->siswa_model->getNosis($this->uri->segment(3));
 		$data['siswa'] = $this->siswa_model->getDetilSiswa($this->uri->segment(3));
 		$data['capelsis'] = $this->siswa_model->getCaPelSisOk($this->uri->segment(3));
+		$data['total_po'] = $this->siswa_model->total_point($this->uri->segment(3));
 		$this->load->view('admin/template', $data);
 
 	}
