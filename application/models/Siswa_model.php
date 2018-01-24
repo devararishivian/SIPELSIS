@@ -166,9 +166,10 @@ class Siswa_model extends CI_Model{
             WHERE A.IDSISWA='$idsiswa'")->row();
     }
 
-    public function total_point($id)
+    public function total_point($idsiswa)
     {   
-        $STATUS_CAPELSIS = 'OK';
-        return $this->db->from('TB_CAPELSIS')->where('STATUS_CAPELSIS', $STATUS_CAPELSIS)->count_all_results();
+        return $this->db->query("SELECT SUM(C.POINT) AS Point FROM TB_CAPELSIS A LEFT JOIN TB_PELANGGARAN B 
+        ON A.IDPELANGGARAN = B.IDPELANGGARAN 
+        LEFT JOIN TB_KATEGORI C ON B.IDKATEGORI = C.IDKATEGORI WHERE A.IDSISWA='$idsiswa'")->row()->Point;  
     }
 }

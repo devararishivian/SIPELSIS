@@ -22,7 +22,7 @@
                       <div class="profile_img">
                         <div id="crop-avatar">
                           <!-- Current avatar -->
-                          <img class="img-responsive avatar-view" src="<?php echo $siswa->URL_FOTO_SISWA; ?>" alt="TIDAK ADA FOTO" title="Change the avatar">
+                          <img class="img-responsive avatar-view" src="<?php echo $siswa->URL_FOTO_SISWA; ?>" alt="TIDAK ADA FOTO">
                         </div>
                       </div>
                       <h3><?php 
@@ -40,9 +40,9 @@
                       </ul>
                       <br />
 
-                      <p>Total Point : 60</p>    
+                      <p>Total Point : <?php echo $total_po; ?></p>    
                       <div class="progress">
-                        <div class="progress-bar progress-bar-primary" data-transitiongoal="60"></div>
+                        <div class="progress-bar progress-bar-primary" data-transitiongoal="<?php echo $total_po; ?>"></div>
                       </div>
 
                     </div>

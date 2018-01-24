@@ -21,6 +21,7 @@ class Siswa extends CI_Controller {
 			$data['siswa'] = $this->siswa_model->getDetilSiswa($this->session->userdata('loggedID'));
 			$data['siswaall'] = $this->siswa_model->getDataSiswa();
 			$data['allcapelsis'] = $this->siswa_model->getCaPelSisOk($this->session->userdata('loggedID'));
+			$data['total_po'] = $this->siswa_model->total_point($this->session->userdata('loggedID'));
 			$this->load->view('siswa/template', $data);
 		} else {
 				redirect('auth');
@@ -34,6 +35,7 @@ class Siswa extends CI_Controller {
 		$data['siswa'] = $this->siswa_model->getDetilSiswa($this->session->userdata('loggedID'));
 		$data['siswaall'] = $this->siswa_model->getDataSiswa();
 		$data['allcapelsis'] = $this->siswa_model->getCaPelSisOk($this->session->userdata('loggedID'));
+		$data['total_po'] = $this->siswa_model->total_point($this->session->userdata('loggedID'));
 		$this->load->view('siswa/template', $data);
 	}
 
