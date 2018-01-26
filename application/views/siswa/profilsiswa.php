@@ -69,6 +69,23 @@
                           </div>
                           <div class="x_content">
 
+                          <div class="alert alert-<?php 
+                        if($total_po >= 0 && $total_po <= 25){echo "success";} 
+                        if($total_po >= 26 && $total_po <= 50){echo "warning";} 
+                        if($total_po >= 51 && $total_po <= 100){echo "danger";} 
+                        ?> alert" role="alert">
+    <strong><i class="fa fa-warning"></i> Peringatan !</strong> 
+    <marquee>
+      <p>
+      <?php 
+        if($total_po >= 0 && $total_po <= 25){echo "Status masih aman, dilarang mengulangi pelanggaran";} 
+        if($total_po >= 26 && $total_po <= 50){echo "Silakan menemui pihak kesiswaan";} 
+        if($total_po >= 51 && $total_po <= 100){echo "Pemanggilan orang tua";} 
+      ?>
+      </p>
+    </marquee>
+    </div>
+
                             <table class="table">
                               <thead>
                                 <tr>
